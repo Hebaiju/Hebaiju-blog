@@ -1,0 +1,50 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "H E B A I J U",
+    "home_page_url": "http://www.hebaiju.cn/",
+    "feed_url": "http://www.hebaiju.cn/feed.json",
+    "description": "搞钱，迎娶白富美，走上人生巅峰。",
+    "icon": "https://preview.cloud.189.cn/image/imageAction?param=4585952347B1C14632263C55ED1A5C02BB302FEEED45C898C673F3BB032DB267368ECF53DBF000D18F093C5198E30C751E8D0CC51E40EAB793434B5CC056352FA531AC4D59A1BEE9C3BAAB9E37909E62A871154B82596CB12A849C19D908755E6A410A5321136E32E7643E6C980B84B95FBDAC7B",
+    "author": {
+        "name": "鹤白居",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "http://www.hebaiju.cn/posts/251109我的“舞台”",
+            "content_html": "<h2>日记</h2>\n<p>这篇文章我反反复复隐藏了多次，还是公开吧。希望我的读者能学到经验。</p>\n<h3>开始</h3>\n<br/><p>访问 <a href=\"http://www.hebaiju.cn/posts/251109我的“舞台”\" target=\"_blank\">http://www.hebaiju.cn/posts/251109我的“舞台”</a> 阅读全文。</p>",
+            "url": "http://www.hebaiju.cn/posts/251109我的“舞台”",
+            "title": "我的“舞台”",
+            "date_modified": "2025-11-09T00:00:00.000Z",
+            "date_published": "2025-11-09T00:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "http://www.hebaiju.cn/posts/250726ESP8266实现配网",
+            "content_html": "<h2>ESP8266实现配网</h2>\n<p>我目前处于大学阶段，在参加一个社团，里面主要是做项目，比赛的一个小团队。<br>\n在这个小团队中，我主要负责的是一个项目的硬件部分，<br>\n比如说硬件的组装，电路</p>\n<br/><p>访问 <a href=\"http://www.hebaiju.cn/posts/250726ESP8266实现配网\" target=\"_blank\">http://www.hebaiju.cn/posts/250726ESP8266实现配网</a> 阅读全文。</p>",
+            "url": "http://www.hebaiju.cn/posts/250726ESP8266实现配网",
+            "title": "ESP8266实现配网",
+            "date_modified": "2025-07-26T00:00:00.000Z",
+            "date_published": "2025-07-26T00:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "http://www.hebaiju.cn/posts/250725小破站成立了",
+            "content_html": "<h2>小破站成立了！</h2>\n<p>  今天时间是2025年7月25日，我在<a href=\"https://www.hebaiju.cn\">liveou的博客</a>上创建了一个我的小破站，用于记录我生活中的点点</p>\n<br/><p>访问 <a href=\"http://www.hebaiju.cn/posts/250725小破站成立了\" target=\"_blank\">http://www.hebaiju.cn/posts/250725小破站成立了</a> 阅读全文。</p>",
+            "url": "http://www.hebaiju.cn/posts/250725小破站成立了",
+            "title": "小破站成立了！",
+            "date_modified": "2025-06-30T16:00:00.000Z",
+            "date_published": "2025-06-30T16:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
