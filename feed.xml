@@ -4,7 +4,7 @@
         <title>H E B A I J U</title>
         <link>http://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Mon, 17 Nov 2025 17:16:34 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Nov 2025 10:32:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,19 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
         <atom:link href="http://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[3C3U-金萝卜文档]]></title>
+            <link>http://www.hebaiju.cn/posts/link</link>
+            <guid isPermaLink="false">http://www.hebaiju.cn/posts/link</guid>
+            <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>3C3U-金萝卜挂机机器人</h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜的挂机机器人，后台控制，链接等。</p>
+</blockquote>
+<p>目前本基地有正式成员4人。</p>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/link" target="_blank">http://www.hebaiju.cn/posts/link</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (鹤白居)</author>
+        </item>
         <item>
             <title><![CDATA[我的“舞台”]]></title>
             <link>http://www.hebaiju.cn/posts/251109我的“舞台”</link>

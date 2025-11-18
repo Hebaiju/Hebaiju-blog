@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://www.hebaiju.cn/</id>
     <title>H E B A I J U</title>
-    <updated>2025-11-17T17:16:34.671Z</updated>
+    <updated>2025-11-18T10:32:49.431Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -15,6 +15,24 @@
     <logo>https://preview.cloud.189.cn/image/imageAction?param=4585952347B1C14632263C55ED1A5C02BB302FEEED45C898C673F3BB032DB267368ECF53DBF000D18F093C5198E30C751E8D0CC51E40EAB793434B5CC056352FA531AC4D59A1BEE9C3BAAB9E37909E62A871154B82596CB12A849C19D908755E6A410A5321136E32E7643E6C980B84B95FBDAC7B</logo>
     <icon>http://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2025 © 鹤白居</rights>
+    <entry>
+        <title type="html"><![CDATA[3C3U-金萝卜文档]]></title>
+        <id>http://www.hebaiju.cn/posts/link</id>
+        <link href="http://www.hebaiju.cn/posts/link"/>
+        <updated>2025-11-18T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>3C3U-金萝卜挂机机器人</h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜的挂机机器人，后台控制，链接等。</p>
+</blockquote>
+<p>目前本基地有正式成员4人。</p>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/link" target="_blank">http://www.hebaiju.cn/posts/link</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>鹤白居</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-11-18T00:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我的“舞台”]]></title>
         <id>http://www.hebaiju.cn/posts/251109我的“舞台”</id>
