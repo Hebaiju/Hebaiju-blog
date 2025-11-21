@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://www.hebaiju.cn/</id>
     <title>H E B A I J U</title>
-    <updated>2025-11-20T09:05:02.314Z</updated>
+    <updated>2025-11-21T06:21:11.755Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -17,15 +17,15 @@
     <rights>CC BY-NC-SA 4.0 2025 © 鹤白居</rights>
     <entry>
         <title type="html"><![CDATA[3C3U-金萝卜文档]]></title>
-        <id>http://www.hebaiju.cn/posts/link</id>
-        <link href="http://www.hebaiju.cn/posts/link"/>
+        <id>http://www.hebaiju.cn/posts/251118-3c3uconfig</id>
+        <link href="http://www.hebaiju.cn/posts/251118-3c3uconfig"/>
         <updated>2025-11-18T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<h2>3C3U-金萝卜挂机机器人</h2>
 <blockquote>
 <p>本篇文章将介绍金萝卜的挂机机器人，后台控制，链接等。</p>
 </blockquote>
 <p>目前本基地有正式成员4人。</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/link" target="_blank">http://www.hebaiju.cn/posts/link</a> 阅读全文。</p>]]></content>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">http://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content>
         <author>
             <name>鹤白居</name>
             <email>i@valaxy.site</email>
@@ -35,13 +35,13 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[我的“舞台”]]></title>
-        <id>http://www.hebaiju.cn/posts/251109我的“舞台”</id>
-        <link href="http://www.hebaiju.cn/posts/251109我的“舞台”"/>
+        <id>http://www.hebaiju.cn/posts/251109-MyStage</id>
+        <link href="http://www.hebaiju.cn/posts/251109-MyStage"/>
         <updated>2025-11-09T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<h2>日记</h2>
 <p>这篇文章我反反复复隐藏了多次，还是公开吧。希望我的读者能学到经验。</p>
 <h3>开始</h3>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/251109我的“舞台”" target="_blank">http://www.hebaiju.cn/posts/251109我的“舞台”</a> 阅读全文。</p>]]></content>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/251109-MyStage" target="_blank">http://www.hebaiju.cn/posts/251109-MyStage</a> 阅读全文。</p>]]></content>
         <author>
             <name>鹤白居</name>
             <email>i@valaxy.site</email>
@@ -51,14 +51,14 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ESP8266实现配网]]></title>
-        <id>http://www.hebaiju.cn/posts/250726ESP8266实现配网</id>
-        <link href="http://www.hebaiju.cn/posts/250726ESP8266实现配网"/>
+        <id>http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</id>
+        <link href="http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup"/>
         <updated>2025-07-26T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<h2>ESP8266实现配网</h2>
 <p>我目前处于大学阶段，在参加一个社团，里面主要是做项目，比赛的一个小团队。<br>
 在这个小团队中，我主要负责的是一个项目的硬件部分，<br>
 比如说硬件的组装，电路</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250726ESP8266实现配网" target="_blank">http://www.hebaiju.cn/posts/250726ESP8266实现配网</a> 阅读全文。</p>]]></content>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup" target="_blank">http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</a> 阅读全文。</p>]]></content>
         <author>
             <name>鹤白居</name>
             <email>i@valaxy.site</email>
@@ -68,12 +68,12 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[小破站成立了！]]></title>
-        <id>http://www.hebaiju.cn/posts/250725小破站成立了</id>
-        <link href="http://www.hebaiju.cn/posts/250725小破站成立了"/>
+        <id>http://www.hebaiju.cn/posts/250725-SmallStationLaunched</id>
+        <link href="http://www.hebaiju.cn/posts/250725-SmallStationLaunched"/>
         <updated>2025-06-30T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<h2>小破站成立了！</h2>
 <p>  今天时间是2025年7月25日，我在<a href="https://www.hebaiju.cn">HEBAIJU的博客</a>上创建了一个我的小破站，用于记录我生活中的点</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250725小破站成立了" target="_blank">http://www.hebaiju.cn/posts/250725小破站成立了</a> 阅读全文。</p>]]></content>
+<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250725-SmallStationLaunched" target="_blank">http://www.hebaiju.cn/posts/250725-SmallStationLaunched</a> 阅读全文。</p>]]></content>
         <author>
             <name>鹤白居</name>
             <email>i@valaxy.site</email>
