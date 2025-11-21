@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://www.hebaiju.cn/</id>
     <title>H E B A I J U</title>
-    <updated>2025-11-21T06:57:51.083Z</updated>
+    <updated>2025-11-21T16:22:22.395Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -31,7 +31,7 @@
             <email>i@valaxy.site</email>
             <uri>https://valaxy.site</uri>
         </author>
-        <published>2025-11-20T00:00:00.000Z</published>
+        <published>2025-11-21T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[我的“舞台”]]></title>
