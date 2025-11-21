@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://www.hebaiju.cn/</id>
     <title>H E B A I J U</title>
-    <updated>2025-11-21T06:21:11.755Z</updated>
+    <updated>2025-11-21T06:57:51.083Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -16,13 +16,13 @@
     <icon>http://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2025 © 鹤白居</rights>
     <entry>
-        <title type="html"><![CDATA[3C3U-金萝卜文档]]></title>
+        <title type="html"><![CDATA[3C3U-金萝卜组织文档]]></title>
         <id>http://www.hebaiju.cn/posts/251118-3c3uconfig</id>
         <link href="http://www.hebaiju.cn/posts/251118-3c3uconfig"/>
         <updated>2025-11-18T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h2>3C3U-金萝卜挂机机器人</h2>
+        <content type="html"><![CDATA[<h2>3C3U-MCC命令行客户端</h2>
 <blockquote>
-<p>本篇文章将介绍金萝卜的挂机机器人，后台控制，链接等。</p>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
 </blockquote>
 <p>目前本基地有正式成员4人。</p>
 <br/><p>访问 <a href="http://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">http://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content>

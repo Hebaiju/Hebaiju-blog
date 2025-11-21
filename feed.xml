@@ -4,7 +4,7 @@
         <title>H E B A I J U</title>
         <link>http://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Fri, 21 Nov 2025 06:21:11 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Nov 2025 06:57:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -15,13 +15,13 @@
         <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
         <atom:link href="http://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[3C3U-金萝卜文档]]></title>
+            <title><![CDATA[3C3U-金萝卜组织文档]]></title>
             <link>http://www.hebaiju.cn/posts/251118-3c3uconfig</link>
             <guid isPermaLink="false">http://www.hebaiju.cn/posts/251118-3c3uconfig</guid>
             <pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h2>3C3U-金萝卜挂机机器人</h2>
+            <content:encoded><![CDATA[<h2>3C3U-MCC命令行客户端</h2>
 <blockquote>
-<p>本篇文章将介绍金萝卜的挂机机器人，后台控制，链接等。</p>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
 </blockquote>
 <p>目前本基地有正式成员4人。</p>
 <br/><p>访问 <a href="http://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">http://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content:encoded>
