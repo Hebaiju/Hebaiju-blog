@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>H E B A I J U</title>
-        <link>http://www.hebaiju.cn/</link>
+        <title>鹤白居的小站</title>
+        <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Fri, 21 Nov 2025 16:22:22 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Nov 2025 05:54:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
-            <title>H E B A I J U</title>
+            <title>鹤白居的小站</title>
             <url>https://preview.cloud.189.cn/image/imageAction?param=4585952347B1C14632263C55ED1A5C02BB302FEEED45C898C673F3BB032DB267368ECF53DBF000D18F093C5198E30C751E8D0CC51E40EAB793434B5CC056352FA531AC4D59A1BEE9C3BAAB9E37909E62A871154B82596CB12A849C19D908755E6A410A5321136E32E7643E6C980B84B95FBDAC7B</url>
-            <link>http://www.hebaiju.cn/</link>
+            <link>https://www.hebaiju.cn/</link>
         </image>
         <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
-        <atom:link href="http://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[3C3U-金萝卜组织文档]]></title>
-            <link>http://www.hebaiju.cn/posts/251118-3c3uconfig</link>
-            <guid isPermaLink="false">http://www.hebaiju.cn/posts/251118-3c3uconfig</guid>
+            <link>https://www.hebaiju.cn/posts/251118-3c3uconfig</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/251118-3c3uconfig</guid>
             <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<h2>3C3U-MCC命令行客户端</h2>
 <blockquote>
 <p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
 </blockquote>
 <p>目前本基地有正式成员4人。</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">http://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">https://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (鹤白居)</author>
         </item>
         <item>
             <title><![CDATA[我的“舞台”]]></title>
-            <link>http://www.hebaiju.cn/posts/251109-MyStage</link>
-            <guid isPermaLink="false">http://www.hebaiju.cn/posts/251109-MyStage</guid>
+            <link>https://www.hebaiju.cn/posts/251109-MyStage</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/251109-MyStage</guid>
             <pubDate>Sun, 09 Nov 2025 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<h2>日记</h2>
 <p>这篇文章我反反复复隐藏了多次，还是公开吧。希望我的读者能学到经验。</p>
 <h3>开始</h3>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/251109-MyStage" target="_blank">http://www.hebaiju.cn/posts/251109-MyStage</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251109-MyStage" target="_blank">https://www.hebaiju.cn/posts/251109-MyStage</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (鹤白居)</author>
         </item>
         <item>
             <title><![CDATA[ESP8266实现配网]]></title>
-            <link>http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</link>
-            <guid isPermaLink="false">http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</guid>
+            <link>https://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</guid>
             <pubDate>Sat, 26 Jul 2025 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<h2>ESP8266实现配网</h2>
 <p>我目前处于大学阶段，在参加一个社团，里面主要是做项目，比赛的一个小团队。<br>
 在这个小团队中，我主要负责的是一个项目的硬件部分，<br>
 比如说硬件的组装，电路</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup" target="_blank">http://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup" target="_blank">https://www.hebaiju.cn/posts/250726-ESP8266NetworkSetup</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (鹤白居)</author>
         </item>
         <item>
             <title><![CDATA[小破站成立了！]]></title>
-            <link>http://www.hebaiju.cn/posts/250725-SmallStationLaunched</link>
-            <guid isPermaLink="false">http://www.hebaiju.cn/posts/250725-SmallStationLaunched</guid>
+            <link>https://www.hebaiju.cn/posts/250725-SmallStationLaunched</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/250725-SmallStationLaunched</guid>
             <pubDate>Mon, 30 Jun 2025 16:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<h2>小破站成立了！</h2>
 <p>  今天时间是2025年7月25日，我在<a href="https://www.hebaiju.cn">HEBAIJU的博客</a>上创建了一个我的小破站，用于记录我生活中的点</p>
-<br/><p>访问 <a href="http://www.hebaiju.cn/posts/250725-SmallStationLaunched" target="_blank">http://www.hebaiju.cn/posts/250725-SmallStationLaunched</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/250725-SmallStationLaunched" target="_blank">https://www.hebaiju.cn/posts/250725-SmallStationLaunched</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (鹤白居)</author>
         </item>
     </channel>
