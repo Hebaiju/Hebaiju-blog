@@ -4,7 +4,7 @@
         <title>鹤白居的小站</title>
         <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Mon, 08 Dec 2025 12:19:10 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Dec 2025 12:30:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,16 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
         <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[ESP8266控制空调]]></title>
+            <link>https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</guid>
+            <pubDate>Mon, 08 Dec 2025 16:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>项目介绍</h2>
+<p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控制，从而实现对空调的</p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control" target="_blank">https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (鹤白居)</author>
+        </item>
         <item>
             <title><![CDATA[开源项目-「宿舍智能门」]]></title>
             <link>https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</link>

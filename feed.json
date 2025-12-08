@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control",
+            "content_html": "<h2>项目介绍</h2>\n<p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控制，从而实现对空调的</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control\" target=\"_blank\">https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a> 阅读全文。</p>",
+            "url": "https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control",
+            "title": "ESP8266控制空调",
+            "date_modified": "2025-12-08T16:00:00.000Z",
+            "date_published": "2025-12-08T16:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
             "id": "https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor",
             "content_html": "<h2>介绍</h2>\n<p>本文基于Arduino平台，点灯科技，ESP8266开发板完成宿舍智能门项目的开发。最终目标是在手机上利用点灯科技APP来实现开门关门的功能。</p>\n<h3>背景</h3>\n<p>在科技高</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor\" target=\"_blank\">https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a> 阅读全文。</p>",
             "url": "https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor",

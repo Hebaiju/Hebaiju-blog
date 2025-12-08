@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hebaiju.cn/</id>
     <title>鹤白居的小站</title>
-    <updated>2025-12-08T12:19:10.521Z</updated>
+    <updated>2025-12-08T12:30:56.042Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -15,6 +15,21 @@
     <logo>https://preview.cloud.189.cn/image/imageAction?param=4585952347B1C14632263C55ED1A5C02BB302FEEED45C898C673F3BB032DB267368ECF53DBF000D18F093C5198E30C751E8D0CC51E40EAB793434B5CC056352FA531AC4D59A1BEE9C3BAAB9E37909E62A871154B82596CB12A849C19D908755E6A410A5321136E32E7643E6C980B84B95FBDAC7B</logo>
     <icon>https://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2025 © 鹤白居</rights>
+    <entry>
+        <title type="html"><![CDATA[ESP8266控制空调]]></title>
+        <id>https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</id>
+        <link href="https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control"/>
+        <updated>2025-12-08T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>项目介绍</h2>
+<p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控制，从而实现对空调的</p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control" target="_blank">https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>鹤白居</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-12-08T16:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[开源项目-「宿舍智能门」]]></title>
         <id>https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</id>
