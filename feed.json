@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor",
+            "content_html": "<h2>介绍</h2>\n<p>本文基于Arduino平台，点灯科技，ESP8266开发板完成宿舍智能门项目的开发。最终目标是在手机上利用点灯科技APP来实现开门关门的功能。</p>\n<h3>背景</h3>\n<p>在科技高</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor\" target=\"_blank\">https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a> 阅读全文。</p>",
+            "url": "https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor",
+            "title": "开源项目-「宿舍智能门」",
+            "date_modified": "2025-12-07T16:00:00.000Z",
+            "date_published": "2025-12-07T16:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
             "id": "https://www.hebaiju.cn/posts/251118-3c3uconfig",
             "content_html": "<h2>3C3U-MCC命令行客户端</h2>\n<blockquote>\n<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>\n</blockquote>\n<p>目前本基地有正式成员4人。</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251118-3c3uconfig\" target=\"_blank\">https://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>",
             "url": "https://www.hebaiju.cn/posts/251118-3c3uconfig",

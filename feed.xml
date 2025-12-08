@@ -4,7 +4,7 @@
         <title>鹤白居的小站</title>
         <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Sun, 07 Dec 2025 15:14:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Dec 2025 09:42:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,18 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
         <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[开源项目-「宿舍智能门」]]></title>
+            <link>https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</guid>
+            <pubDate>Sun, 07 Dec 2025 16:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>介绍</h2>
+<p>本文基于Arduino平台，点灯科技，ESP8266开发板完成宿舍智能门项目的开发。最终目标是在手机上利用点灯科技APP来实现开门关门的功能。</p>
+<h3>背景</h3>
+<p>在科技高</p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor" target="_blank">https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (鹤白居)</author>
+        </item>
         <item>
             <title><![CDATA[3C3U-金萝卜组织文档]]></title>
             <link>https://www.hebaiju.cn/posts/251118-3c3uconfig</link>
