@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hebaiju.cn/</id>
     <title>鹤白居的小站</title>
-    <updated>2025-12-08T12:30:56.042Z</updated>
+    <updated>2025-12-19T11:30:57.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -12,7 +12,7 @@
     <link rel="alternate" href="https://www.hebaiju.cn/"/>
     <link rel="self" href="https://www.hebaiju.cn/atom.xml"/>
     <subtitle>搞钱，迎娶白富美，走上人生巅峰。</subtitle>
-    <logo>https://preview.cloud.189.cn/image/imageAction?param=4585952347B1C14632263C55ED1A5C02BB302FEEED45C898C673F3BB032DB267368ECF53DBF000D18F093C5198E30C751E8D0CC51E40EAB793434B5CC056352FA531AC4D59A1BEE9C3BAAB9E37909E62A871154B82596CB12A849C19D908755E6A410A5321136E32E7643E6C980B84B95FBDAC7B</logo>
+    <logo>https://www.hebaiju.cn/head.jpg</logo>
     <icon>https://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2025 © 鹤白居</rights>
     <entry>
