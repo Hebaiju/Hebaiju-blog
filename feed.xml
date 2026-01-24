@@ -4,7 +4,7 @@
         <title>鹤白居的小站</title>
         <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Sun, 21 Dec 2025 04:32:35 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 24 Jan 2026 03:27:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>https://www.hebaiju.cn/head.jpg</url>
             <link>https://www.hebaiju.cn/</link>
         </image>
-        <copyright>CC BY-NC-SA 4.0 2025 © 鹤白居</copyright>
+        <copyright>CC BY-NC-SA 4.0 2026 © 鹤白居</copyright>
         <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[ESP8266控制空调]]></title>

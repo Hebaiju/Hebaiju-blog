@@ -1,81 +1,51 @@
-# 鹤白居的小站
+# create-valaxy
 
-> “破站但有爱，金萝卜永不倒。”  
-> —— 一个技术宅 + 社畜 + 偶尔写日记的鹤白居
+Example: [valaxy.site](https://valaxy.site)
 
-网址：https://hebaiju.cn  
-仓库：[https://github.com/hebaiju](https://github.com/Hebaiju)
+## Usage
 
-## 这是什么站？
+```bash
+# install
+npm i
+# or pnpm i
 
-一个用爱发电的个人小站，目前塞了以下乱七八糟的东西：
+# start
+npm run dev
+# or pnpm dev
+```
 
-- 金萝卜组织（3C3U）内部文档 & 成员吐槽大会
-- MCC 命令行客户端使用说明（我们自己的小玩具）
-- ESP8266、IoT、嵌入式折腾记录
-- 想到啥写啥的日记（隐藏→公开→后悔→再公开，循环往复）
-- 偶尔更新的项目展示区「我的舞台」
+See `http://localhost:4859/`, have fun!
 
-简单说：**这里什么都有，就是没流量。**
+### Config
 
-## 主要内容一览
+Modify `valaxy.config.ts` to custom your blog.
 
-| 标题                        | 最后更新     | 阅读时长 | 备注                |
-|-----------------------------|--------------|----------|---------------------|
-| 3C3U-金萝卜组织文档        | 2025-11-21   | 43 min   | 目前正式成员 4 人   |
-| 3C3U-MCC 命令行客户端       | 2025-11-18   | 15 min   | 金萝卜专属工具      |
-| ESP8266 实现智能配网        | 2025-07-26   | 35 min   | 经典翻车现场        |
-| 小破站成立了！              | 2025-07-01   | 6 min    | 建站心路历程        |
-| 我的“舞台”                  | 2025-11-09   | 8 min    | 持续施工中…         |
+English & Chinese Docs is coming!
 
-更多文章直接点 → https://hebaiju.cn
+> Wait a minute.
 
-## 技术栈（穷人版）
+### Docker
 
-- 静态生成：手写 Markdown + GitHub Pages
-- 主题：自己瞎几把写的 CSS（极简到简陋）
-- 部署：GitHub Actions 一键部署
-- 域名：DNSPod 解析到 GitHub Pages
+```bash
+docker build . -t your-valaxy-blog-name:latest
+```
 
-## 联系方式（可选）
+## Structure
 
-- GitHub：[@你的用户名](https://github.com/你的用户名)
-- 邮箱：hebaiju@proton.me（偶尔看）
-- 金萝卜内部事务请走 MCC 私聊，谢谢喵
+In most cases, you only need to work in the `pages` folder.
 
-## Star & Fork 随缘，反正也没几个人看（哭）
+### Main folders
 
-                                                         _ooOoo_
-                                                        o8888888o
-                                                        88" . "88
-                                                        (| -_- |)
-                                                         O\ = /O
-                                                     ____/`---'\____
-                                                   .   ' \\| |// `.
-                                                    / \\||| : |||// \
-                                                  / _||||| -:- |||||- \
-                                                    | | \\\ - /// | |
-                                                  | \_| ''\---/'' | |
-                                                   \ .-\__ `-` ___/-. /
-                                                ___`. .' /--.--\ `. . __
-                                             ."" '< `.___\_<|>_/___.' >'"".
-                                            | | : `- \`.;`\ _ /`;.`/ - ` : | |
-                                              \ \ `-. \_ __\ /__ _/ .-` / /
-                                      ======`-.____`-.___\_____/___.-`____.-'======
-                                                         `=---='
+- `pages`: your all pages
+  - `posts`: write your posts here, will be counted as posts
+- `styles`: override theme styles, `index.scss`/`vars.csss`/`index.css` will be loaded automatically
+- `components`: custom your vue components (will be loaded automatically)
+- `layouts`: custom layouts (use it by `layout: xxx` in md)
+- `locales`: custom i18n
 
-                                      .............................................
-                                             佛祖保佑             永无BUG
-                                     佛曰:
-                                             写字楼里写字间，写字间里程序员；
-                                             程序人员写程序，又拿程序换酒钱。
-                                             酒醒只在网上坐，酒醉还来网下眠；
-                                             酒醉酒醒日复日，网上网下年复年。
-                                             但愿老死电脑间，不愿鞠躬老板前；
-                                             奔驰宝马贵者趣，公交自行程序员。
-                                             别人笑我忒疯癫，我笑自己命太贱；
-                                             不见满街漂亮妹，哪个归得程序员？
+### Other
 
-
-
-欢迎常来玩～
+- `.vscode`: recommend some useful plugins & settings, you can preview icon/i18n/class...
+- `.github`: GitHub Actions to auto build & deploy to GitHub Pages
+- `netlify.toml`: for [netlify](https://www.netlify.com/)
+- `vercel.json`: for [vercel](https://vercel.com/)
