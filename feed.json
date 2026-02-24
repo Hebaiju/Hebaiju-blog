@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://www.hebaiju.cn/posts/260124-3c3u-config",
+            "content_html": "<h2>3C3U-金萝卜-MCC命令行客户端使用文档</h2>\n<blockquote>\n<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>\n</blockquote>\n<p>目前本基地有正式成员4人。</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/260124-3c3u-config\" target=\"_blank\">https://www.hebaiju.cn/posts/260124-3c3u-config</a> 阅读全文。</p>",
+            "url": "https://www.hebaiju.cn/posts/260124-3c3u-config",
+            "title": "3C3U-金萝卜组织文档贰",
+            "date_modified": "2026-02-23T16:00:00.000Z",
+            "date_published": "2026-02-23T16:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
             "id": "https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control",
             "content_html": "<h2>项目介绍</h2>\n<p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控制，从而实现对空调的</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control\" target=\"_blank\">https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a> 阅读全文。</p>",
             "url": "https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control",
@@ -29,18 +41,6 @@
             "title": "开源项目-「宿舍智能门」",
             "date_modified": "2025-12-07T16:00:00.000Z",
             "date_published": "2025-12-07T16:00:00.000Z",
-            "author": {
-                "name": "鹤白居",
-                "url": "https://valaxy.site"
-            }
-        },
-        {
-            "id": "https://www.hebaiju.cn/posts/251118-3c3uconfig",
-            "content_html": "<h2>3C3U-MCC命令行客户端</h2>\n<blockquote>\n<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>\n</blockquote>\n<p>目前本基地有正式成员4人。</p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/251118-3c3uconfig\" target=\"_blank\">https://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>",
-            "url": "https://www.hebaiju.cn/posts/251118-3c3uconfig",
-            "title": "3C3U-金萝卜组织文档",
-            "date_modified": "2025-11-18T00:00:00.000Z",
-            "date_published": "2025-11-21T00:00:00.000Z",
             "author": {
                 "name": "鹤白居",
                 "url": "https://valaxy.site"

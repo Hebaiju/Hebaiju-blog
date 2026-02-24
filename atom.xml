@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hebaiju.cn/</id>
     <title>鹤白居的小站</title>
-    <updated>2026-02-19T09:16:45.968Z</updated>
+    <updated>2026-02-24T13:17:58.479Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -15,6 +15,24 @@
     <logo>https://www.hebaiju.cn/head.jpg</logo>
     <icon>https://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2026 © 鹤白居</rights>
+    <entry>
+        <title type="html"><![CDATA[3C3U-金萝卜组织文档贰]]></title>
+        <id>https://www.hebaiju.cn/posts/260124-3c3u-config</id>
+        <link href="https://www.hebaiju.cn/posts/260124-3c3u-config"/>
+        <updated>2026-02-23T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>3C3U-金萝卜-MCC命令行客户端使用文档</h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
+</blockquote>
+<p>目前本基地有正式成员4人。</p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/260124-3c3u-config" target="_blank">https://www.hebaiju.cn/posts/260124-3c3u-config</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>鹤白居</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-02-23T16:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ESP8266控制空调]]></title>
         <id>https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</id>
@@ -46,24 +64,6 @@
             <uri>https://valaxy.site</uri>
         </author>
         <published>2025-12-07T16:00:00.000Z</published>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[3C3U-金萝卜组织文档]]></title>
-        <id>https://www.hebaiju.cn/posts/251118-3c3uconfig</id>
-        <link href="https://www.hebaiju.cn/posts/251118-3c3uconfig"/>
-        <updated>2025-11-18T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h2>3C3U-MCC命令行客户端</h2>
-<blockquote>
-<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
-</blockquote>
-<p>目前本基地有正式成员4人。</p>
-<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">https://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>鹤白居</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2025-11-21T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[我的“舞台”]]></title>

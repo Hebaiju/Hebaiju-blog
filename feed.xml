@@ -4,7 +4,7 @@
         <title>鹤白居的小站</title>
         <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Thu, 19 Feb 2026 09:16:45 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 24 Feb 2026 13:17:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,19 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2026 © 鹤白居</copyright>
         <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[3C3U-金萝卜组织文档贰]]></title>
+            <link>https://www.hebaiju.cn/posts/260124-3c3u-config</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/260124-3c3u-config</guid>
+            <pubDate>Mon, 23 Feb 2026 16:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>3C3U-金萝卜-MCC命令行客户端使用文档</h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
+</blockquote>
+<p>目前本基地有正式成员4人。</p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/260124-3c3u-config" target="_blank">https://www.hebaiju.cn/posts/260124-3c3u-config</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (鹤白居)</author>
+        </item>
         <item>
             <title><![CDATA[ESP8266控制空调]]></title>
             <link>https://www.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</link>
@@ -34,19 +47,6 @@
 <h3>背景</h3>
 <p>在科技高</p>
 <br/><p>访问 <a href="https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor" target="_blank">https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (鹤白居)</author>
-        </item>
-        <item>
-            <title><![CDATA[3C3U-金萝卜组织文档]]></title>
-            <link>https://www.hebaiju.cn/posts/251118-3c3uconfig</link>
-            <guid isPermaLink="false">https://www.hebaiju.cn/posts/251118-3c3uconfig</guid>
-            <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h2>3C3U-MCC命令行客户端</h2>
-<blockquote>
-<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
-</blockquote>
-<p>目前本基地有正式成员4人。</p>
-<br/><p>访问 <a href="https://www.hebaiju.cn/posts/251118-3c3uconfig" target="_blank">https://www.hebaiju.cn/posts/251118-3c3uconfig</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (鹤白居)</author>
         </item>
         <item>
