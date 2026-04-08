@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hebaiju.cn/</id>
     <title>鹤白居的小站</title>
-    <updated>2026-03-05T03:19:00.521Z</updated>
+    <updated>2026-04-08T06:06:20.856Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -15,6 +15,22 @@
     <logo>https://pic1.imgdb.cn/item/699da71c01b9a5550a554137.jpg</logo>
     <icon>https://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2026 © 鹤白居</rights>
+    <entry>
+        <title type="html"><![CDATA[旧日记]]></title>
+        <id>https://www.hebaiju.cn/posts/260319-blog</id>
+        <link href="https://www.hebaiju.cn/posts/260319-blog"/>
+        <updated>2026-03-20T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>找到了之前的一些日记</h2>
+<p>找到了之前的一些个小日记，反正都是没有多少人看。我就挂在我的网站上面吧。</p>
+<p>![日记230911.jpg](<a href="https://pic1.imgdb.cn/ite">https://pic1.imgdb.cn/ite</a></p>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/260319-blog" target="_blank">https://www.hebaiju.cn/posts/260319-blog</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>鹤白居</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-20T00:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[3C3U-金萝卜组织文档贰]]></title>
         <id>https://www.hebaiju.cn/posts/260124-3c3u-config</id>
