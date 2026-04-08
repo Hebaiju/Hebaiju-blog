@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hebaiju.cn/</id>
     <title>鹤白居的小站</title>
-    <updated>2026-04-08T06:06:20.856Z</updated>
+    <updated>2026-04-08T11:13:39.956Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>鹤白居</name>
@@ -15,6 +15,31 @@
     <logo>https://pic1.imgdb.cn/item/699da71c01b9a5550a554137.jpg</logo>
     <icon>https://www.hebaiju.cn/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2026 © 鹤白居</rights>
+    <entry>
+        <title type="html"><![CDATA[为博客添加 Waline 评论系统]]></title>
+        <id>https://www.hebaiju.cn/posts/260408-blog-msg</id>
+        <link href="https://www.hebaiju.cn/posts/260408-blog-msg"/>
+        <updated>2026-04-08T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>终于把评论系统搞定了！趁着还有记忆，把整个过程记录下来，包括踩过的坑和最终的解决方案。</p>
+</blockquote>
+<h2>用到的工具和网站</h2>
+<table>
+<thead>
+<tr>
+<th>工具/网站</th>
+<th>用途</th>
+</tr>
+</thead>
+</table>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/260408-blog-msg" target="_blank">https://www.hebaiju.cn/posts/260408-blog-msg</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>鹤白居</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-04-08T00:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[旧日记]]></title>
         <id>https://www.hebaiju.cn/posts/260319-blog</id>

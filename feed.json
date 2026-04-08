@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://www.hebaiju.cn/posts/260408-blog-msg",
+            "content_html": "<blockquote>\n<p>终于把评论系统搞定了！趁着还有记忆，把整个过程记录下来，包括踩过的坑和最终的解决方案。</p>\n</blockquote>\n<h2>用到的工具和网站</h2>\n<table>\n<thead>\n<tr>\n<th>工具/网站</th>\n<th>用途</th>\n</tr>\n</thead>\n</table>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/260408-blog-msg\" target=\"_blank\">https://www.hebaiju.cn/posts/260408-blog-msg</a> 阅读全文。</p>",
+            "url": "https://www.hebaiju.cn/posts/260408-blog-msg",
+            "title": "为博客添加 Waline 评论系统",
+            "date_modified": "2026-04-08T00:00:00.000Z",
+            "date_published": "2026-04-08T00:00:00.000Z",
+            "author": {
+                "name": "鹤白居",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
             "id": "https://www.hebaiju.cn/posts/260319-blog",
             "content_html": "<h2>找到了之前的一些日记</h2>\n<p>找到了之前的一些个小日记，反正都是没有多少人看。我就挂在我的网站上面吧。</p>\n<p>![日记230911.jpg](<a href=\"https://pic1.imgdb.cn/ite\">https://pic1.imgdb.cn/ite</a></p>\n<br/><p>访问 <a href=\"https://www.hebaiju.cn/posts/260319-blog\" target=\"_blank\">https://www.hebaiju.cn/posts/260319-blog</a> 阅读全文。</p>",
             "url": "https://www.hebaiju.cn/posts/260319-blog",

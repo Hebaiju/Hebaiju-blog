@@ -4,7 +4,7 @@
         <title>鹤白居的小站</title>
         <link>https://www.hebaiju.cn/</link>
         <description>搞钱，迎娶白富美，走上人生巅峰。</description>
-        <lastBuildDate>Wed, 08 Apr 2026 06:06:20 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Apr 2026 11:13:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,26 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2026 © 鹤白居</copyright>
         <atom:link href="https://www.hebaiju.cn/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[为博客添加 Waline 评论系统]]></title>
+            <link>https://www.hebaiju.cn/posts/260408-blog-msg</link>
+            <guid isPermaLink="false">https://www.hebaiju.cn/posts/260408-blog-msg</guid>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>终于把评论系统搞定了！趁着还有记忆，把整个过程记录下来，包括踩过的坑和最终的解决方案。</p>
+</blockquote>
+<h2>用到的工具和网站</h2>
+<table>
+<thead>
+<tr>
+<th>工具/网站</th>
+<th>用途</th>
+</tr>
+</thead>
+</table>
+<br/><p>访问 <a href="https://www.hebaiju.cn/posts/260408-blog-msg" target="_blank">https://www.hebaiju.cn/posts/260408-blog-msg</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (鹤白居)</author>
+        </item>
         <item>
             <title><![CDATA[旧日记]]></title>
             <link>https://www.hebaiju.cn/posts/260319-blog</link>
