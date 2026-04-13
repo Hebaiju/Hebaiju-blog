@@ -5,6 +5,8 @@ let client = null;
 let subscriptions = [];
 let messages = [];
 let currentFilter = 'all';
+let currentSubFilter = null;
+let ctrlSelectedSubs = []; // Ctrl 多选的订阅 topic 列表 // 当前选中的订阅过滤（topic 字符串，null 表示不过滤）
 let isConnected = false;
 let retainEnabled = false;
 let jsonFormat = true;
@@ -28,9 +30,148 @@ const defaultConfig = {
 
 // 默认值
 const defaultValues = {
-  topic: 'hbj/test',
+  topic: 'msg/',
   content: '{"status":"ok","value":123}'
 };
+
+// ========== 本地存储 ==========
+const STORAGE_KEYS = {
+  subscriptions: 'mqtt_subs',
+  pubConfig: 'mqtt_pub',
+  brokerConfig: 'mqtt_broker',
+  toggles: 'mqtt_toggles'
+};
+
+function saveSubscriptions() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.subscriptions, JSON.stringify(subscriptions));
+  } catch (e) { /* 存储满时静默忽略 */ }
+}
+
+function loadSubscriptions() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.subscriptions);
+    if (raw) subscriptions = JSON.parse(raw);
+  } catch (e) { subscriptions = []; }
+}
+
+function savePubConfig() {
+  try {
+    // 保存前把当前位置更新进历史
+    const topicInput = document.getElementById('pubTopic');
+    const contentInput = document.getElementById('pubContent');
+    if (!topicInput || !contentInput) return;
+    const currentTopic = topicInput.value.trim();
+    const currentContent = contentInput.value;
+    if (topicHistoryIndex >= 0) {
+      topicHistory[topicHistoryIndex] = { topic: currentTopic, content: currentContent };
+    } else if (currentTopic) {
+      const existing = topicHistory.find(t => t.topic === currentTopic);
+      if (existing) {
+        existing.content = currentContent;
+      }
+    }
+    localStorage.setItem(STORAGE_KEYS.pubConfig, JSON.stringify({
+      topic: currentTopic || defaultValues.topic,
+      content: currentContent,
+      history: topicHistory
+    }));
+  } catch (e) { /* 存储满时静默忽略 */ }
+}
+
+function loadPubConfig() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.pubConfig);
+    if (raw) {
+      const cfg = JSON.parse(raw);
+      if (cfg.topic) document.getElementById('pubTopic').value = cfg.topic;
+      if (cfg.content) document.getElementById('pubContent').value = cfg.content;
+      if (cfg.history && Array.isArray(cfg.history)) {
+        // 兼容旧格式 string[] → 转为 {topic, content}[]
+        if (cfg.history.length > 0 && typeof cfg.history[0] === 'string') {
+          topicHistory = cfg.history.map(t => ({ topic: t, content: '' }));
+        } else {
+          topicHistory = cfg.history;
+        }
+        // 恢复到历史的最后一条（上次使用的）
+        topicHistoryIndex = Math.max(0, topicHistory.length - 1);
+        const entry = topicHistory[topicHistoryIndex];
+        if (entry) {
+          document.getElementById('pubTopic').value = entry.topic;
+          document.getElementById('pubContent').value = entry.content || '';
+        }
+      }
+      updateSwitchBtnState();
+    }
+  } catch (e) { /* ignore */ }
+}
+
+function saveBrokerConfig() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.brokerConfig, JSON.stringify({
+      broker: defaultConfig.broker,
+      autoReconnect: autoReconnectEnabled,
+      userHasEverConnected // 记录是否曾主动连接过
+    }));
+  } catch (e) { /* ignore */ }
+}
+
+function loadBrokerConfig() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.brokerConfig);
+    if (raw) {
+      const cfg = JSON.parse(raw);
+      if (cfg.broker) {
+        defaultConfig.broker = cfg.broker;
+        document.getElementById('cfgBroker').value = cfg.broker;
+        connInfoText.textContent = cfg.broker;
+      }
+      if (cfg.autoReconnect === false) {
+        autoReconnectEnabled = false;
+      } else {
+        autoReconnectEnabled = true;
+      }
+      // 恢复是否曾主动连接过的状态
+      if (cfg.userHasEverConnected === true) {
+        userHasEverConnected = true;
+      }
+      console.log('[MQTT Debug] loadBrokerConfig:', { raw: cfg, userHasEverConnected, autoReconnectEnabled });
+    }
+  } catch (e) { /* ignore */ }
+  // 如果之前用户主动连接过（页面刷新场景），且未主动断开，则自动重连
+  console.log('[MQTT Debug] auto-connect check:', { userHasEverConnected, autoReconnectEnabled });
+  if (userHasEverConnected && autoReconnectEnabled) {
+    console.log('[MQTT Debug] triggering auto-connect');
+    connect();
+  }
+}
+
+function saveToggles() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.toggles, JSON.stringify({
+      retainEnabled,
+      jsonFormat
+    }));
+  } catch (e) { /* ignore */ }
+}
+
+function loadToggles() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.toggles);
+    if (raw) {
+      const t = JSON.parse(raw);
+      retainEnabled = !!t.retainEnabled;
+      jsonFormat = t.jsonFormat !== false;
+      document.getElementById('retainToggle').classList.toggle('active', retainEnabled);
+      document.getElementById('jsonToggle').classList.toggle('active', jsonFormat);
+    }
+  } catch (e) { /* ignore */ }
+}
+
+function clearStorage() {
+  Object.values(STORAGE_KEYS).forEach(k => localStorage.removeItem(k));
+  showToast('已清除本地存储', 'info');
+}
 
 // ========== DOM 引用 ==========
 const msgList = document.getElementById('msgList');
@@ -40,7 +181,12 @@ const connectBtn = document.getElementById('connectBtn');
 const disconnectBtn = document.getElementById('disconnectBtn');
 const connInfoDisplay = document.getElementById('connInfoDisplay');
 const connInfoText = document.getElementById('connInfoText');
-const connInfoInput = document.getElementById('connInfoInput');
+
+// ========== 自动重连状态 ==========
+let autoReconnectEnabled = true;
+let reconnectAttempts = 0;
+const MAX_RECONNECT_ATTEMPTS = 3;
+let userInitiatedDisconnect = false;
 
 // ========== Toast 通知 ==========
 function showToast(message, type = 'info', duration = 4000) {
@@ -78,12 +224,35 @@ function showToast(message, type = 'info', duration = 4000) {
 // ========== 连接管理 ==========
 function quickConnect() {
   if (isConnected) return;
-  doConnect(defaultConfig.broker, '', '');
+  // 先同步设置面板的值到 defaultConfig（如果有打开过）
+  const cfgUsername = document.getElementById('cfgUsername');
+  const cfgPassword = document.getElementById('cfgPassword');
+  if (cfgUsername) defaultConfig.username = cfgUsername.value.trim();
+  if (cfgPassword) defaultConfig.password = cfgPassword.value;
+  userHasEverConnected = true;
+  autoReconnectEnabled = true;
+  doConnect(defaultConfig.broker, defaultConfig.username, defaultConfig.password);
 }
 
 function doConnect(broker, username, password) {
+  // 防止 MQTT.js 未加载
+  if (typeof mqtt === 'undefined') {
+    showToast('MQTT 库加载失败，请刷新页面重试', 'error');
+    return;
+  }
+
+  // 如果已有连接，先关闭其 offline 监听器防止触发自动重连，再断开
+  if (client) {
+    client.removeAllListeners('offline');
+    client.removeAllListeners('close');
+    client.end(true);
+    client = null;
+  }
+
+  // 更新按钮状态
   connectBtn.textContent = '连接中...';
   connectBtn.disabled = true;
+  disconnectBtn.classList.add('hidden');
 
   // 断开之前的连接
   if (client) {
@@ -118,15 +287,39 @@ function doConnect(broker, username, password) {
     return;
   }
 
+  // 连接超时兜底（10秒）
+  const connectTimer = setTimeout(() => {
+    if (!isConnected && client) {
+      client.end(true);
+      client = null;
+      connectBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path></svg> 连接';
+      connectBtn.disabled = false;
+      showToast('连接超时，请检查网络和 Broker 地址', 'error');
+    }
+  }, 10000);
+
   client.on('connect', () => {
+    clearTimeout(connectTimer);
     isConnected = true;
+    // 重置重连状态
+    reconnectAttempts = 0;
+    autoReconnectEnabled = true;
+    userInitiatedDisconnect = false;
+    const isRetry = lastReconnectAttempt > 0;
+    lastReconnectAttempt = 0;
     connectBtn.classList.add('hidden');
     disconnectBtn.classList.remove('hidden');
-    showToast('连接成功', 'success');
-    
+    showToast(isRetry ? '重连成功' : '连接成功', 'success');
+
     // 更新连接信息显示
     updateConnInfo(broker);
-    
+
+    // 保存 Broker 地址
+    console.log('[MQTT Debug] connected, userHasEverConnected:', userHasEverConnected);
+    console.log('[MQTT Debug] localStorage before save:', localStorage.getItem(STORAGE_KEYS.brokerConfig));
+    saveBrokerConfig();
+    console.log('[MQTT Debug] localStorage after save:', localStorage.getItem(STORAGE_KEYS.brokerConfig));
+
     // 重新订阅之前的主题
     subscriptions.forEach(sub => {
       client.subscribe(sub.topic, { qos: sub.qos });
@@ -170,11 +363,12 @@ function doConnect(broker, username, password) {
   
   client.on('offline', () => {
     updateConnectionState(false);
-    showToast('连接已离线', 'warning');
+    attemptAutoReconnect();
   });
-  
+
   client.on('disconnect', () => {
     updateConnectionState(false);
+    attemptAutoReconnect();
   });
 }
 
@@ -229,9 +423,34 @@ function updateConnectionState(connected) {
     connInfoText.textContent = 'wss://broker.emqx.io:8084/mqtt';
     connInfoDisplay.classList.remove('has-value');
   }
+  updateSettingsFooter();
+}
+
+function updateSettingsFooter() {
+  const btn = document.getElementById('settingsToggleBtn');
+  if (!btn) return;
+  if (isConnected) {
+    btn.textContent = '断开';
+    btn.className = 'settings-toggle-btn disconnect';
+    btn.onclick = function() { hideSettings(); disconnect(); };
+  } else {
+    btn.textContent = '连接';
+    btn.className = 'settings-toggle-btn connect';
+    btn.onclick = toggleConnection;
+  }
+}
+
+function toggleConnection() {
+  hideSettings();
+  if (isConnected) {
+    disconnect();
+  } else {
+    connect();
+  }
 }
 
 function disconnect() {
+  userInitiatedDisconnect = true; // 标记为主动断开，禁用自动重连
   if (client) {
     client.end(true);
     client = null;
@@ -240,32 +459,70 @@ function disconnect() {
   showToast('已断开连接', 'info');
 }
 
-// ========== 连接信息内联编辑 ==========
-function editBrokerInline() {
-  connInfoDisplay.classList.add('hidden');
-  connInfoInput.classList.remove('hidden');
-  connInfoInput.value = defaultConfig.broker;
-  connInfoInput.focus();
-  connInfoInput.select();
+// ========== 自动重连 ==========
+let lastReconnectAttempt = 0; // 记录上一次重连尝试的序号，用于区分首次连接和重连
+let userHasEverConnected = false; // 用户是否主动发起过连接（页面刷新后保持，用于判断是否自动连接）
+
+function attemptAutoReconnect() {
+  if (!autoReconnectEnabled) return;
+  if (userInitiatedDisconnect) return; // 主动断开则不重连
+  if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+    autoReconnectEnabled = false;
+    showToast(`连接失败，已达最大重试次数（${MAX_RECONNECT_ATTEMPTS}次）`, 'error', 6000);
+    return;
+  }
+  reconnectAttempts++;
+  lastReconnectAttempt = reconnectAttempts;
+  showToast(`连接断开，1秒后自动重连（第${reconnectAttempts}/${MAX_RECONNECT_ATTEMPTS}次）...`, 'warning', 3000);
+  setTimeout(() => {
+    if (!userInitiatedDisconnect) {
+      connect();
+    }
+  }, 1000);
 }
 
-function finishBrokerEdit() {
-  const newBroker = connInfoInput.value.trim();
-  if (newBroker && newBroker !== defaultConfig.broker) {
-    defaultConfig.broker = newBroker;
-    showToast('已更新连接地址', 'success');
-  }
-  connInfoInput.classList.add('hidden');
-  connInfoDisplay.classList.remove('hidden');
+// ========== 连接信息点击打开设置 ==========
+function editBrokerInline() {
+  showSettings();
 }
 
 // ========== 设置面板 ==========
 function showSettings() {
   document.getElementById('settingsOverlay').classList.add('show');
+  // 从当前激活的配置填充表单
   document.getElementById('cfgBroker').value = defaultConfig.broker;
+  document.getElementById('cfgUsername').value = defaultConfig.username || '';
+  document.getElementById('cfgPassword').value = defaultConfig.password || '';
+
+  // Broker 输入时实时保存
+  document.getElementById('cfgBroker').oninput = function () {
+    defaultConfig.broker = this.value.trim();
+    connInfoText.textContent = defaultConfig.broker;
+    saveBrokerConfig();
+  };
+  document.getElementById('cfgTimeout').value = defaultConfig.timeout || 4000;
+  document.getElementById('cfgKeepalive').value = defaultConfig.keepalive || 60;
+  document.getElementById('cfgWillTopic').value = defaultConfig.willTopic || '';
+  document.getElementById('cfgWillMessage').value = defaultConfig.willMessage || '';
+  document.getElementById('cfgWillQos').value = defaultConfig.willQos || 0;
+  document.getElementById('cfgWillRetain').value = String(defaultConfig.willRetain || false);
+  updateSettingsFooter();
 }
 
 function hideSettings() {
+  // 关闭前把表单值同步到 defaultConfig
+  const newBroker = document.getElementById('cfgBroker').value.trim();
+  defaultConfig.broker = newBroker || defaultConfig.broker;
+  defaultConfig.username = document.getElementById('cfgUsername').value.trim();
+  defaultConfig.password = document.getElementById('cfgPassword').value;
+  defaultConfig.timeout = parseInt(document.getElementById('cfgTimeout').value) || 4000;
+  defaultConfig.keepalive = parseInt(document.getElementById('cfgKeepalive').value) || 60;
+  defaultConfig.willTopic = document.getElementById('cfgWillTopic').value.trim();
+  defaultConfig.willMessage = document.getElementById('cfgWillMessage').value;
+  defaultConfig.willQos = parseInt(document.getElementById('cfgWillQos').value) || 0;
+  defaultConfig.willRetain = document.getElementById('cfgWillRetain').value === 'true';
+  // 同步更新主页导航栏的 broker 显示
+  updateConnInfo(defaultConfig.broker);
   document.getElementById('settingsOverlay').classList.remove('show');
 }
 
@@ -273,13 +530,26 @@ function connect() {
   const broker = document.getElementById('cfgBroker').value.trim();
   const username = document.getElementById('cfgUsername').value.trim();
   const password = document.getElementById('cfgPassword').value;
-  
+
   if (!broker) {
     showToast('请输入连接地址', 'warning');
     return;
   }
+
+  // 标记用户主动发起过连接（用于页面刷新后自动重连）
+  userHasEverConnected = true;
+  autoReconnectEnabled = true;
   
+  // 更新 defaultConfig 后再连接（hideSettings 已同步一次，这里以表单为准）
   defaultConfig.broker = broker;
+  defaultConfig.username = username;
+  defaultConfig.password = password;
+  defaultConfig.timeout = parseInt(document.getElementById('cfgTimeout').value) || 4000;
+  defaultConfig.keepalive = parseInt(document.getElementById('cfgKeepalive').value) || 60;
+  defaultConfig.willTopic = document.getElementById('cfgWillTopic').value.trim();
+  defaultConfig.willMessage = document.getElementById('cfgWillMessage').value;
+  defaultConfig.willQos = parseInt(document.getElementById('cfgWillQos').value) || 0;
+  defaultConfig.willRetain = document.getElementById('cfgWillRetain').value === 'true';
   
   hideSettings();
   doConnect(broker, username, password);
@@ -353,6 +623,7 @@ function confirmSubscribe() {
         subId: subId || null
       };
       subscriptions.push(newSub);
+      saveSubscriptions();
       renderSubscriptions();
       showToast(`已订阅 ${topic}`, 'success');
       hideSubModal();
@@ -366,6 +637,7 @@ function unsubscribe(topic) {
   client.unsubscribe(topic, (err) => {
     if (!err) {
       subscriptions = subscriptions.filter(s => s.topic !== topic);
+      saveSubscriptions();
       renderSubscriptions();
       showToast(`已取消订阅 ${topic}`, 'info');
     }
@@ -378,29 +650,101 @@ function renderSubscriptions() {
     return;
   }
   
-  subList.innerHTML = subscriptions.map(sub => `
-    <div class="sub-item" style="border-left-color: ${sub.color};" onclick="filterBySub('${sub.topic}')">
+  subList.innerHTML = subscriptions.map(sub => {
+    const isActive = currentSubFilter === sub.topic;
+    const isCtrl = ctrlSelectedSubs.includes(sub.topic);
+    return `
+    <div class="sub-item${isActive ? ' active' : ''}${isCtrl && !isActive ? ' sub-item-ctrl' : ''}" style="border-left-color: ${sub.color};" data-topic="${escapeAttr(sub.topic)}" onclick="filterBySub(this.dataset.topic, event)">
       <div class="sub-item-content">
         <div class="sub-alias">${escapeHtml(sub.alias)}</div>
         <div class="sub-topic">${escapeHtml(sub.topic)}</div>
       </div>
       <span class="sub-qos">QoS${sub.qos}</span>
-      <button class="sub-delete" onclick="event.stopPropagation(); unsubscribe('${escapeHtml(sub.topic)}')">
+      <button class="sub-delete" onclick="event.stopPropagation(); unsubscribe('${escapeAttr(sub.topic)}')">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
-function filterBySub(topic) {
-  // 点击订阅项可以按该订阅过滤消息
-  currentFilter = 'all';
-  document.querySelectorAll('.msg-tab').forEach(tab => tab.classList.remove('active'));
-  document.querySelector('.msg-tab').classList.add('active');
+function filterBySub(topic, event) {
+  if (event && event.ctrlKey) {
+    // Ctrl 点击：多选 / 取消多选
+    const idx = ctrlSelectedSubs.indexOf(topic);
+    if (idx >= 0) {
+      ctrlSelectedSubs.splice(idx, 1);
+    } else {
+      ctrlSelectedSubs.push(topic);
+    }
+    // Ctrl 多选时同时设置 currentSubFilter 为 null
+    currentSubFilter = null;
+  } else {
+    // 普通点击：单选 / 取消
+    if (currentSubFilter === topic) {
+      currentSubFilter = null;
+    } else {
+      currentSubFilter = topic;
+    }
+    // 非 Ctrl 点击时清空 Ctrl 多选
+    ctrlSelectedSubs = [];
+  }
+  renderSubscriptions();
   renderMessages();
+  updateSubFilterTag();
+}
+
+function clearSubFilter() {
+  currentSubFilter = null;
+  ctrlSelectedSubs = [];
+  renderSubscriptions();
+  renderMessages();
+  updateSubFilterTag();
+}
+
+function removeSubFilter(topic) {
+  if (currentSubFilter === topic) {
+    currentSubFilter = null;
+  }
+  const idx = ctrlSelectedSubs.indexOf(topic);
+  if (idx >= 0) ctrlSelectedSubs.splice(idx, 1);
+  renderSubscriptions();
+  renderMessages();
+  updateSubFilterTag();
+}
+
+function updateSubFilterTag() {
+  const container = document.getElementById('subFilterTag');
+  if (!container) return;
+
+  const activeSubs = [];
+  if (currentSubFilter) activeSubs.push(currentSubFilter);
+  activeSubs.push(...ctrlSelectedSubs);
+
+  if (activeSubs.length > 0) {
+    container.innerHTML = activeSubs.map(topic => {
+      const sub = subscriptions.find(s => s.topic === topic);
+      const label = sub ? escapeHtml(sub.alias || sub.topic) : escapeHtml(topic);
+      const color = sub?.color || 'var(--accent-light)';
+      return `
+      <span class="sub-filter-badge" style="border-color: ${color}; background: ${color};">
+        ${label}
+        <button onclick="event.stopPropagation(); removeSubFilter('${escapeAttr(topic)}')" title="移除">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </span>`;
+    }).join('');
+    container.style.display = 'flex';
+  } else {
+    container.innerHTML = '';
+    container.style.display = 'none';
+  }
 }
 
 // ========== 消息管理 ==========
@@ -428,9 +772,16 @@ function addMessage(topic, payload, type, options = {}) {
 
 function renderMessages() {
   const filtered = messages.filter(m => {
-    if (currentFilter === 'all') return true;
-    if (currentFilter === 'received') return m.type === 'incoming';
-    if (currentFilter === 'sent') return m.type === 'outgoing';
+    // 先按收发类型过滤
+    if (currentFilter === 'received' && m.type !== 'incoming') return false;
+    if (currentFilter === 'sent' && m.type !== 'outgoing') return false;
+    // 再按订阅过滤：如果有选中的订阅，只显示匹配的消息
+    const activeSubs = [];
+    if (currentSubFilter) activeSubs.push(currentSubFilter);
+    activeSubs.push(...ctrlSelectedSubs);
+    if (activeSubs.length > 0) {
+      return activeSubs.some(sub => matchTopic(sub, m.topic));
+    }
     return true;
   });
   
@@ -479,6 +830,11 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function escapeAttr(text) {
+  if (text === null || text === undefined) return '';
+  return String(text).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 function setFilter(filter, event) {
   currentFilter = filter;
   document.querySelectorAll('.msg-tab').forEach(tab => {
@@ -490,6 +846,81 @@ function setFilter(filter, event) {
 
 function updateMsgCount() {
   document.getElementById('msgCountText').textContent = `${messages.length} 条`;
+}
+
+let topicHistory = []; // [{topic, content}, ...]
+let topicHistoryIndex = -1;
+
+function addToTopicHistory(topic, content) {
+  topic = topic.trim();
+  if (!topic) return;
+  const entry = { topic, content: content || '' };
+  topicHistory = topicHistory.filter(t => t.topic !== topic);
+  topicHistory.unshift(entry);
+  if (topicHistory.length > 10) topicHistory.pop();
+  topicHistoryIndex = -1;
+  savePubConfig();
+  updateSwitchBtnState();
+}
+
+function switchTopic(dir) {
+  const topicInput = document.getElementById('pubTopic');
+  const contentInput = document.getElementById('pubContent');
+  const currentTopic = topicInput.value.trim();
+  const currentContent = contentInput.value;
+
+  const len = topicHistory.length;
+
+  // 首次切换：把当前值作为历史第 1 条
+  if (len === 0 && currentTopic) {
+    topicHistory.push({ topic: currentTopic, content: currentContent });
+    topicHistoryIndex = 0;
+    updateSwitchBtnState();
+    savePubConfig();
+    return;
+  }
+
+  // 保存当前位置（如果和历史中不同，则追加为新条目）
+  if (currentTopic) {
+    const currentEntry = topicHistory[topicHistoryIndex];
+    const isDifferent = !currentEntry || currentEntry.topic !== currentTopic;
+    if (isDifferent) {
+      topicHistory.push({ topic: currentTopic, content: currentContent });
+      topicHistoryIndex = topicHistory.length - 1;
+    }
+  }
+
+  const newLen = topicHistory.length;
+  if (newLen <= 1) return;
+
+  if (dir === 1) {
+    // 向前：跳到下一条（如果已是最后一条则不变）
+    if (topicHistoryIndex < newLen - 1) {
+      topicHistoryIndex++;
+    }
+  } else {
+    // 向后：跳到上一条（如果已是第一条则回到当前位置）
+    if (topicHistoryIndex > 0) {
+      topicHistoryIndex--;
+    }
+  }
+
+  const entry = topicHistory[topicHistoryIndex];
+  topicInput.value = entry.topic;
+  contentInput.value = entry.content;
+  updateSwitchBtnState();
+  savePubConfig();
+}
+
+function updateSwitchBtnState() {
+  const prevBtn = document.getElementById('topicPrevBtn');
+  const nextBtn = document.getElementById('topicNextBtn');
+  if (!prevBtn || !nextBtn) return;
+  const len = topicHistory.length;
+  // prev 禁用：已在第一条（index=0）时
+  prevBtn.disabled = len <= 1 || topicHistoryIndex <= 0;
+  // next 禁用：已在最后一条时
+  nextBtn.disabled = len <= 1 || topicHistoryIndex >= len - 1;
 }
 
 function clearMessages() {
@@ -507,11 +938,13 @@ function clearMessages() {
 
 // ========== 工具函数 ==========
 function toggleRetain() {
+  console.log('[toggle] retain clicked');
   retainEnabled = !retainEnabled;
   document.getElementById('retainToggle').classList.toggle('active', retainEnabled);
 }
 
 function toggleJson() {
+  console.log('[toggle] json clicked');
   jsonFormat = !jsonFormat;
   document.getElementById('jsonToggle').classList.toggle('active', jsonFormat);
 }
@@ -531,6 +964,9 @@ function publish() {
     showToast('请输入发布主题', 'warning');
     return;
   }
+  
+  // 记录到历史（带对应消息内容）
+  addToTopicHistory(topic, payload);
   
   // 检查通配符
   if (hasWildcard(topic)) {
@@ -562,6 +998,7 @@ function publish() {
       
       // 发送成功后添加到消息列表
       addMessage(topic, payload, 'outgoing', { qos, retain: retainEnabled });
+      savePubConfig();
     } else {
       showToast('连接已断开，请重新连接', 'error');
     }
@@ -572,37 +1009,56 @@ function publish() {
 
 // ========== 初始化 ==========
 window.addEventListener('load', () => {
+  // 加载本地存储数据
+  loadSubscriptions();
+  loadPubConfig();
+  loadBrokerConfig();
+  loadToggles();
+
   renderSubscriptions();
-  
-  // 设置默认值
-  document.getElementById('pubTopic').value = defaultValues.topic;
-  document.getElementById('pubContent').value = defaultValues.content;
-  document.getElementById('cfgBroker').value = defaultConfig.broker;
-  connInfoText.textContent = defaultConfig.broker;
-  
-  // 初始化 Toggle 状态
-  document.getElementById('jsonToggle').classList.add('active');
-  
-  // 连接信息输入框
-  connInfoInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      finishBrokerEdit();
-    } else if (e.key === 'Escape') {
-      connInfoInput.value = defaultConfig.broker;
-      connInfoInput.classList.add('hidden');
-      connInfoDisplay.classList.remove('hidden');
-    }
+  updateSubFilterTag();
+  updateSwitchBtnState();
+
+  // 初始化 Toggle 状态（如果没读取到才设置默认值）
+  if (!localStorage.getItem(STORAGE_KEYS.toggles)) {
+    document.getElementById('jsonToggle').classList.add('active');
+  }
+
+  // 用 addEventListener 重新绑定 toggle，防止 onclick 属性失效
+  document.getElementById('retainToggle').addEventListener('click', () => {
+    console.log('[addEventListener] retain clicked');
+    toggleRetain();
   });
-  
-  connInfoInput.addEventListener('blur', () => {
-    finishBrokerEdit();
+  document.getElementById('jsonToggle').addEventListener('click', () => {
+    console.log('[addEventListener] json clicked');
+    toggleJson();
   });
-  
+
   // 回车发送（Ctrl+Enter）
   document.getElementById('pubContent').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && e.ctrlKey) {
       publish();
     }
+  });
+
+  // Topic 输入框左右方向键切换历史
+  document.getElementById('pubTopic').addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); switchTopic(1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); switchTopic(-1); }
+  });
+  
+  // Topic/Content 输入变化时自动保存
+  document.getElementById('pubTopic').addEventListener('input', savePubConfig);
+  document.getElementById('pubContent').addEventListener('input', savePubConfig);
+  
+  // Toggle 切换时保存状态
+  document.getElementById('retainToggle').addEventListener('click', () => {
+    toggleRetain();
+    saveToggles();
+  });
+  document.getElementById('jsonToggle').addEventListener('click', () => {
+    toggleJson();
+    saveToggles();
   });
   
   // 回车确认订阅
@@ -617,11 +1073,6 @@ window.addEventListener('load', () => {
     if (e.key === 'Escape') {
       hideSettings();
       hideSubModal();
-      if (!connInfoInput.classList.contains('hidden')) {
-        connInfoInput.value = defaultConfig.broker;
-        connInfoInput.classList.add('hidden');
-        connInfoDisplay.classList.remove('hidden');
-      }
     }
   });
 });
