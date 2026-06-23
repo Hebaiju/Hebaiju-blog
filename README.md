@@ -29,7 +29,7 @@
 | 小破站成立了！              | 2025-07-01   | 6 min    | 建站心路历程        |
 | 我的“舞台”                  | 2025-11-09   | 8 min    | 持续施工中…         |
 
-更多文章直接点 → https://hebaiju.cn
+更多文章直接点 → https://www.hebaiju.cn
 
 ## 技术栈（穷人版）
 
@@ -38,13 +38,7 @@
 - 部署：GitHub Actions 一键部署
 - 域名：DNSPod 解析到 GitHub Pages
 
-## 联系方式（可选）
-
-- GitHub：[@你的用户名](https://github.com/你的用户名)
-- 邮箱：hebaiju@proton.me（偶尔看）
-- 金萝卜内部事务请走 MCC 私聊，谢谢喵
-
-## Star & Fork 随缘，反正也没几个人看（哭）
+ Star & Fork 随缘，反正也没几个人看（哭）
 
                                                          _ooOoo_
                                                         o8888888o
