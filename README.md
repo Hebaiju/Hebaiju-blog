@@ -4,7 +4,7 @@
 > “破站但有爱，金萝卜永不倒。”  
 > —— 一个技术宅 + 社畜 + 偶尔写日记的鹤白居
 
-网址：https://hebaiju.cn  
+网址：https://www.hebaiju.cn  
 仓库：[https://github.com/hebaiju](https://github.com/Hebaiju)
 
 ## 这是什么站？
