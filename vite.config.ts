@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 
-// GitHub Pages 项目仓库(Hebaiju-blog)会把站点挂在 /Hebaiju-blog/ 子路径下，
-// 必须设置 base 让 CSS/JS/图片等资源的相对路径正确解析。
-// 只有在 GitHub Pages 设置里配置了自定义根域名(如 www.hebaiju.cn)后，
-// 才能把 base 改为 '/'（此时站点以根路径提供，github.io 子路径会 404 属正常）。
+// 站点通过 GitHub Pages 的自定义根域名(web.hebaiju.cn)提供，
+// 因此 base 设为 '/'（根路径）。注意：此时 github.io 子路径会空白属正常，
+// 只能通过自定义域名访问。未配置自定义域名前不要推送此配置。
 export default defineConfig({
-  base: '/Hebaiju-blog/',
+  base: '/',
 })

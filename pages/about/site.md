@@ -6,4 +6,4 @@ title: 关于站点
 
 - 框架: [Valaxy](https://github.com/YunYouJun/valaxy) + [valaxy-theme-yun](https://github.com/YunYouJun/valaxy/blob/main/packages/valaxy-theme-yun/)
 - 部署: GitHub Pages
-- 域名: www.hebaiju.cn
+- 域名: web.hebaiju.cn

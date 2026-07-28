@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://www.hebaiju.cn/',
+  url: 'https://web.hebaiju.cn/',
   lang: 'zh-CN',
   title: '鹤白居的小站',
   author: {

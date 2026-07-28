@@ -4,7 +4,7 @@
 > “破站但有爱，金萝卜永不倒。”  
 > —— 一个技术宅 + 社畜 + 偶尔写日记的鹤白居
 
-网址：https://www.hebaiju.cn  
+网址：https://web.hebaiju.cn  
 仓库：[https://github.com/hebaiju](https://github.com/Hebaiju)
 
 ## 这是什么站？
@@ -29,7 +29,7 @@
 | 小破站成立了！              | 2025-07-01   | 6 min    | 建站心路历程        |
 | 我的“舞台”                  | 2025-11-09   | 8 min    | 持续施工中…         |
 
-更多文章直接点 → https://www.hebaiju.cn
+更多文章直接点 → https://web.hebaiju.cn
 
 ## 技术栈（穷人版）
 
