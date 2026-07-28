@@ -25,6 +25,11 @@ export default defineValaxyConfig<UserThemeConfig>({
       title: '鹤白居的小站',
     },
 
+    nav: [
+      { text: '文章', link: '/posts/', icon: 'i-ri-article-line' },
+      { text: '友链', link: '/links/', icon: 'i-ri-link' },
+    ],
+
     pages: [
       {
         name: '归档',
@@ -64,6 +69,7 @@ export default defineValaxyConfig<UserThemeConfig>({
         enable: false,
       },
     },
+    
   },
 
   unocss: { safelist },
