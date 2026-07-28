@@ -51,7 +51,7 @@ export default defineValaxyConfig<UserThemeConfig>({
         color: 'coral',
       },
       {
-        name: '导航',
+        name: '快捷链接',
         url: '/nav-link/',
         icon: 'i-ri-global-line',
         color: 'mediumspringgreen',

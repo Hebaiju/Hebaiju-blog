@@ -1,24 +1,37 @@
-# valaxy
-
-valaxy-fuse-list.json
-
-# vite-ssg
-
+# ===== Valaxy / Vite 构建产物 =====
+dist
+dist-ssg
+dist-ssr
+.output
 .vite-ssg-dist
 .vite-ssg-temp
 
-temp/
+# ===== Valaxy 生成文件 =====
+.valaxy
+valaxy-fuse-list.json
+public/valaxy-fuse-list.json
+# RSS 订阅（构建时生成）
+public/feed.xml
+public/atom.xml
+public/feed.json
 
-.DS_Store
-*.local
-dist
-dist-ssr
-node_modules
-.idea/
-*.log
-
+# ===== 自动生成的类型声明 =====
 components.d.ts
 
-# env (may contain secrets like VALAXY_ENCRYPT_PASSWORD)
+# ===== 依赖 =====
+node_modules
+node_modules/.cache
+
+# ===== 环境变量（可能含密钥，如 VALAXY_ENCRYPT_PASSWORD）=====
 .env
 .env.*
+
+# ===== 编辑器 / 系统 =====
+.vscode
+.idea
+.DS_Store
+*.local
+
+# ===== 日志 / 临时 =====
+*.log
+temp/

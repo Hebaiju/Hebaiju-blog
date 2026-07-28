@@ -7,7 +7,7 @@ categories:
 tags:
 - ESP8266
 - 项目
-codeHeightLimit: 300
+codeHeightLimit: 600
 ---
 
 ## ESP8266实现配网 [​](#esp8266实现配网)
