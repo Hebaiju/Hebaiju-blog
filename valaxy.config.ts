@@ -2,7 +2,7 @@ import type { UserThemeConfig } from 'valaxy-theme-yun'
 import { defineValaxyConfig } from 'valaxy'
 import { addonWaline } from 'valaxy-addon-waline'
 
-// add icons what you will need
+// 在此添加你需要的图标（加入白名单，避免被 UnoCSS 清除）
 const safelist = [
   'i-ri-home-line',
   'i-ri-archive-line',
@@ -13,10 +13,10 @@ const safelist = [
 ]
 
 /**
- * User Config
+ * 用户配置
  */
 export default defineValaxyConfig<UserThemeConfig>({
-  // site config see site.config.ts
+  // 站点级配置见 site.config.ts
 
   theme: 'yun',
 
@@ -38,18 +38,18 @@ export default defineValaxyConfig<UserThemeConfig>({
         icon: 'i-ri-archive-line',
         color: 'dodgerblue',
       },
-      {
-        name: '分类',
-        url: '/categories/',
-        icon: 'i-ri-folder-2-line',
-        color: 'seagreen',
-      },
-      {
-        name: '标签',
-        url: '/tags/',
-        icon: 'i-ri-price-tag-3-line',
-        color: 'mediumpurple',
-      },
+      // {
+      //   name: '分类',
+      //   url: '/categories/',
+      //   icon: 'i-ri-folder-2-line',
+      //   color: 'seagreen',
+      // },
+      // {
+      //   name: '标签',
+      //   url: '/tags/',
+      //   icon: 'i-ri-price-tag-3-line',
+      //   color: 'mediumpurple',
+      // },
       {
         name: '友链',
         url: '/links/',

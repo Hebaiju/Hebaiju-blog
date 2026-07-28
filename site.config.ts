@@ -5,10 +5,10 @@ export default defineSiteConfig({
   lang: 'zh-CN',
   title: '鹤白居的小站',
   author: {
-    name: '鹤白居',
+    name: 'HEBAIJU',
     avatar: 'https://pic1.imgdb.cn/item/699da71c01b9a5550a554137.jpg',
     status: {
-      emoji: '🌱',
+      emoji: '😁',
       message: '小破站建设中',
     },
   },
@@ -41,18 +41,24 @@ export default defineSiteConfig({
     },
   ],
 
+  // 全站搜索：开启后导航栏出现搜索按钮，文章/页面可被站内搜索（默认本地 Fuse.js 检索，无需后端）
   search: {
     enable: true,
   },
 
+  // 赞赏/打赏：开启后文章页底部显示「赞助」区域（可配二维码等）；当前 false = 不显示
   sponsor: {
     enable: false,
   },
 
+  // 文章加密：开启后，文章 frontmatter 写 encrypt: true 就需要输入密码才能看正文。
+  // 全局密码从环境变量 VALAXY_ENCRYPT_PASSWORD 读取（务必用 .env 或 CI secrets，别写进本文件）
   encrypt: {
     enable: true,
   },
 
+  // 评论系统：开启后文章页底部渲染评论区。
+  // 具体用哪家由 valaxy.config.ts 的 addons 决定（当前接的是 Waline，后端 https://msg.hebaiju.cn）
   comment: {
     enable: true,
   },
