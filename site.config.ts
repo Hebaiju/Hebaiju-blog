@@ -52,4 +52,8 @@ export default defineSiteConfig({
   encrypt: {
     enable: true,
   },
+
+  comment: {
+    enable: true,
+  },
 })
