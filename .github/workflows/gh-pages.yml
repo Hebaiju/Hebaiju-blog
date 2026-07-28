@@ -9,6 +9,10 @@ on:
       - master
       - valaxy
 
+# 赋予 GITHUB_TOKEN 写权限，否则 peaceiris 无法推送 gh-pages 分支 (403)
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
