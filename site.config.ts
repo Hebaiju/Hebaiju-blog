@@ -6,7 +6,7 @@ export default defineSiteConfig({
   title: '鹤白居的小站',
   author: {
     name: 'HEBAIJU',
-    avatar: 'https://pic1.imgdb.cn/item/699da71c01b9a5550a554137.jpg',
+    avatar: 'https://qntc.hebaiju.cn/img/site-avatar.jpg',
     status: {
       emoji: '😁',
       message: '小破站建设中',
