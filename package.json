@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "预览": "npm run dev",
     "build": "npm run build:ssg",
     "build:spa": "valaxy build",
     "build:ssg": "valaxy build --ssg",
-    "预览": "npm run dev",
     "dev": "valaxy",
     "rss": "valaxy rss",
     "serve": "vite preview"
