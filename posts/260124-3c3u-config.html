@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.By6FC1Cu.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.BTQirQJB.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.C1-1dNXk.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.YUHqddSK.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BHwonxou.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CPXCB7Nr.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.R6iBPCna.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.B77LU5n3.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/260124-3c3u-config.iELqo1IZ.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3C3U-金萝卜组织文档贰 - 鹤白居的小站</title>
+<script>LA.init({id:"3Ny1uac0PW8pSlg2",ck:"3Ny1uac0PW8pSlg2",autoTrack:true,screenRecord:true})</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="鹤白居的小站">
+<meta property="og:title" content="3C3U-金萝卜组织文档贰">
+<meta property="og:image" content="https://pic1.imgdb.cn/i/0342DbvtwTXWm9CQVrF9X0.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://web.hebaiju.cn/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.11">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-f6b5dd64><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-f6b5dd64><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-f6b5dd64><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-f6b5dd64><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-f6b5dd64><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="文章" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><a href="/links/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="友链" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-link"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-f6b5dd64><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-f6b5dd64><!----><span class="font-light truncate">鹤白居的小站</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-f6b5dd64><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-f6b5dd64><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-f6b5dd64><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg" alt="avatar"><span class="site-author-status absolute" title="小破站建设中">😁</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">HEBAIJU</a><a href="/about/site" class="site-name text-lg leading-loose">鹤白居的小站</a><h4 class="site-subtitle block op-70" text="xs">Next Generation Static Blog Framework.</h4><div class="site-description">鹤白居的个人博客，记录生活与学习。</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">9</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">5</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">13</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/Hebaiju" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://space.bilibili.com/3546981114841718" title="哔哩哔哩" target="_blank" style="color:#FF8EB3;"><div class="i-ri-bilibili-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:wbix@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1;"><div class="i-ri-mail-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/archives/" class="va-link link-item yun-icon-btn" inline-flex title="归档" style="color:dodgerblue;"><!--[--><div class="i-ri-archive-line icon size-6"></div><!--]--></a><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="友链" style="color:coral;"><!--[--><div class="i-ri-link-m icon size-6"></div><!--]--></a><a href="/nav-link/" class="va-link link-item yun-icon-btn" inline-flex title="快捷链接" style="color:mediumspringgreen;"><!--[--><div class="i-ri-global-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template></template><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">3C3U-金萝卜组织文档贰</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2026-02-24 00:00:00"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2026-02-24</time></span><!----></div><!--[--><!--]--><div class="inline-flex-center gap-4"><!----><div class="inline-flex gap-4" text="sm" h="5"><!----><!----></div><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E6%B8%B8%E6%88%8F" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>游戏</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=3c3u.org" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>3c3u.org</span></a><a href="/tags/?tag=%E6%97%A0%E8%A7%84%E5%88%99%E6%9C%8D" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>无规则服</span></a><a href="/tags/?tag=minecraft" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>minecraft</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><h2 id="_3c3u-金萝卜-mcc命令行客户端使用文档-​" tabindex="-1">3C3U-金萝卜-MCC命令行客户端使用文档 <a href="#_3c3u-%E9%87%91%E8%90%9D%E5%8D%9C-mcc%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3">​</a> <a class="header-anchor" href="#_3c3u-金萝卜-mcc命令行客户端使用文档-​" aria-label="Permalink to &quot;3C3U-金萝卜-MCC命令行客户端使用文档 [​](#_3c3u-金萝卜-mcc命令行客户端使用文档)&quot;">​</a></h2><blockquote><p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p></blockquote><p>目前本基地有正式成员4人。</p><!-- more --><h3 id="_3c3u-org金萝卜组织账号列表" tabindex="-1">3C3U.ORG金萝卜组织账号列表 <a class="header-anchor" href="#_3c3u-org金萝卜组织账号列表" aria-label="Permalink to &quot;3C3U.ORG金萝卜组织账号列表&quot;">​</a></h3><p><a href="https://docs.qq.com/doc/DY1puc1ZyYXFxc1VO" target="_blank" rel="noreferrer">成员列表请查看文档</a></p><h2 id="简要描述" tabindex="-1">简要描述 <a class="header-anchor" href="#简要描述" aria-label="Permalink to &quot;简要描述&quot;">​</a></h2><p>经过第一次的使用MCC客户端以及自己搭建服务器节点后，目前发现很多问题。</p><p>情况如下</p><p>之前未长期续费的原因：</p><p>1.使用“润雨云”提供的面板服务器，我发现了我会经常容易忘记签到，导致一个月漏掉了很多天。从而导致不能及时给服务器续费。故后面没有使用润雨云的面板服务器。</p><p>2.同时的方案还有：购买nat便宜服务器，续费价格3元一个月。以及连续续费两个月，随后因为<strong>过年</strong>从而导致忘记续费，且服务器商家会将服务器关机，然后需要我手动打开，才能连接成功，故已经抛弃当前方案。</p><p>当前情况：</p><p>以上两种使用服务器方式均已失效，没能实现长期续费……</p><p>现在解决办法：</p><p>经过之前搭建服务器的经验，结合当前比较火的<strong>飞牛NAS</strong>其中可以使用Docker来安装MCSM面板从而来使用MCC客户端。综合考虑之后，我决定购买一台小主机。要求是功耗低，能够长时间开机，可以远程管理。经过查找后选定了一个J1900cpu的瘦客户端来作为我的服务器。</p><p>在网络方面我选择了使用frp的ipv4穿透+ipv6直连。</p><h2 id="mcsmanager-panel-​" tabindex="-1">MCSManager Panel <a href="#mcsmanager-panel">​</a> <a class="header-anchor" href="#mcsmanager-panel-​" aria-label="Permalink to &quot;MCSManager Panel [​](#mcsmanager-panel)&quot;">​</a></h2><p>使用指南：</p><h3 id="_1-登陆-​" tabindex="-1">1.登陆 <a href="#_1-%E7%99%BB%E9%99%86">​</a> <a class="header-anchor" href="#_1-登陆-​" aria-label="Permalink to &quot;1.登陆 [​](#_1-登陆)&quot;">​</a></h3><p>在浏览器地址栏输入<strong>f.hebaiju.cn:23333</strong>及可以访问到web控制面板。随后输入账号密码即可</p><figure><img src="https://pic1.imgdb.cn/i/0342DbvtwTXWm9CQVrF9X0.png" alt="MCSM登陆面板0001" loading="lazy" decoding="async"></figure><h3 id="_2-应用实例-​" tabindex="-1">2.应用实例 <a href="#_2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B">​</a> <a class="header-anchor" href="#_2-应用实例-​" aria-label="Permalink to &quot;2.应用实例 [​](#_2-应用实例)&quot;">​</a></h3><p>因为服务器的连接采用frp端口映射和ipv6直连。</p><p>①若你有ipv6则可以使用ipv6节点来更快的进行访问，若看不明白则选择ipv4默认节点即可。两个节点只有线路不同，内容均为相同。</p><p>②随后既可以进入例如jb_19CM该机器人终端进行管理。</p><p>另外：该web面板属于“傻瓜式”操作逻辑，故此随后将不会对简单的操作进行解释，可以自行研究。</p><figure><img src="https://pic1.imgdb.cn/i/0342DbvZrRtrZkvQmVpm77.png" alt="PixPin_2026-02-24_16-48-41.png" loading="lazy" decoding="async"></figure><h4 id="_1应用实例讲解-​" tabindex="-1">①应用实例讲解 <a href="#_1%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3">​</a> <a class="header-anchor" href="#_1应用实例讲解-​" aria-label="Permalink to &quot;①应用实例讲解 [​](#_1应用实例讲解)&quot;">​</a></h4><p>进入演示的jb_19CM中后会有如下图界面，在点击开启实例之后会有几率在实例进程和应用进程中间点击如①关闭按钮可以会卡在正在停止中，也就是将关闭指令没有发送到MCC机器人程序当中，而实例误以为已经发送成功指令，从而一直卡在②的终止处。从而不能完整的保存配置文件，有几率下次不能成功启动实例。</p><p>还有一种情况为<strong>关闭实例命令</strong>错误，如下图④处。MCC机器人的关机指令为<code>/quit</code>而默认关闭容器的命令为<code>Ctrl+C</code> / <code>^C</code>。导致MCC机器人不能识别</p><p>解决办法为：点击③终端设置，将命令修改为<code>/quit</code>。注意若要关闭web窗口任然实现容器运行需要<strong>关闭仿真终端</strong>开关</p><figure><img src="https://pic1.imgdb.cn/i/0342DbvY6aeIfPMetuWkVi.png" alt="PixPin_2026-02-24_18-15-15.png" loading="lazy" decoding="async"></figure><h3 id="_3-关于实例的高级配置-​" tabindex="-1">3.关于实例的高级配置 <a href="#_3-%E5%85%B3%E4%BA%8E%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE">​</a> <a class="header-anchor" href="#_3-关于实例的高级配置-​" aria-label="Permalink to &quot;3.关于实例的高级配置 [​](#_3-关于实例的高级配置)&quot;">​</a></h3><p>只有管理员可以修改和管理</p><h4 id="_1启动命令-mcc-jb-19cm-​" tabindex="-1">①启动命令：<code>./mcc jb_19CM</code> <a href="#_1%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4-mcc-jb-19cm">​</a> <a class="header-anchor" href="#_1启动命令-mcc-jb-19cm-​" aria-label="Permalink to &quot;①启动命令：`./mcc jb_19CM` [​](#_1启动命令-mcc-jb-19cm)&quot;">​</a></h4><figure><img src="https://pic1.imgdb.cn/i/0342Dbvq2sD5ANBrWg1kDb.png" alt="PixPin_2026-02-24_18-35-36.png" loading="lazy" decoding="async"></figure><p>简单的示例如下</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>#登陆一个账户：notch，密码是：password123 要进入的服务器IP： mc.someserver.com:25565</span></span>
+<span class="line"><span>MinecraftClient.exe notch password123 mc.someserver.com:25565</span></span>
+<span class="line"><span>#使用命令行参数覆盖来自MinecraftClient.ini的设置</span></span>
+<span class="line"><span>MinecraftClient.exe --debugmessages=false</span></span>
+<span class="line"><span>#使用其他ini并覆盖语言为中文</span></span>
+<span class="line"><span>MinecraftClient.exe CustomSettingsFile.ini --language=zh</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>更多启动命令的配置参考 <a href="https://mccteam.github.io/l10n/zh-Hans/guide/usage.html#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95" target="_blank" rel="noreferrer">Minecraft 命令行客户端</a>。</p><h4 id="_2高级设置-​" tabindex="-1">②高级设置 <a href="#_2%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE">​</a> <a class="header-anchor" href="#_2高级设置-​" aria-label="Permalink to &quot;②高级设置 [​](#_2高级设置)&quot;">​</a></h4><p>高级设置中没有需要修改和配置的内容</p><h4 id="_3容器化-​" tabindex="-1">③容器化 <a href="#_3%E5%AE%B9%E5%99%A8%E5%8C%96">​</a> <a class="header-anchor" href="#_3容器化-​" aria-label="Permalink to &quot;③容器化 [​](#_3容器化)&quot;">​</a></h4><p>现在实例采取<a href="https://www.runoob.com/docker/docker-intro.html" target="_blank" rel="noreferrer">Docker 容器的形式</a>来运行以此来保护主机的安全性。</p><p>可以设置的内容不多，按照图片中设置即可</p><figure><img src="https://pic1.imgdb.cn/i/0342DbMDvCOjjxBrnqOfzW.png" alt="PixPin_2026-02-24_20-05-59.png" loading="lazy" decoding="async"></figure><p>其中值得注意的是<strong>环境变量</strong>可以向容器内传递参数，如下图中的参数就能将容器的系统语言修改为中文。从而使MCC获取到的参数修改为中文。该方法在其他的地方仍然适用。</p><figure><img src="https://pic1.imgdb.cn/i/0342DbMFaHKmImhL0q7VHj.png" alt="PixPin_2026-02-24_20-09-10.png" loading="lazy" decoding="async"></figure><p>④容器限制界面暂时没有东西需要修改</p><figure><img src="https://pic1.imgdb.cn/i/0342DbKNHx99zvFn0iURgF.png" alt="PixPin_2026-02-24_20-01-01.png" loading="lazy" decoding="async"></figure><h2 id="文件管理-​" tabindex="-1">文件管理 <a href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86">​</a> <a class="header-anchor" href="#文件管理-​" aria-label="Permalink to &quot;文件管理 [​](#文件管理)&quot;">​</a></h2><p>如图所示其中有很多文件，我将一一介绍：</p><ul><li>Sentry：这个是用于机器人的UUID，不用管</li><li>lang：这个是服务器的翻译配置文件，里面有一个zh_cn.json。</li><li>log.txt：这个是服务器消息日志文件。用于记录聊天成就等信息。可以在配置文件里面开启或者关闭，或者</li><li>MinecraftClient-20250522-285-linux-x64：机器人本体。文件名称可以修改。</li><li>MinecraftClient.backup.ini:机器人配置文件备份，若配置损坏则读取这个。</li><li>MinecraftClient.ini：机器人配置文件，优先读取，可以修改，但是记得备份。点击<a href="https://mccteam.github.io/l10n/zh-Hans/guide/" target="_blank" rel="noreferrer">Minecraft 命令行客户端</a>查看详细配置。</li><li>core：这个我也不知道是干什么的。</li></ul><figure><img src="https://pic1.imgdb.cn/i/0342DbMLEV9ZXMSEuU7M1S.png" alt="PixPin_2026-02-24_20-31-14.png" loading="lazy" decoding="async"></figure><h2 id="挂机机器人详细配置-​" tabindex="-1">挂机机器人详细配置 <a href="#%E6%8C%82%E6%9C%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE">​</a> <a class="header-anchor" href="#挂机机器人详细配置-​" aria-label="Permalink to &quot;挂机机器人详细配置 [​](#挂机机器人详细配置)&quot;">​</a></h2><p>你可以访问<a href="https://mccteam.github.io/l10n/zh-Hans/guide/" target="_blank" rel="noreferrer">Minecraft 命令行客户端</a>来查看更加详细的配置。</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span># 启动配置文件</span></span>
+<span class="line"><span># 请不要在此文件中记录任何无关的东西，因为这个文件会被MCC覆盖写入。</span></span>
+<span class="line"><span># </span></span>
+<span class="line"><span># 对 MCC（Minecraft 命令行客户端）不熟悉？请看这个文档：https://mccteam.github.io/g/conf.html</span></span>
+<span class="line"><span># 想升级到较新的版本吗？请访问 https://github.com/MCCTeam/Minecraft-Console-Client/#download</span></span>
+<span class="line"><span>[Head]</span></span>
+<span class="line"><span>&quot;Current Version&quot; = &quot;GitHub build 281, built on 2024-12-27 from commit 2409de2&quot;</span></span>
+<span class="line"><span>&quot;Latest Version&quot; = &quot;GitHub build 285, built on 2025-05-22&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Main]</span></span>
+<span class="line"><span>[Main.General]</span></span>
+<span class="line"><span>Account = { Login = &quot;&quot;, Password = &quot;&quot; }     # Login请填写邮箱或玩家名称。若要以离线模式登录请使用&quot;-&quot;作为密码。若留空则使用交互式登录。</span></span>
+<span class="line"><span>Server = { Host = &quot;&quot; }                      # 游戏服务器的地址和端口，可填入域名或IP地址。（可删除端口字段，会自动解析SRV记录）</span></span>
+<span class="line"><span>AccountType = &quot;microsoft&quot;                   # 帐户类型：mojang 或是 microsoft 或是 yggdrasil。此项设置也会影响交互式登录。</span></span>
+<span class="line"><span>Method = &quot;mcc&quot;                              # 微软账户的登录方式：mcc 或是 browser（手动在网页上登录）。</span></span>
+<span class="line"><span>AuthServer = { Host = &quot;&quot;, Port = 443 }      # Yggdrasil API 认证服务器的域名与端口。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 在更改这里的某项设置之前，请确保你理解了该选项的影响。</span></span>
+<span class="line"><span>[Main.Advanced]</span></span>
+<span class="line"><span>EnableSentry = true                         # Set to false to opt-out of Sentry error logging.</span></span>
+<span class="line"><span>Language = &quot;zh_cn&quot;                          # 请使用Minecraft语言代码填写，详见 https://mccteam.github.io/r/l-code.html</span></span>
+<span class="line"><span>LoadMccTranslation = true                   # 在可用时加载应用于MCC的翻译，关闭则仅使用英语。</span></span>
+<span class="line"><span>ConsoleTitle = &quot;%username%@%serverip% - Minecraft Console Client&quot;</span></span>
+<span class="line"><span>InternalCmdChar = &quot;slash&quot;                   # MCC内部命令的前缀，可使用 &quot;none&quot;, &quot;slash&quot;(/) 或 &quot;backslash&quot;(\)。</span></span>
+<span class="line"><span>MessageCooldown = 1.0                       # 控制向服务器发送消息的最小间隔时间（秒）。</span></span>
+<span class="line"><span>BotOwners = [ &quot;Player1&quot;, &quot;Player2&quot;, ]       # 设置机器人的所有者。/!\服务器管理员可以伪装成任何玩家!</span></span>
+<span class="line"><span>MinecraftVersion = &quot;auto&quot;                   # 游戏版本，可使用 &quot;auto&quot;(自动) 或类似 &quot;1.X.X&quot; 的值。设定具体版本将跳过从服务器解析的过程。</span></span>
+<span class="line"><span>EnableForge = &quot;no&quot;                          # 可使用 &quot;auto&quot;(自动)，&quot;no&quot;(禁用) 或是 &quot;force&quot;(强制启用，仅在 1.13 及更高的版本中可用)。</span></span>
+<span class="line"><span>BrandInfo = &quot;mcc&quot;                           # 客户端标识，可用 &quot;mcc&quot;，&quot;vanilla&quot;(原版客户端) 或 &quot;none&quot;(空标识)。这用于改变MCC向服务器发送的客户端标识内容。</span></span>
+<span class="line"><span>ChatbotLogFile = &quot;&quot;                         # 留空将禁用 ChatBot 写入日志文件。</span></span>
+<span class="line"><span>PrivateMsgsCmdName = &quot;tell&quot;                 # 远程控制功能将会使用它。</span></span>
+<span class="line"><span>ShowSystemMessages = true                   # 显示游戏服务器的系统消息（来自管理员或命令方块等）。</span></span>
+<span class="line"><span>ShowXPBarMessages = true                    # 显示经验条上方的消息，如果被此类消息刷屏请禁用此选项。</span></span>
+<span class="line"><span>ShowChatLinks = true                        # 解码聊天信息里的链接，并在控制台单独显示。</span></span>
+<span class="line"><span>ShowInventoryLayout = true                  # 以字符画形式显示库存布局。</span></span>
+<span class="line"><span>TerrainAndMovements = false                 # 开启地形处理将消耗更多的内存、CPU和网络带宽，但这允许你进行移动以及和方块交互。</span></span>
+<span class="line"><span>MoveHeadWhileWalking = true                 # 在移动时转向头部。</span></span>
+<span class="line"><span>MovementSpeed = 2                           # 高于 2 的移动速度可能会被检测为作弊。</span></span>
+<span class="line"><span>TemporaryFixBadpacket = false               # 暂时修复一些服务器上的坏数据包问题。需要先启用“TerrainAndMovements”。</span></span>
+<span class="line"><span>InventoryHandling = false                   # 启用库存处理（可操作背包、箱子等容器）。</span></span>
+<span class="line"><span>EntityHandling = false                      # 启用实体处理。</span></span>
+<span class="line"><span>SessionCache = &quot;disk&quot;                       # 如何缓存会话令牌。可使用 &quot;none&quot;(不缓存)，&quot;memory&quot;(内存缓存) 或 &quot;disk&quot;(磁盘缓存)。</span></span>
+<span class="line"><span>ProfileKeyCache = &quot;disk&quot;                    # 如何缓存聊天签名密钥。可使用 &quot;none&quot;(不缓存)，&quot;memory&quot;(内存缓存) 或 &quot;disk&quot;(磁盘缓存)。</span></span>
+<span class="line"><span>ResolveSrvRecords = &quot;fast&quot;                  # 可填写 &quot;no&quot;，&quot;fast&quot;（超时时间为五秒钟）或是 &quot;yes&quot;。加入某些服务器需要开启此项。</span></span>
+<span class="line"><span>PlayerHeadAsIcon = true                     # 使用玩家皮肤头像作为窗口图标，这仅在部分旧版控制台中有效。</span></span>
+<span class="line"><span>ExitOnFailure = false                       # 发生错误时是否直接退出，用于在非交互式脚本中使用MCC。</span></span>
+<span class="line"><span>CacheScript = true                          # 缓存已编译的脚本，以便在低端设备上更快的加载。</span></span>
+<span class="line"><span>Timestamps = false                          # 在聊天信息头部添加时间戳。</span></span>
+<span class="line"><span>AutoRespawn = false                         # 死亡时自动重生（开启前请确保你的出生点是安全的）</span></span>
+<span class="line"><span>MinecraftRealms = false                     # 启用对加入我的世界领域(Realms)服务器的支持。</span></span>
+<span class="line"><span>TcpTimeout = 30                             # 与服务器的TCP连接超时时间（秒）。</span></span>
+<span class="line"><span>EnableEmoji = true                          # 如果关闭，Emoji表情符号将被替换成更简单的字符（用于 &quot;/chunk status&quot; 命令）</span></span>
+<span class="line"><span>MinTerminalWidth = 16                       # 当使用终端宽度来计算显示的图像大小时，限制其最小宽度。</span></span>
+<span class="line"><span>MinTerminalHeight = 10                      # 当使用终端高度来计算显示的图像大小时，限制其最小高度。</span></span>
+<span class="line"><span>IgnoreInvalidPlayerName = true              # 忽略无效的玩家名</span></span>
+<span class="line"><span># AccountList：使你可以不用输入账号信息而快速在多个账号间切换</span></span>
+<span class="line"><span># 可用命令示例：&quot;/tell &lt;mybot&gt; reco Player2&quot;，&quot;/connect &lt;serverip&gt; Player1&quot;</span></span>
+<span class="line"><span>[Main.Advanced.AccountList]</span></span>
+<span class="line"><span>AccountNikename1 = { Login = &quot;playerone@email.com&quot;, Password = &quot;thepassword&quot; }</span></span>
+<span class="line"><span>AccountNikename2 = { Login = &quot;TestBot&quot;, Password = &quot;-&quot; }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># ServerList：可用使用服务器别名快速连接到该服务器</span></span>
+<span class="line"><span># 别名不能包含空格和小数点&quot;，而且 &quot;localhost&quot; 不能作为别名使用。</span></span>
+<span class="line"><span># 可用命令示例：&quot;/tell &lt;mybot&gt; connect Server1&quot;，&quot;/connect Server2&quot;</span></span>
+<span class="line"><span>[Main.Advanced.ServerList]</span></span>
+<span class="line"><span>ServerAlias1 = { Host = &quot;mc.awesomeserver.com&quot; }</span></span>
+<span class="line"><span>ServerAlias2 = { Host = &quot;192.168.1.27&quot;, Port = 12345 }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 聊天签名相关设置（影响1.19及以上版本）</span></span>
+<span class="line"><span>[Signature]</span></span>
+<span class="line"><span>LoginWithSecureProfile = true               # 仅微软账户可用。如禁用此项，将无法签名消息和进入某些的服务器。</span></span>
+<span class="line"><span>SignChat = true                             # 是否签名发送的聊天消息。</span></span>
+<span class="line"><span>SignMessageInCommand = true                 # 是否签名指令中的消息。例如&quot;/msg&quot;和&quot;/me&quot;中的消息。</span></span>
+<span class="line"><span>MarkLegallySignedMsg = true                 # 是否使用绿色色块标识拥有合法签名的聊天。</span></span>
+<span class="line"><span>MarkModifiedMsg = true                      # 是否使用黄色色块标识被服务器更改过的聊天。</span></span>
+<span class="line"><span>MarkIllegallySignedMsg = true               # 是否使用红色色块标识没有合法签名的聊天。</span></span>
+<span class="line"><span>MarkSystemMessage = true                    # 是否使用灰色色块标识系统消息（它们总是不会被签名）。</span></span>
+<span class="line"><span>ShowModifiedChat = true                     # 设置为 true，显示被服务器修改过的信息；设置为 false，显示经过签名的原始信息。</span></span>
+<span class="line"><span>ShowIllegalSignedChat = true                # 是否显示没有被正确签名的聊天消息。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 此项设置仅会影响到控制台中的信息（日志）。</span></span>
+<span class="line"><span>[Logging]</span></span>
+<span class="line"><span>DebugMessages = false                       # 请在提交错误报告之前先启用此项。谢谢！</span></span>
+<span class="line"><span>ChatMessages = true                         # 是否显示来自服务器的聊天消息。</span></span>
+<span class="line"><span>InfoMessages = true                         # 信息性的消息。（大部分来自MCC内部）</span></span>
+<span class="line"><span>WarningMessages = true                      # 显示警告消息。</span></span>
+<span class="line"><span>ErrorMessages = true                        # 显示错误消息。</span></span>
+<span class="line"><span>ChatFilterRegex = &quot;.*&quot;                      # 过滤聊天消息所用的正则表达式。</span></span>
+<span class="line"><span>DebugFilterRegex = &quot;.*&quot;                     # 过滤调试消息所用的正则表达式。</span></span>
+<span class="line"><span>FilterMode = &quot;disable&quot;                      # 过滤方式：&quot;disable&quot;（禁用），&quot;blacklist&quot;（隐藏匹配的消息） 或 &quot;whitelist&quot;（仅显示匹配的消息）</span></span>
+<span class="line"><span>LogToFile = false                           # 是否将日志信息写入到文件。</span></span>
+<span class="line"><span>LogFile = &quot;console-log.txt&quot;                 # 日志文件名称。</span></span>
+<span class="line"><span>PrependTimestamp = false                    # 写入日志文件时是否添加时间戳。</span></span>
+<span class="line"><span>SaveColorCodes = false                      # 是否保留消息中的颜色字符。（例如&quot;§b&quot;）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Console]</span></span>
+<span class="line"><span>[Console.General]</span></span>
+<span class="line"><span>ConsoleColorMode = &quot;vt100_24bit&quot;            # 使用“disable”、“legacy_4bit”、“vt100_4bit”、“vt100_8bit”或“vt100_24bit”。如果终端上出现“←[0m”等乱码，您可以尝试切换到“legacy_4bit”模式，或者直接禁用它。</span></span>
+<span class="line"><span>Display_Input = true                        # 您可以使用“Ctrl+P”打印当前输入和光标位置。</span></span>
+<span class="line"><span>History_Input_Records = 32                  # Console.General.History_Input_Records</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 命令补全建议的设置。</span></span>
+<span class="line"><span># 只在使用“vt100_24bit”颜色模式时才可自定义颜色。</span></span>
+<span class="line"><span>[Console.CommandSuggestion]</span></span>
+<span class="line"><span>Enable = true                               # 是否在控制台中显示命令建议。</span></span>
+<span class="line"><span>Enable_Color = true</span></span>
+<span class="line"><span>Use_Basic_Arrow = false                     # 如果命令建议中的箭头未在您的终端中正确显示，请启用此选项。</span></span>
+<span class="line"><span>Max_Suggestion_Width = 30</span></span>
+<span class="line"><span>Max_Displayed_Suggestions = 6</span></span>
+<span class="line"><span>Text_Color = &quot;#f8fafc&quot;</span></span>
+<span class="line"><span>Text_Background_Color = &quot;#64748b&quot;</span></span>
+<span class="line"><span>Highlight_Text_Color = &quot;#334155&quot;</span></span>
+<span class="line"><span>Highlight_Text_Background_Color = &quot;#fde047&quot;</span></span>
+<span class="line"><span>Tooltip_Color = &quot;#7dd3fc&quot;</span></span>
+<span class="line"><span>Highlight_Tooltip_Color = &quot;#3b82f6&quot;</span></span>
+<span class="line"><span>Arrow_Symbol_Color = &quot;#d1d5db&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[AppVar]</span></span>
+<span class="line"><span># 可以在某些字段中以 &quot;%yourvar%&quot; 的形式使用。</span></span>
+<span class="line"><span># %username% 和 %serverip% 为保留的变量名。</span></span>
+<span class="line"><span>[AppVar.VarStirng]</span></span>
+<span class="line"><span>your_var = &quot;your_value&quot;</span></span>
+<span class="line"><span>&quot;your var 2&quot; = &quot;your value 2&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 通过代理连接到服务器。</span></span>
+<span class="line"><span># 如果Mojang/微软登录服务被防火墙阻断，设置Enabled_Login=true以使用代理进行登录。</span></span>
+<span class="line"><span># 如果到Minecraft游戏服务器的连接被防火墙阻止，设置Enabled_Ingame=true以使用代理连接游戏服务器。</span></span>
+<span class="line"><span># /!\ 在启用代理前，请确保你的服务器规则允许使用代理或VPN，否则你可能面临被封禁等风险！</span></span>
+<span class="line"><span>[Proxy]</span></span>
+<span class="line"><span>Enabled_Update = false                      # 下载MCC的更新时是否通过代理服务器。</span></span>
+<span class="line"><span>Enabled_Login = false                       # 是否使用代理连接Mojang或微软的登录服务器。</span></span>
+<span class="line"><span>Enabled_Ingame = false                      # 是否通过代理连接Minecraft游戏服务器。</span></span>
+<span class="line"><span>Server = { Host = &quot;0.0.0.0&quot;, Port = 8080 }  # 代理服务器必须允许HTTPS登录。</span></span>
+<span class="line"><span>Proxy_Type = &quot;HTTP&quot;                         # 支持的代理类型：&quot;HTTP&quot;，&quot;SOCKS4&quot;，&quot;SOCKS4a&quot;，&quot;SOCKS5&quot;。</span></span>
+<span class="line"><span>Username = &quot;&quot;                               # 只有连接到受密码保护的代理才需要。</span></span>
+<span class="line"><span>Password = &quot;&quot;                               # 只有连接到受密码保护的代理才需要。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 下面的设置将会被发送到游戏服务器，只影响一些服务器端的东西，比如你的皮肤。</span></span>
+<span class="line"><span>[MCSettings]</span></span>
+<span class="line"><span>Enabled = true                              # 如果禁用，下面的设置就不会被发送到服务器上。</span></span>
+<span class="line"><span>Locale = &quot;en_US&quot;                            # 请使用Minecraft的语言代码填写，详见[Main.Advanced.Language]</span></span>
+<span class="line"><span>RenderDistance = 8                          # 渲染距离，取值范围[0 - 255]。</span></span>
+<span class="line"><span>Difficulty = &quot;peaceful&quot;                     # Minecraft 1.7及更早版本难度。&quot;peaceful&quot;，&quot;easy&quot;，&quot;normal&quot;，&quot;difficult&quot;。</span></span>
+<span class="line"><span>ChatMode = &quot;enabled&quot;                        # 使用 &quot;enabled&quot;（完全启用聊天）、&quot;commands&quot;（仅限命令）或 &quot;disabled&quot;（完全禁用聊天）。这允许你禁言自己...</span></span>
+<span class="line"><span>ChatColors = true                           # 这允许你在服务器端禁用聊天颜色。</span></span>
+<span class="line"><span>MainHand = &quot;left&quot;                           # 在1.9及更高版本中的主手设置。&quot;left&quot;（左手） 或 &quot;right&quot;（右手）。</span></span>
+<span class="line"><span>[MCSettings.Skin]</span></span>
+<span class="line"><span>Cape = true</span></span>
+<span class="line"><span>Hat = true</span></span>
+<span class="line"><span>Jacket = false</span></span>
+<span class="line"><span>Sleeve_Left = false</span></span>
+<span class="line"><span>Sleeve_Right = false</span></span>
+<span class="line"><span>Pants_Left = false</span></span>
+<span class="line"><span>Pants_Right = false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># MCC会尽力检测聊天信息，但有些服务器有不寻常的聊天格式</span></span>
+<span class="line"><span># 当这种情况发生时，你需要在下面自定义匹配聊天所用的正则表达式</span></span>
+<span class="line"><span># 详见 https://mccteam.github.io/g/conf/#chat-format-section</span></span>
+<span class="line"><span>[ChatFormat]</span></span>
+<span class="line"><span>Builtins = true                             # 是否启用MCC内置的聊天检测规则。设置为 false 以避免与自定义格式冲突。</span></span>
+<span class="line"><span>UserDefined = false                         # 是否启用下方的自定义正则表达式进行聊天检测。</span></span>
+<span class="line"><span>Public = &quot;^&lt;([a-zA-Z0-9_]+)&gt; (.+)<div id="app"></div>quot;</span></span>
+<span class="line"><span>Private = &quot;^([a-zA-Z0-9_]+) whispers to you: (.+)<div id="app"></div>quot;</span></span>
+<span class="line"><span>TeleportRequest = &#39;^([a-zA-Z0-9_]+) has requested (?:to|that you) teleport to (?:you|them)\.<div id="app"></div>#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># =============================== #</span></span>
+<span class="line"><span># Minecraft 控制台客户端 机器人  #</span></span>
+<span class="line"><span># =============================== #</span></span>
+<span class="line"><span>[ChatBot]</span></span>
+<span class="line"><span># 当检测到特定聊天消息或特定事件发生时提醒你</span></span>
+<span class="line"><span>#  # 对检测特定玩家的聊天消息很有用。</span></span>
+<span class="line"><span>[ChatBot.Alerts]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Beep_Enabled = true                         # 除了高亮显示外，当检测到一个词时还会播放类似蜂鸣器的哔哔声。</span></span>
+<span class="line"><span>Trigger_By_Words = false                    # 在收到指定的关键词后触发提醒。</span></span>
+<span class="line"><span>Trigger_By_Rain = false                     # 在开始下雨和停止下雨时触发提醒。</span></span>
+<span class="line"><span>Trigger_By_Thunderstorm = false             # 在雷暴天气的开始与结束触发提醒。</span></span>
+<span class="line"><span>Log_To_File = false                         # 是否将提醒消息写入到日志文件。</span></span>
+<span class="line"><span>Log_File = &quot;alerts-log.txt&quot;                 # 日志文件的路径。</span></span>
+<span class="line"><span># 触发提醒的聊天关键词列表。</span></span>
+<span class="line"><span>Matches = [ &quot;Yourname&quot;, &quot; whispers &quot;, &quot;-&gt; me&quot;, &quot;admin&quot;, &quot;.com&quot;, ]</span></span>
+<span class="line"><span># 出现这些关键词后该条消息一定不触发提醒。</span></span>
+<span class="line"><span>Excludes = [ &quot;myserver.com&quot;, &quot;Yourname&gt;:&quot;, &quot;Player Yourname&quot;, &quot;Yourname joined&quot;, &quot;Yourname left&quot;, &quot;[Lockette] (Admin)&quot;, &quot; Yourname:&quot;, &quot;Yourname is&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 定期发送命令，或让机器人随机走动，以避免检测到挂机后被踢出服务器</span></span>
+<span class="line"><span>#  # /!\启用前请确保你的服务器规则不禁止反AFK机制！</span></span>
+<span class="line"><span># /!\如果启用随机移动，请将机器人围在围栏里，以防走失！（建议尺寸5x5x5）</span></span>
+<span class="line"><span>[ChatBot.AntiAFK]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Delay = { min = 60.0, max = 60.0 }          # 执行操作的间隔时间。（秒）</span></span>
+<span class="line"><span>Command = &quot;/ping&quot;                           # 发送给服务器的指令。</span></span>
+<span class="line"><span>Use_Sneak = false                           # 在发送命令时是否蹲下。</span></span>
+<span class="line"><span>Use_Terrain_Handling = false                # 启用地形处理，以使机器人能够四处移动。</span></span>
+<span class="line"><span>Walk_Range = 5                              # 机器人可以随机移动的范围（注意：范围越大，速度越慢）</span></span>
+<span class="line"><span>Walk_Retries = 20                           # 尝试移动失败几次后在改为发送命令模式。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 自动攻击周围的生物</span></span>
+<span class="line"><span># 使用此功能之前，你需要开启实体处理。</span></span>
+<span class="line"><span># /!\确保你的服务器允许使用自动攻击。</span></span>
+<span class="line"><span># /!\服务器插件可能会认为此功能时作弊，并可能会封禁你的账号，所以请自己检查服务器规则是否允许。</span></span>
+<span class="line"><span>[ChatBot.AutoAttack]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Mode = &quot;single&quot;                             # &quot;single&quot;（单目标） 或 &quot;multi&quot;（多目标）。一次攻击一个生物还是范围内的所有生物。</span></span>
+<span class="line"><span>Priority = &quot;distance&quot;                       # &quot;health&quot;（生命值）或 &quot;distance&quot;（距离）。当使用&quot;single&quot;模式时，以哪一个属性确定优先级。</span></span>
+<span class="line"><span>Cooldown_Time = { Custom = false, value = 1.0 } # 每次攻击间的冷却时间，设置 &quot;Custom = false&quot; 以让MCC自动计算攻击速度。</span></span>
+<span class="line"><span>Interaction = &quot;Attack&quot;                      # 可选项：&quot;Interact&quot;（交互），&quot;Attack&quot;（攻击） 或 &quot;InteractAt&quot;（交互并攻击）</span></span>
+<span class="line"><span>Attack_Range = 4.0                          # 上限介于 1 到 4</span></span>
+<span class="line"><span>Attack_Hostile = true                       # 是否攻击敌对生物。</span></span>
+<span class="line"><span>Attack_Passive = false                      # 是否攻击被动生物。</span></span>
+<span class="line"><span>List_Mode = &quot;whitelist&quot;                     # 将实体列表作为 &quot;whitelist&quot;（白名单）还是 &quot;blacklist&quot;（黑名单）。</span></span>
+<span class="line"><span>Entites_List = [ &quot;Zombie&quot;, &quot;Cow&quot;, ]         # 你可以在这里找到所有的实体名称：https://mccteam.github.io/r/entity/#L15</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 自动使用背包中的物品进行合成。</span></span>
+<span class="line"><span># 请看 https://mccteam.github.io/g/bots/#auto-craft</span></span>
+<span class="line"><span># 你需要启用库存处理来使用这个功能</span></span>
+<span class="line"><span># 如果需要使用工作台，你还需要启用地形处理。</span></span>
+<span class="line"><span>[ChatBot.AutoCraft]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>CraftingTable = { X = 123.0, Y = 65.0, Z = 456.0 } # 如果你打算使用工作台，请填写它所在的位置。（需要启用地形处理）</span></span>
+<span class="line"><span>OnFailure = &quot;abort&quot;                         # 合成失败时应该怎么处理，&quot;abort&quot;（中止）或 &quot;wait&quot;（等待）。</span></span>
+<span class="line"><span># Recipes.Name：给该配方起一个独一无二的名字。（不能包含空白字符）</span></span>
+<span class="line"><span># Recipes.Type：合成类型，&quot;player&quot;（背包2x2）或 &quot;table&quot;（工作台3x3）</span></span>
+<span class="line"><span># Recipes.Result：合成的目标物品</span></span>
+<span class="line"><span># Recipes.Slots：合成的物品摆放方式，以从左到右、从上到下的格式填写。需留空请填写&quot;Null&quot;</span></span>
+<span class="line"><span># 最新的物品命名请看：https://mccteam.github.io/r/item/#L12</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.AutoCraft.Recipes]]</span></span>
+<span class="line"><span>Name = &quot;Recipe-Name-1&quot;</span></span>
+<span class="line"><span>Type = &quot;player&quot;</span></span>
+<span class="line"><span>Result = &quot;StoneBricks&quot;</span></span>
+<span class="line"><span>Slots = [ &quot;Stone&quot;, &quot;Stone&quot;, &quot;Stone&quot;, &quot;Stone&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.AutoCraft.Recipes]]</span></span>
+<span class="line"><span>Name = &quot;Recipe-Name-2&quot;</span></span>
+<span class="line"><span>Type = &quot;table&quot;</span></span>
+<span class="line"><span>Result = &quot;StoneBricks&quot;</span></span>
+<span class="line"><span>Slots = [ &quot;Stone&quot;, &quot;Stone&quot;, &quot;Null&quot;, &quot;Stone&quot;, &quot;Stone&quot;, &quot;Null&quot;, &quot;Null&quot;, &quot;Null&quot;, &quot;Null&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 自动挖掘方块。</span></span>
+<span class="line"><span># 你需要启用地形处理来使用这个功能。</span></span>
+<span class="line"><span># 你可以使用 &quot;/digbot start&quot; 和 &quot;/digbot stop&quot; 指令来控制 AutoDig 的启停。</span></span>
+<span class="line"><span># 由于MCC目前还不支持精确计算方块的碰撞体积，在获取看向的方块时，视线上所有的方块都被看作是完整的立方体。</span></span>
+<span class="line"><span># 查询方块的名称，请访问 https://mccteam.github.io/r/block/#L15</span></span>
+<span class="line"><span>[ChatBot.AutoDig]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Mode = &quot;lookat&quot;                             # &quot;lookat&quot;，&quot;fixedpos&quot; 或 &quot;both&quot;。挖掘看向的方块还是固定位置的方块，或者是两个条件都满足的方块。</span></span>
+<span class="line"><span># 使用 &quot;fixedpos&quot; 或 &quot;both&quot; 模式时，方块的坐标。</span></span>
+<span class="line"><span>Locations = [</span></span>
+<span class="line"><span>	{ x = 123.5, y = 64.0, z = 234.5 },</span></span>
+<span class="line"><span>	{ x = 124.5, y = 63.0, z = 235.5 },</span></span>
+<span class="line"><span>]</span></span>
+<span class="line"><span>Location_Order = &quot;distance&quot;                 # &quot;distance&quot; 或 &quot;index&quot;，当使用 &quot;fixedpos&quot; 模式时，按照到玩家的距离，还是列表中的顺序确定挖掘的方块。</span></span>
+<span class="line"><span>Auto_Start_Delay = 3.0                      # 进入游戏后等待多少秒后开始自动挖掘，设置为-1禁用自动开始。</span></span>
+<span class="line"><span>Dig_Timeout = 60.0                          # 若挖掘一个方块用时超过这个值，将会重新获取目标进行挖掘。</span></span>
+<span class="line"><span>Log_Block_Dig = true                        # 是否输出挖掘方块的相关信息。</span></span>
+<span class="line"><span>List_Type = &quot;whitelist&quot;                     # 将方块列表作为 &quot;whitelist&quot;（白名单）还是 &quot;blacklist&quot;（黑名单）。</span></span>
+<span class="line"><span>Blocks = [ &quot;Cobblestone&quot;, &quot;Stone&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 自动从背包/库存中丢弃指定的物品</span></span>
+<span class="line"><span># 你需要启用库存处理来使用这个功能</span></span>
+<span class="line"><span># 查询物品命名：https://mccteam.github.io/r/item/#L12</span></span>
+<span class="line"><span>[ChatBot.AutoDrop]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Mode = &quot;include&quot;                            # &quot;include&quot;（丢弃列表中的物品），&quot;exclude&quot;（丢弃列表外的所有物品） 或 &quot;everything&quot;（丢弃所有物品）</span></span>
+<span class="line"><span>Items = [ &quot;Cobblestone&quot;, &quot;Dirt&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 在饱食度较低是自动在背包中寻找食物食用。</span></span>
+<span class="line"><span># 你需要启用库存处理来使用这个功能。</span></span>
+<span class="line"><span>[ChatBot.AutoEat]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Threshold = 6</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 使用鱼竿自动钓鱼。</span></span>
+<span class="line"><span># 指南：https://mccteam.github.io/g/bots/#auto-fishing</span></span>
+<span class="line"><span># 你可以使用&quot;/fish&quot;命令来手动进行控制。</span></span>
+<span class="line"><span># /!\ 启用前请确保服务器允许你自动钓鱼。</span></span>
+<span class="line"><span>[ChatBot.AutoFishing]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Antidespawn = false                         # 如果你之前没有启用过这个选项，请保持它为 false 。</span></span>
+<span class="line"><span>Mainhand = true                             # 使用主手还是副手拿鱼竿。</span></span>
+<span class="line"><span>Auto_Start = true                           # 是否在进入服务器后自动开始钓鱼，禁用此功能后，你需要使用&quot;/usehand&quot;手动使用鱼竿一次。</span></span>
+<span class="line"><span>Cast_Delay = 0.4                            # 钓到鱼后多久开始下一次钓鱼（抛竿）。</span></span>
+<span class="line"><span>Fishing_Delay = 3.0                         # 进入服务器后多久后开始自动钓鱼。（秒）</span></span>
+<span class="line"><span>Fishing_Timeout = 300.0                     # 多少秒后没有钓到鱼视为超时。超时后会重新抛竿。</span></span>
+<span class="line"><span>Durability_Limit = 2.0                      # 不会使用低于此耐久度的鱼竿（鱼竿耐久度最高为64）。（需要启用库存处理）</span></span>
+<span class="line"><span>Auto_Rod_Switch = true                      # 在当前鱼竿不可用后自动切换到背包中的其他鱼竿。（需要启用库存处理）</span></span>
+<span class="line"><span>Stationary_Threshold = 0.001                # 鱼钩在X轴和Z轴方向上的移动小于这个值将被认为是静止的，过高的阈值会在抛竿途中触发收竿。</span></span>
+<span class="line"><span>Hook_Threshold = 0.2                        # 一个“静止”的鱼钩，在Y轴方向上的移动超过这个阈值将被认为钓到了鱼。</span></span>
+<span class="line"><span>Log_Fish_Bobber = false                     # 用于调整以上两个阈值，启用后会在收到鱼钩实体移动数据包后打印其坐标变化。</span></span>
+<span class="line"><span>Enable_Move = false                         # 这允许玩家在钓到鱼后改变其位置或朝向。（需要启用地形处理）</span></span>
+<span class="line"><span># 会按照 &quot;1-&gt;2-&gt;3-&gt;4-&gt;3-&gt;2-&gt;1-&gt;2-&gt;...&quot; 的顺序执行。每次可用改变位置、朝向或是都改变。推荐只改变朝向。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.AutoFishing.Movements]]</span></span>
+<span class="line"><span>facing = { yaw = 12.34, pitch = -23.45 }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.AutoFishing.Movements]]</span></span>
+<span class="line"><span>XYZ = { x = 123.45, y = 64.0, z = -654.32 }</span></span>
+<span class="line"><span>facing = { yaw = -25.14, pitch = 36.25 }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.AutoFishing.Movements]]</span></span>
+<span class="line"><span>XYZ = { x = -1245.63, y = 63.5, z = 1.2 }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 在被服务器断开连接时自动重连，例如服务器重启时。</span></span>
+<span class="line"><span># /!\ 谨慎使用Ignore_Kick_Message=true，这会在服务器管理员将你踢出时依然连回！</span></span>
+<span class="line"><span>[ChatBot.AutoRelog]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Delay = { min = 3.0, max = 3.0 }            # 重新加入到服务器前的延迟时间。(单位：秒)</span></span>
+<span class="line"><span>Retries = 3                                 # 重新登录服务器失败时的重试次数，使用-1表示无限重试。</span></span>
+<span class="line"><span>Ignore_Kick_Message = false                 # 当设置为 true 时，将不考虑踢出的信息直接重连。</span></span>
+<span class="line"><span># 如果踢出信息与这其中的任何一个字符串匹配，那么将触发自动重连。</span></span>
+<span class="line"><span>Kick_Messages = [ &quot;Connection has been lost&quot;, &quot;Server is restarting&quot;, &quot;Server is full&quot;, &quot;Too Many people&quot;, ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 当聊天消息与文件中的规则匹配时，自动执行指定命令。</span></span>
+<span class="line"><span># /!\ 服务器管理员可以以任意玩家的身份发送任意消息，记住这一点！</span></span>
+<span class="line"><span># 此机器人如果设置的不得当可能会造成刷屏，建议设置一个冷却时间。</span></span>
+<span class="line"><span>[ChatBot.AutoRespond]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Matches_File = &quot;matches.ini&quot;</span></span>
+<span class="line"><span>Match_Colors = false                        # 不要删除文本中的颜色代码（使用§字符的代码）。注意：启用后你的匹配模板也必须包括颜色代码。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 将聊天信息写入到日志文件中。</span></span>
+<span class="line"><span>[ChatBot.ChatLog]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Add_DateTime = true</span></span>
+<span class="line"><span>Log_File = &quot;chatlog-%username%-%serverip%.txt&quot;</span></span>
+<span class="line"><span>Filter = &quot;messages&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 此机器人允许您通过Discord频道发送和接收消息和命令。</span></span>
+<span class="line"><span># 您也可以在文档中阅读此机器人的配置方法(文档中有图像)。</span></span>
+<span class="line"><span># 文档：https://mccteam.github.io/g/bots/#discord-bridge</span></span>
+<span class="line"><span># 配置方法：</span></span>
+<span class="line"><span># 首先您需要在 Discord 开发者中心上创建一个机器人，这有一个视频教程：https://www.youtube.com/watch?v=2FgMnZViNPA。</span></span>
+<span class="line"><span># /!\ 重要/! : 创建机器人时，您必须启用&quot;Message Content Intent&quot;，&quot;Server Members Intent&quot;和&quot;Presence Intent&quot;才能使机器人工作！还请小心跟随教程，不要错过任何步骤！</span></span>
+<span class="line"><span># 创建机器人时，复制生成的令牌并将其粘贴在&quot;Token&quot;字段中 (令牌很重要，保证它们的安全)。</span></span>
+<span class="line"><span># 复制&quot;Application ID&quot;并访问：https://discordapi.com/permissions.html</span></span>
+<span class="line"><span># 粘贴您复制过的ID并在权限中检查&quot;Administrator&quot;字段，然后点击底部的链接。</span></span>
+<span class="line"><span># 这将打开您的服务器的邀请菜单，选择您想邀请机器人的服务器并邀请他。</span></span>
+<span class="line"><span># 邀请机器人后，前往您的Discord客户端访问设置 -&gt; 高级并启用&quot;Developer Mode&quot;。</span></span>
+<span class="line"><span># 退出设置并右击邀请机器人进入服务器列表中的服务器 然后点击&quot;Copy ID&quot;，然后将ID粘贴到下方的&quot;GuildId&quot;。</span></span>
+<span class="line"><span># 然后右键单击要与机器人互动的频道，然后右键单击选择&gt; &quot;Copy ID&quot;，然后将ID粘贴到下方的&quot;ChannelId&quot;。</span></span>
+<span class="line"><span># 最后，在频道发送一条消息， 右键单击你的昵称，然后右键单击选择&gt; &quot;Copy ID&quot;，然后将ID粘贴到下方的&quot;OwnersIds&quot;。</span></span>
+<span class="line"><span># -----------------------------------------------------------</span></span>
+<span class="line"><span># 如何使用：</span></span>
+<span class="line"><span># 希望运行MCC指令时，在指令前加上点 &quot;.&quot;。例如 &quot;.move 143 64 735&quot;。</span></span>
+<span class="line"><span># 希望发送聊天信息时，只需要直接发送就好了。</span></span>
+<span class="line"><span>[ChatBot.DiscordBridge]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Token = &quot;your bot token here&quot;               # 你的Discord机器人的令牌。</span></span>
+<span class="line"><span>GuildId = 1018553894831403028               # 你邀请机器人加入的服务器ID。</span></span>
+<span class="line"><span>ChannelId = 1018565295654326364             # 你想要使机器人与 MCC 交互的频道ID。</span></span>
+<span class="line"><span>OwnersIds = [ 978757810781323276, ]         # 你希望能够使用机器人与 MCC 交互的用户ID列表。</span></span>
+<span class="line"><span>Message_Send_Timeout = 3                    # 如果信息无法被发送至Discord时，要等候多少秒才取消发送。（最小 1 秒）</span></span>
+<span class="line"><span># 消息格式</span></span>
+<span class="line"><span># 使用 { 和 } 包裹的单词将在代码执行过程中被替换，请不要更改它们！</span></span>
+<span class="line"><span># 例如，{message} 将替换为实际的消息，{username} 将替换为用户名， {timestamp} 将替换为当前时间。</span></span>
+<span class="line"><span># 了解Discord消息格式，请访问：https://mccteam.github.io/r/dc-fmt.html</span></span>
+<span class="line"><span>PrivateMessageFormat = &quot;**[Private Message]** {username}: {message}&quot;</span></span>
+<span class="line"><span>PublicMessageFormat = &quot;{username}: {message}&quot;</span></span>
+<span class="line"><span>TeleportRequestMessageFormat = &quot;A new Teleport Request from **{username}**!&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 自动为你耕种农作物（种下，收获和骨粉催熟）</span></span>
+<span class="line"><span># 可用的农作物类型：Beetroot（甜菜根）, Carrot（萝卜）, Melon（西瓜）, Netherwart（地狱疣）, Pumpkin（南瓜）, Potato（马铃薯）, Wheat（小麦）</span></span>
+<span class="line"><span># 使用方法：&quot;/farmer start&quot; 指令和 &quot;/farmer stop&quot; 指令。</span></span>
+<span class="line"><span># 注意：这是新加入的机器人，它不完美并且只在 1.19.2 版本进行过测试。它有些小问题，例如有时候不能对萝卜或马铃薯使用骨粉催熟；</span></span>
+<span class="line"><span># 或机器人会在耕地上跳跃并破坏耕地（这很少发生，但还是有机率出现）。我们期待可以改善它。</span></span>
+<span class="line"><span># 另外，如果你的耕地只有一格厚，请加厚至两格以上，否则机器人在重新连接时有可能会穿过耕地并掉落。</span></span>
+<span class="line"><span># 此外，如果机器人走到边缘时将不会拾起所有的掉落物，我们已有计划在未来添加这个选项，同时加入将农作物放到箱子及从箱子补充骨粉。</span></span>
+<span class="line"><span>[ChatBot.Farmer]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Delay_Between_Tasks = 1.0                   # 任务之间的延迟时间（最短为1秒）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 让机器人跟随指定玩家</span></span>
+<span class="line"><span># 注意这是一个实验性的功能，目前的寻路速度可能很慢，你可能需要时常等一会机器人来让它跟上你。</span></span>
+<span class="line"><span># 你可以调整&quot;Update_Limit&quot;，找到最适合你的速度。（注意不要设置的太低，这样可能导致反效果或使MCC卡顿）。</span></span>
+<span class="line"><span># /!\ 在使用此功能之前，请先确保服务器规则允许你这样做。</span></span>
+<span class="line"><span>[ChatBot.FollowPlayer]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Update_Limit = 1.5                          # 机器人寻路的间隔时间（以秒为单位）</span></span>
+<span class="line"><span>Stop_At_Distance = 3.0                      # 如果玩家在该范围内，则视为已经接近玩家了。（防止机器人将玩家推开而产生无限循环）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 一个用于演示聊天互动的小游戏。玩家可以一次一个字母地猜出神秘的单词。</span></span>
+<span class="line"><span># 你需要正确地使用 ChatFormat，并在 botowners 中添加自己，用/tell &lt;bot username&gt; start</span></span>
+<span class="line"><span># /!\ 这个机器人可能会造成刷屏，如果许多玩家与它互动。</span></span>
+<span class="line"><span>[ChatBot.HangmanGame]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>English = true</span></span>
+<span class="line"><span>FileWords_EN = &quot;hangman-en.txt&quot;</span></span>
+<span class="line"><span>FileWords_FR = &quot;hangman-fr.txt&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 在玩家和服务器之间中继消息，就像一个邮件插件一样。</span></span>
+<span class="line"><span># 这个机器人可以在收件人离线时存储消息，并在他们加入服务器时发送消息。</span></span>
+<span class="line"><span># /!\ 服务器管理员可以以任意玩家的身份发送任意消息，请记住这一点。</span></span>
+<span class="line"><span>[ChatBot.Mailer]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>DatabaseFile = &quot;MailerDatabase.ini&quot;</span></span>
+<span class="line"><span>IgnoreListFile = &quot;MailerIgnoreList.ini&quot;</span></span>
+<span class="line"><span>PublicInteractions = false</span></span>
+<span class="line"><span>MaxMailsPerPlayer = 10</span></span>
+<span class="line"><span>MaxDatabaseSize = 10000</span></span>
+<span class="line"><span>MailRetentionDays = 30</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 允许你将地图渲染成.jpg图片，该图片会被渲染到Rendered_Maps文件夹中。</span></span>
+<span class="line"><span># 注意：这个功能目前只对解决使用地图的验证码有用。</span></span>
+<span class="line"><span># 如果一些服务器解决验证码的时间很短，请启用Auto_Render_On_Update并准备快速打开该文件。</span></span>
+<span class="line"><span># 在linux上，你可以使用FTP来访问生成的文件。</span></span>
+<span class="line"><span>[ChatBot.Map]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Render_In_Console = true                    # 是否在控制台中渲染地图。</span></span>
+<span class="line"><span>Save_To_File = false                        # 是否将地图保存为文件。</span></span>
+<span class="line"><span>Auto_Render_On_Update = false               # 一旦接收到新的地图或已有地图被更新，自动渲染该地图。</span></span>
+<span class="line"><span>Delete_All_On_Unload = true                 # 在卸载/重新加载地图时删除所有已渲染的地图（退出MCC时不会删除图像）</span></span>
+<span class="line"><span>Notify_On_First_Update = true               # 当第一次从服务器上收到一张地图时，发送一个通知。</span></span>
+<span class="line"><span>Rasize_Rendered_Image = false               # 调整渲染图像的大小，当渲染的图像较小或需要发送到Discord时，这很有用。</span></span>
+<span class="line"><span>Resize_To = 512                             # 渲染的图像应调整到的大小，以像素为单位（例如 512）。</span></span>
+<span class="line"><span># 将已渲染地图（保存到文件）通过Discord/Telegram Bridge发送到Discord/Telegram频道（Discord/Telegram Bridge必须已激活并完成配置！）</span></span>
+<span class="line"><span># 你需要激活 Save_To_File 才能使用此功能。</span></span>
+<span class="line"><span># 我们同时建议打开调整大小功能。</span></span>
+<span class="line"><span>Send_Rendered_To_Discord = false</span></span>
+<span class="line"><span>Send_Rendered_To_Telegram = false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 定期记录当前的玩家列表到文件中。</span></span>
+<span class="line"><span>[ChatBot.PlayerListLogger]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>File = &quot;playerlog.txt&quot;</span></span>
+<span class="line"><span>Delay = 60.0                                # （单位：秒）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 通过游戏中的私聊向机器人发送MCC控制台命令</span></span>
+<span class="line"><span># 你需要先配置好[ChatFormat]章节的设置，并在[Main.Advanced.bot_owners]中添加自己的账号。</span></span>
+<span class="line"><span># /!\ 服务器管理员可以以任意玩家的身份发送任意消息，仅在信任他们时启用本功能。</span></span>
+<span class="line"><span>[ChatBot.RemoteControl]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>AutoTpaccept = true</span></span>
+<span class="line"><span>AutoTpaccept_Everyone = false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 使用&quot;/replay start&quot;开始记录游戏，并在之后使用 Replay Mod (https://www.replaymod.com/) 进行重放。</span></span>
+<span class="line"><span># 请注意，由于技术限制，玩家自身不会显示在重放文件中。</span></span>
+<span class="line"><span># /!\ 你应该使用&quot;/replay stop&quot;停止记录或者使用&quot;/quit&quot;退出程序，否则回放文件可能会损坏。</span></span>
+<span class="line"><span>[ChatBot.ReplayCapture]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Backup_Interval = 300.0                     # 每间隔多少秒自动保存一次回放文件，以秒为单位。使用-1禁用自动保存。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 在加入服务器时、到达特定时间时或以设定的时间间隔执行命令或脚本文件</span></span>
+<span class="line"><span># 详细使用方法请查看：https://mccteam.github.io/g/bots/#script-scheduler</span></span>
+<span class="line"><span>[ChatBot.ScriptScheduler]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.ScriptScheduler.TaskList]]</span></span>
+<span class="line"><span>Task_Name = &quot;Task Name 1&quot;</span></span>
+<span class="line"><span>Trigger_On_First_Login = false</span></span>
+<span class="line"><span>Trigger_On_Login = false</span></span>
+<span class="line"><span>Trigger_On_Times = { Enable = true, Times = [ 14:00:00, ] }</span></span>
+<span class="line"><span>Trigger_On_Interval = { Enable = true, MinTime = 3.6, MaxTime = 4.8 }</span></span>
+<span class="line"><span>Action = &quot;send /hello&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[[ChatBot.ScriptScheduler.TaskList]]</span></span>
+<span class="line"><span>Task_Name = &quot;Task Name 2&quot;</span></span>
+<span class="line"><span>Trigger_On_First_Login = false</span></span>
+<span class="line"><span>Trigger_On_Login = true</span></span>
+<span class="line"><span>Trigger_On_Times = { Enable = false, Times = [ ] }</span></span>
+<span class="line"><span>Trigger_On_Interval = { Enable = false, MinTime = 1.0, MaxTime = 10.0 }</span></span>
+<span class="line"><span>Action = &quot;send /login pass&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 这个 Chatbot 可以让你通过Telegram机器人使用Telegram频道或私聊来与MCC交互。</span></span>
+<span class="line"><span># /!\ 注意：你不能从群组对话发送信息和指令，你只能从私人信息发送，但你可以从客户端取得群组对话的信息。</span></span>
+<span class="line"><span># -----------------------------------------------------------</span></span>
+<span class="line"><span># 配置：</span></span>
+<span class="line"><span># 首先你需要创建一个Telegram机器人并取得API密钥。请到Telegram找到@botfather</span></span>
+<span class="line"><span># 点击开始按钮，阅读机器人的信息，然后输入 &quot;/newbot&quot;。@botfather 将会引导你创建机器人。</span></span>
+<span class="line"><span># 当成功创建机器人后，复制API钥匙，然后贴在 &quot;ChatBot.TelegramBridge&quot; 部分中的 &quot;Token&quot; 字段（本部分）</span></span>
+<span class="line"><span># /!\ 请勿与任何人分享API密钥，并将它存储在安全的地方。</span></span>
+<span class="line"><span># 然后启动客户端和你的Telegram，在Telegram中寻找你新创建的机器人并与机器人打开私人信息。</span></span>
+<span class="line"><span># 点击开始按钮，输入并发送 &quot;.chatid&quot; 指令来获得聊天室ID。</span></span>
+<span class="line"><span># 复制聊天室ID （例子：2627844670），然后贴在 &quot;ChannelId&quot; 字段和 &quot;Authorized_Chat_Ids&quot; 字段 （&quot;Authorized_Chat_Ids&quot; 字段是一个数字而不是字符串），存储配置文档。</span></span>
+<span class="line"><span># 现在你可以通过私聊信息来使用机器人。</span></span>
+<span class="line"><span># /!\ 如果你没有将聊天室ID加到 &quot;Authorized_Chat_Ids&quot; 字段，任何找到你的机器人的人将能够运行指令和发送信息！</span></span>
+<span class="line"><span># /!\ &quot;Authorized_Chat_Ids&quot; 字段中的ID应该是一个数字而不是字符串！</span></span>
+<span class="line"><span># -----------------------------------------------------------</span></span>
+<span class="line"><span># 注意：如果你希望通过群组来接收信息，将群组暂时改为公开，邀请你的机器人到群组并给与机器人管理员权限，最后将群组改为私人。</span></span>
+<span class="line"><span># 然后将 &quot;ChannelId&quot; 字段设为 @群组名称（必须包括@，例子：&quot;@mysupersecretchannel&quot;），你可以在频道邀请链接看到这个用户名。</span></span>
+<span class="line"><span># /!\ 只需包含用户名加上@在前面，不需要包括剩下的链接。例如你的链接是 &quot;https://t.me/mysupersecretchannel&quot;，&quot;ChannelId&quot; 字段将会是 &quot;@mysupersecretchannel&quot;。</span></span>
+<span class="line"><span># /!\ 注意，你将不能从群组发送信息到客户端！</span></span>
+<span class="line"><span># -----------------------------------------------------------</span></span>
+<span class="line"><span># 如何使用：</span></span>
+<span class="line"><span># 希望运行MCC指令时，在指令前加上点 &quot;.&quot;。例如 &quot;.move 143 64 735&quot;。</span></span>
+<span class="line"><span># 希望发送聊天信息时，只需要直接发送就好了。</span></span>
+<span class="line"><span>[ChatBot.TelegramBridge]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Token = &quot;your bot token here&quot;               # 你的Telegram机器人的令牌。</span></span>
+<span class="line"><span>ChannelId = &quot;&quot;                              # 你想要使机器人与 MCC 交互的频道ID。</span></span>
+<span class="line"><span>Authorized_Chat_Ids = [ ]                   # 允许发送信息和运行指令的聊天室ID列表。要获得你的私人聊天室ID，请在 Telegram 中使用 &quot;.chatid&quot; 指令。</span></span>
+<span class="line"><span>Message_Send_Timeout = 3                    # 如果信息无法被发送至Telegram时，要等候多少秒才取消发送。（最小 1 秒）</span></span>
+<span class="line"><span># 消息格式</span></span>
+<span class="line"><span># 使用 { 和 } 包裹的单词将在代码执行过程中被替换，请不要更改它们！</span></span>
+<span class="line"><span># 例如，{message} 将替换为实际的消息，{username} 将替换为用户名， {timestamp} 将替换为当前时间。</span></span>
+<span class="line"><span># 了解Telegram消息格式，请访问：https://mccteam.github.io/r/tg-fmt.html</span></span>
+<span class="line"><span>PrivateMessageFormat = &quot;*(Private Message)* {username}: {message}&quot;</span></span>
+<span class="line"><span>PublicMessageFormat = &quot;{username}: {message}&quot;</span></span>
+<span class="line"><span>TeleportRequestMessageFormat = &quot;A new Teleport Request from **{username}**!&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 一个收集掉落物的Chat Bot。</span></span>
+<span class="line"><span>[ChatBot.ItemsCollector]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Collect_All_Item_Types = true               # 如果被设置为true，则机器人会拾取所有的掉落物，无论其类型如何。如果您需要使用掉落物白名单，请将该选项设置为false。</span></span>
+<span class="line"><span>Items_Whitelist = [ &quot;Diamond&quot;, &quot;NetheriteIngot&quot;, ] # 在这个列表中，您可以指定机器人要有目标地拾取某些掉落物。要启用该选项，请将Collect_All_Item_Types设为false。（PS：这并不能阻止机器人意外地拾取其他掉落物，它只是前往它发现掉落物的位置。）\n您可以参照掉落物类型列表：https://raw.githubusercontent.com/MCCTeam/Minecraft-Console-Client/master/MinecraftClient/Inventory/ItemType.cs</span></span>
+<span class="line"><span>Delay_Between_Tasks = 300                   # 机器人扫描掉落物的延迟，以毫秒为单位。（推荐：300~500ms左右）</span></span>
+<span class="line"><span>Collection_Radius = 30.0                    # 机器人搜寻掉落物的半径。（默认：30格）</span></span>
+<span class="line"><span>Always_Return_To_Start = true               # 如果您将其设置为true，则机器人会在拾取完所有掉落物后返回起始位置。</span></span>
+<span class="line"><span>Prioritize_Clusters = false                 # 如果设置为 true，机器人将会在收集完所有物品之后处理，而不是收集一次就处理</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 通过Web Sockets来远程控制MCC机器人.\n# 在远程和异步执行MCC中的程序很有用.\n# JavaScript示例: https://github.com/milutinke/MCC.js.git\n# 协议规范很快将会在文档种提供</span></span>
+<span class="line"><span>[ChatBot.WebSocketBot]</span></span>
+<span class="line"><span>Enabled = false</span></span>
+<span class="line"><span>Ip = &quot;127.0.0.1&quot;                            # WebSocket服务器监听的IP地址</span></span>
+<span class="line"><span>Port = 8043                                 # Websocket服务器绑定的端口</span></span>
+<span class="line"><span>Password = &quot;1f635d72954d451383a6f2629f450f8c&quot; # 密码会用于Web Socket服务器的身份验证（建议修改默认密码并设置一个强密码）</span></span>
+<span class="line"><span>DebugMode = false                           # 此选项适用于使用Chat Bot远程执行程序/命令/函数</span></span>
+<span class="line"><span>AllowIpAlias = false                        # 允许 IP 别名，如 &quot;localhost&quot;；如果使用容器，则可以使用容器名称...</span></span></code></pre><button class="code-block-unfold-btn"></button></div><hr><h2 id="附-账号列表-​" tabindex="-1">附：账号列表 <a href="#%E9%99%84%E8%B4%A6%E5%8F%B7%E5%88%97%E8%A1%A8">​</a> <a class="header-anchor" href="#附-账号列表-​" aria-label="Permalink to &quot;附：账号列表 [​](#附账号列表)&quot;">​</a></h2><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>HEBAIJU</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://web.hebaiju.cn/posts/260124-3c3u-config" target="_blank" title="本文链接">https://web.hebaiju.cn/posts/260124-3c3u-config</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/260319-blog" class="post-nav-prev" title="旧日记"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">旧日记</span></a></div><div class="post-nav-item"><a href="/posts/251207-ESP8266AC-IR-Control" class="post-nav-next" title="ESP8266控制空调"><span class="title truncate" text="sm">ESP8266控制空调</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template class="mt-4 lg:hidden"></template><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-134607ee><div class="content" data-v-134607ee><div class="outline-title" data-v-134607ee>本页</div><div class="outline-marker" data-v-134607ee></div><nav aria-labelledby="doc-outline-aria-label" data-v-134607ee><span id="doc-outline-aria-label" class="visually-hidden" data-v-134607ee> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-134607ee data-v-9d599344><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2025 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>HEBAIJU</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.11</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.11</span></span></div><!--[--><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://web.hebaiju.cn/#identity","@type":"Person","name":"HEBAIJU","url":"https://web.hebaiju.cn/","image":{"@id":"https://web.hebaiju.cn/#/schema/image/1"},"sameAs":["/atom.xml","https://github.com/Hebaiju","https://space.bilibili.com/3546981114841718","mailto:wbix@qq.com"]},{"@id":"https://web.hebaiju.cn/#website","@type":"WebSite","dateModified":"2026-02-24","datePublished":"2026-02-24","inLanguage":"zh-CN","name":"3C3U-金萝卜组织文档贰","url":"https://web.hebaiju.cn/","publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#webpage","@type":"WebPage","dateModified":"2026-02-24T00:00:00.000Z","datePublished":"2026-02-24T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","name":"3C3U-金萝卜组织文档贰","url":"https://web.hebaiju.cn/","about":{"@id":"https://web.hebaiju.cn/#identity"},"isPartOf":{"@id":"https://web.hebaiju.cn/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://web.hebaiju.cn/"]}]},{"@id":"https://web.hebaiju.cn/#article","dateModified":"2026-02-24T00:00:00.000Z","datePublished":"2026-02-24T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","headline":"3C3U-金萝卜组织文档贰","inLanguage":"zh-CN","thumbnailUrl":"https://pic1.imgdb.cn/i/0342DbvtwTXWm9CQVrF9X0.png","@type":["Article","BlogPosting"],"author":{"@id":"https://web.hebaiju.cn/#/schema/person/1"},"image":{"@id":"https://web.hebaiju.cn/#/schema/image/2"},"isPartOf":{"@id":"https://web.hebaiju.cn/#webpage"},"mainEntityOfPage":{"@id":"https://web.hebaiju.cn/#webpage"},"publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#/schema/person/1","@type":"Person","name":"HEBAIJU","url":"https://valaxy.site"},{"@id":"https://web.hebaiju.cn/#/schema/image/1","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg"},{"@id":"https://web.hebaiju.cn/#/schema/image/2","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342DbvtwTXWm9CQVrF9X0.png","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342DbvtwTXWm9CQVrF9X0.png"}]}</script>
+  
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.By6FC1Cu.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.BTQirQJB.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.C1-1dNXk.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.YUHqddSK.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BHwonxou.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CPXCB7Nr.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.R6iBPCna.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.B77LU5n3.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/251207-ESP8266AC-IR-Control.VoYZCvbP.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESP8266控制空调 - 鹤白居的小站</title>
+<script>LA.init({id:"3Ny1uac0PW8pSlg2",ck:"3Ny1uac0PW8pSlg2",autoTrack:true,screenRecord:true})</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="鹤白居的小站">
+<meta property="og:title" content="ESP8266控制空调">
+<meta property="og:image" content="https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://web.hebaiju.cn/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.11">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-f6b5dd64><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-f6b5dd64><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-f6b5dd64><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-f6b5dd64><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-f6b5dd64><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="文章" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><a href="/links/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="友链" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-link"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-f6b5dd64><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-f6b5dd64><!----><span class="font-light truncate">鹤白居的小站</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-f6b5dd64><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-f6b5dd64><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-f6b5dd64><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg" alt="avatar"><span class="site-author-status absolute" title="小破站建设中">😁</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">HEBAIJU</a><a href="/about/site" class="site-name text-lg leading-loose">鹤白居的小站</a><h4 class="site-subtitle block op-70" text="xs">Next Generation Static Blog Framework.</h4><div class="site-description">鹤白居的个人博客，记录生活与学习。</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">9</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">5</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">13</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/Hebaiju" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://space.bilibili.com/3546981114841718" title="哔哩哔哩" target="_blank" style="color:#FF8EB3;"><div class="i-ri-bilibili-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:wbix@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1;"><div class="i-ri-mail-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/archives/" class="va-link link-item yun-icon-btn" inline-flex title="归档" style="color:dodgerblue;"><!--[--><div class="i-ri-archive-line icon size-6"></div><!--]--></a><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="友链" style="color:coral;"><!--[--><div class="i-ri-link-m icon size-6"></div><!--]--></a><a href="/nav-link/" class="va-link link-item yun-icon-btn" inline-flex title="快捷链接" style="color:mediumspringgreen;"><!--[--><div class="i-ri-global-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template></template><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">ESP8266控制空调</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-12-09 00:00:00"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-12-09</time></span><!----></div><!--[--><!--]--><div class="inline-flex-center gap-4"><!----><div class="inline-flex gap-4" text="sm" h="5"><!----><!----></div><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=Code" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>Code</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=%E7%BC%96%E7%A8%8B" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>编程</span></a><a href="/tags/?tag=ESP8266" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ESP8266</span></a><a href="/tags/?tag=%E9%A1%B9%E7%9B%AE" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>项目</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><h2 id="项目介绍-​" tabindex="-1">项目介绍 <a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">​</a> <a class="header-anchor" href="#项目介绍-​" aria-label="Permalink to &quot;项目介绍 [​](#项目介绍)&quot;">​</a></h2><p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控制，从而实现对空调的控制。可以查看上一篇文章<a href="./251013-ESP8266DormitorySmartDoor">「宿舍智能门」 - 鹤白居的小站</a></p><p>此项目源代码来源于B站博主<a href="https://space.bilibili.com/107884665" target="_blank" rel="noreferrer">DIY大白</a>的视频<a href="https://www.bilibili.com/video/BV1JE411J77j/?share_source=copy_web&amp;vd_source=c1934f3384f795e39369baf360bcb94c" target="_blank" rel="noreferrer">ESP8266红外遥控格力空调</a>。首先感谢博主的开源精神，我将基于该原博主进行代码升级和功能优化。</p><hr><h2 id="开始-​" tabindex="-1">开始 <a href="#%E5%BC%80%E5%A7%8B">​</a> <a class="header-anchor" href="#开始-​" aria-label="Permalink to &quot;开始 [​](#开始)&quot;">​</a></h2><h2 id="材料准备-​" tabindex="-1">材料准备 <a href="#%E6%9D%90%E6%96%99%E5%87%86%E5%A4%87">​</a> <a class="header-anchor" href="#材料准备-​" aria-label="Permalink to &quot;材料准备 [​](#材料准备)&quot;">​</a></h2><table><thead><tr><th>名称</th><th>数量</th></tr></thead><tbody><tr><td>ESP8266</td><td>1</td></tr><tr><td>红外LED</td><td>1</td></tr><tr><td>杜邦线</td><td>若干</td></tr></tbody></table><p>注意需要红外LED，分辨方法，通电之后肉眼看不见白光，而是只能使用手机摄像头能看见微弱的红光。</p><p>当然你仍然可以基于以前的<a href="https://www.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor" target="_blank" rel="noreferrer">开源项目-「宿舍智能门」 - 鹤白居的小站</a>来继续在被控制端进行增加功能。这一次将使用RX引脚，兼容之前的项目。复用了这一段端口</p><h2 id="接线方法-​" tabindex="-1">接线方法 <a href="#%E6%8E%A5%E7%BA%BF%E6%96%B9%E6%B3%95">​</a> <a class="header-anchor" href="#接线方法-​" aria-label="Permalink to &quot;接线方法 [​](#接线方法)&quot;">​</a></h2><p>红外LED长针连接ESP8266的RX引脚如下图的 <strong>7 GPIO3 U0RXD</strong>,短针连接在GND。</p><p><img src="https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png" alt="ESP826601s引脚.png"><img src="https://pic1.imgdb.cn/i/0342DbwHd48GSPQUsGZuJg.jpg" alt="ESP8266引脚.jpg"></p><h2 id="测试代码-​" tabindex="-1">测试代码 <a href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81">​</a> <a class="header-anchor" href="#测试代码-​" aria-label="Permalink to &quot;测试代码 [​](#测试代码)&quot;">​</a></h2><p>接下来，你就可以连接上电脑来刷写下面的测试代码，来测试是否能够点亮led</p><p>你通过串口需要向esp8266发送字符串 on 或者 off，然后通过手机摄像头，对准led观察是否有红色的闪光。多测试几次</p><p>当然你先需要安装下面的库文件。有疑问可以复制发送给ai，咨询什么是库文件，怎么安装，这里不做阐述。</p><p>注意</p><p>注意应为复用RX引脚，所以在下述刷代码的时候请不要连接任何设备在GPIO3，否则刷写不成功。</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>// 红外灯的测试配置</span></span>
+<span class="line"><span>// 正极连接esp8266D2 负极连接GND</span></span>
+<span class="line"><span>#include &lt;IRremoteESP8266.h&gt;</span></span>
+<span class="line"><span>#include &lt;IRsend.h&gt;</span></span>
+<span class="line"><span>#include &lt;ir_Coolix.h&gt;</span><span>  // 确保包含Coolix协议支持</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 引脚定义（ESP8266 D2=GPIO4；ESP32 D5=GPIO14）</span></span>
+<span class="line"><span>const uint16_t kIrLed = 3;  // ESP8266用3</span></span>
+<span class="line"><span>IRsend irsend(kIrLed);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void setup() {</span></span>
+<span class="line"><span>  Serial.begin(115200);</span></span>
+<span class="line"><span>  irsend.begin();  // 初始化红外发送</span></span>
+<span class="line"><span>  Serial.println(&quot;设备启动，输入 &#39;on&#39; 发送开机码，&#39;off&#39; 发送关机码&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void loop() {</span></span>
+<span class="line"><span>  if (Serial.available() &gt; 0) {</span></span>
+<span class="line"><span>    String cmd = Serial.readStringUntil(&#39;\n&#39;);</span></span>
+<span class="line"><span>    cmd.trim();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // 发送Coolix 48位开机码（适配sendCoolix48函数）</span></span>
+<span class="line"><span>    if (cmd == &quot;on&quot;) {</span></span>
+<span class="line"><span>      irsend.sendCoolix48(0xB20800000000, 48);  // 48位Coolix开机测试码</span></span>
+<span class="line"><span>      Serial.println(&quot;已发送开机码，查看LED是否闪烁&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    // 发送Coolix 48位关机码</span></span>
+<span class="line"><span>    else if (cmd == &quot;off&quot;) {</span></span>
+<span class="line"><span>      irsend.sendCoolix48(0xB20801000000, 48);  // 48位Coolix关机测试码</span></span>
+<span class="line"><span>      Serial.println(&quot;已发送关机码，查看LED是否闪烁&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    else {</span></span>
+<span class="line"><span>      Serial.println(&quot;未知指令，请输入 &#39;on&#39; 或 &#39;off&#39;&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  delay(50);</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="恭喜你-​" tabindex="-1">恭喜你 <a href="#%E6%81%AD%E5%96%9C%E4%BD%A0">​</a> <a class="header-anchor" href="#恭喜你-​" aria-label="Permalink to &quot;恭喜你 [​](#恭喜你)&quot;">​</a></h2><p>已经完成1/2，</p><p>下面是B站博主的源代码，不能直接使用，我将基于此进行修改合并</p><p>B站博主的源代码</p><p><a href="https://liveou.lanzoue.com/io0Pz3d4xmta" target="_blank" rel="noreferrer">这是博主的文件包</a></p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>//这个源代码来源于B站，我将基于此进行修改</span></span>
+<span class="line"><span>#define BLINKER_WIFI//通讯方式</span></span>
+<span class="line"><span>#include &lt;Blinker.h&gt;</span></span>
+<span class="line"><span>#include &lt;IRsend.h&gt;</span></span>
+<span class="line"><span>#include &lt;IRremoteESP8266.h&gt;</span></span>
+<span class="line"><span>#include &lt;ir_Coolix.h&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>char auth[] = &quot;&quot;;//这里填写设备密钥</span></span>
+<span class="line"><span>char ssid[] = &quot;&quot;;//这里填写wifi</span></span>
+<span class="line"><span>char pswd[] = &quot;&quot;;//这里填写wifi码</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//暂存温度数据</span></span>
+<span class="line"><span>int nowtemp = 25;</span></span>
+<span class="line"><span>int num_Fan = 5;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//新建组件对象</span></span>
+<span class="line"><span>BlinkerNumber NUM1(&quot;settemp&quot;);//温度数据组件</span></span>
+<span class="line"><span>BlinkerButton Midea_power(&quot;btn-pwr&quot;);//电源开关组件</span></span>
+<span class="line"><span>BlinkerButton Midea_setFan(&quot;btn-fan&quot;);//风速组件</span></span>
+<span class="line"><span>BlinkerButton Midea_cool(&quot;btn-cool&quot;);//制冷模式组件</span></span>
+<span class="line"><span>BlinkerButton Midea_dry(&quot;btn-dry&quot;);//干燥模式组件</span></span>
+<span class="line"><span>BlinkerButton Midea_hot(&quot;btn-hot&quot;);//制热模式组件</span></span>
+<span class="line"><span>BlinkerButton Midea_auto(&quot;btn-auto&quot;);//自动模式组件</span></span>
+<span class="line"><span>BlinkerSlider Slider1(&quot;ran-wen&quot;);//温度调节滑块</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//使用ESP32的D5针脚，如果你使用的是ESP8266,则把&quot;5&quot;改&quot;4&quot;即ESP8266的D2针脚</span></span>
+<span class="line"><span>const uint16_t kIrLed = 4;</span></span>
+<span class="line"><span>IRCoolixAC ac(kIrLed);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void printState() {</span></span>
+<span class="line"><span>  Serial.println(&quot;Coolix A/C remote is in the following state:&quot;);</span></span>
+<span class="line"><span>  Serial.printf(&quot;  %s\n&quot;, ac.toString().c_str());</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//初始化</span></span>
+<span class="line"><span>void setup()</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  Serial.begin(115200);</span></span>
+<span class="line"><span>  BLINKER_DEBUG.stream(Serial);</span></span>
+<span class="line"><span>  ac.begin();</span></span>
+<span class="line"><span>  Midea_power.attach(Midea_power_callback);</span></span>
+<span class="line"><span>  Midea_setFan.attach(Midea_setFan_callback);</span></span>
+<span class="line"><span>  Midea_cool.attach(Midea_cool_callback);</span></span>
+<span class="line"><span>  Midea_dry.attach(Midea_dry_callback);</span></span>
+<span class="line"><span>  Midea_hot.attach(Midea_hot_callback);</span></span>
+<span class="line"><span>  Midea_auto.attach(Midea_auto_callback);</span></span>
+<span class="line"><span>  Slider1.attach(slider1_callback);</span></span>
+<span class="line"><span>  Serial.println(&quot;Default state of the remote.&quot;);</span></span>
+<span class="line"><span>  printState();</span></span>
+<span class="line"><span>  Serial.println(&quot;Setting desired state for A/C.&quot;);</span></span>
+<span class="line"><span>  Blinker.attachHeartbeat(heartbeat);</span></span>
+<span class="line"><span>  Blinker.begin(auth, ssid, pswd);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void loop()</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  Blinker.run();</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//电源开关</span></span>
+<span class="line"><span>void Midea_power_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  BLINKER_LOG(&quot;get button state: &quot;, state);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_ON)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.on();</span></span>
+<span class="line"><span>    ac.setMode(kCoolixCool);</span></span>
+<span class="line"><span>    ac.setTemp(25);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>    Midea_power.icon(&quot;fal fa-power-off&quot;);</span></span>
+<span class="line"><span>    Midea_power.color(&quot;#00FF00&quot;);</span></span>
+<span class="line"><span>    Midea_power.text(&quot;开&quot;);</span></span>
+<span class="line"><span>    Midea_power.print(&quot;on&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  else if (state == BLINKER_CMD_OFF)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.off();</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>    Midea_power.icon(&quot;fal fa-power-off&quot;);</span></span>
+<span class="line"><span>    Midea_power.color(&quot;#FF0000&quot;);</span></span>
+<span class="line"><span>    Midea_power.text(&quot;关&quot;);</span></span>
+<span class="line"><span>    Midea_power.print(&quot;off&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//电源开关</span></span>
+<span class="line"><span>void slider1_callback(int32_t value)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  BLINKER_LOG(&quot;get slider value: &quot;, value);</span></span>
+<span class="line"><span>  nowtemp = value;</span></span>
+<span class="line"><span>  NUM1.print(nowtemp);</span></span>
+<span class="line"><span>  ac.setTemp(nowtemp);</span></span>
+<span class="line"><span>  ac.send();</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//风速心跳包</span></span>
+<span class="line"><span>void heartbeat()</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  switch (num_Fan)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    case 1:</span></span>
+<span class="line"><span>      Midea_setFan.text(&quot;静音&quot;);</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    case 2:</span></span>
+<span class="line"><span>      Midea_setFan.text(&quot;低速&quot;);</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    case 3:</span></span>
+<span class="line"><span>      Midea_setFan.text(&quot;中速&quot;);</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    case 4:</span></span>
+<span class="line"><span>      Midea_setFan.text(&quot;高速&quot;);</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      case 5:</span></span>
+<span class="line"><span>      Midea_setFan.text(&quot;自动&quot;);</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  Midea_setFan.print();</span></span>
+<span class="line"><span>  NUM1.print(nowtemp);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//风速按钮</span></span>
+<span class="line"><span>void Midea_setFan_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_BUTTON_TAP)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    num_Fan++;</span></span>
+<span class="line"><span>    if (num_Fan &gt;= 6)</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      num_Fan = 1;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    switch (num_Fan)</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      case 1:</span></span>
+<span class="line"><span>        ac.setFan(kCoolixFanFixed);</span></span>
+<span class="line"><span>        Midea_setFan.text(&quot;静音&quot;);</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      case 2:</span></span>
+<span class="line"><span>        ac.setFan(kCoolixFanMin);</span></span>
+<span class="line"><span>        Midea_setFan.text(&quot;低速&quot;);</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      case 3:</span></span>
+<span class="line"><span>        ac.setFan(kCoolixFanMed);</span></span>
+<span class="line"><span>        Midea_setFan.text(&quot;中速&quot;);</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      case 4:</span></span>
+<span class="line"><span>        ac.setFan(kCoolixFanMax);</span></span>
+<span class="line"><span>        Midea_setFan.text(&quot;高速&quot;);</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span>        </span></span>
+<span class="line"><span>      case 5:</span></span>
+<span class="line"><span>        ac.setFan(kCoolixFanAuto0);</span></span>
+<span class="line"><span>        Midea_setFan.text(&quot;自动&quot;);</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    Midea_setFan.print();</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//制冷模式</span></span>
+<span class="line"><span>void Midea_cool_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_BUTTON_TAP)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.setMode(kCoolixCool);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//干燥模式</span></span>
+<span class="line"><span>void Midea_dry_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_BUTTON_TAP)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.setMode(kCoolixDry);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//制热模式</span></span>
+<span class="line"><span>void Midea_hot_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_BUTTON_TAP)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.setMode(kCoolixHeat);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//自动模式</span></span>
+<span class="line"><span>void Midea_auto_callback(const String &amp;state)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  if (state == BLINKER_CMD_BUTTON_TAP)</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    ac.setMode(kCoolixAuto);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//空调温度</span></span>
+<span class="line"><span>void Slider1_callback(int32_t value)</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  BLINKER_LOG(&quot;get slider value: &quot;, value);</span></span>
+<span class="line"><span>  nowtemp=value;</span></span>
+<span class="line"><span>  NUM1.print(nowtemp);</span></span>
+<span class="line"><span>    ac.setTemp(nowtemp);</span></span>
+<span class="line"><span>    ac.send();</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>B站博主的BLINKER里面的界面配置，可以直接导入。</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>{¨config¨{¨headerColor¨¨transparent¨¨headerStyle¨¨dark¨¨background¨{¨img¨¨assets/img/bg/1.jpg¨}}¨dashboard¨|{¨type¨¨btn¨¨ico¨¨fal fa-air-conditioner¨¨mode¨Ê¨t0¨´关´¨t1¨¨文本2¨¨bg¨Ë¨cols¨Ë¨rows¨Ë¨key¨¨btn-pwr¨´x´É´y´Ê¨speech¨|÷¨lstyle¨É¨clr¨¨#EA0909¨}{ß9¨num¨ßE¨温度¨ßB¨fal fa-thermometer-three-quarters¨ßO¨#076EEF¨¨min¨É¨max¨¤U¨uni¨´℃´ßHËßIÍßJËßK¨settemp¨´x´Í´y´ÊßM|÷ßNË¨rt¨»}{ß9¨ran¨ßEßRßO¨#00A90C¨ßV¤UßU¤HßHËßIÑßJËßK¨ran-wen¨´x´É´y´ÎßM|÷ßNË}{ß9ßAßB¨fal fa-fan¨ßDÉßE¨风速¨ßFßGßHËßIËßJËßK¨btn-fan¨´x´Ë´y´ÊßM|÷ßNÉßOßa}{ß9ßAßB¨fad fa-sun¨ßDÉßE¨干燥¨ßFßGßHËßIËßJËßK¨btn-dry¨´x´Ë´y´ÌßM|÷ßO¨#FBA613¨}{ß9ßAßB¨fad fa-fire-alt¨ßDÉßE¨制热¨ßFßGßHËßIËßJËßK¨btn-hot¨´x´Í´y´ÌßM|÷ßOßP}{ß9ßAßB¨fad fa-snowflakes¨ßDÉßE¨制冷¨ßFßGßHËßIËßJËßK¨btn-cool¨´x´É´y´ÌßM|÷ßOßT}{ß9ßAßB¨fad fa-user-robot¨ßDÉßE¨自动¨ßFßGßHËßIËßJËßK¨btn-auto¨´x´Ï´y´ÌßM|÷ßOßa}{ß9¨deb¨ßDÉßHÉßIÑßJÌßK¨debug¨´x´É´y´¤AßM|÷ßNÉ}÷ßY|ßX÷}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="正式开始刷写代码-​" tabindex="-1">正式开始刷写代码 <a href="#%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%E5%88%B7%E5%86%99%E4%BB%A3%E7%A0%81">​</a> <a class="header-anchor" href="#正式开始刷写代码-​" aria-label="Permalink to &quot;正式开始刷写代码 [​](#正式开始刷写代码)&quot;">​</a></h2><p>以下代码可以直接刷写，注意安装库文件。</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>/****************************************************************************************</span></span>
+<span class="line"><span> * v2.0 —— 智能风速匹配版</span></span>
+<span class="line"><span> * 可以在其中修改，可以自己修改开机的模式</span></span>
+<span class="line"><span> * 开门+板载灯控制+开关空调，自定义空调模式</span></span>
+<span class="line"><span> ****************************************************************************************/</span></span>
+<span class="line"><span>#include &lt;Servo.h&gt;</span></span>
+<span class="line"><span>#define BLINKER_WIFI</span></span>
+<span class="line"><span>#include &lt;Blinker.h&gt;</span></span>
+<span class="line"><span>#include &lt;NTPClient.h&gt;</span></span>
+<span class="line"><span>#include &lt;WiFiUdp.h&gt;</span></span>
+<span class="line"><span>#include &lt;PubSubClient.h&gt;</span></span>
+<span class="line"><span>#include &lt;IRremoteESP8266.h&gt;</span></span>
+<span class="line"><span>#include &lt;IRsend.h&gt;</span></span>
+<span class="line"><span>#include &lt;ir_Coolix.h&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 配置 ======================</span></span>
+<span class="line"><span>const char AUTH[] = &quot;&quot;;                         //电灯科技密钥测试</span></span>
+<span class="line"><span>// const char AUTH[] = &quot;&quot;;</span><span>                      //电灯科技密钥正式</span></span>
+<span class="line"><span>const char WIFI_SSID[] = &quot;&quot;;                    //WIFI名称</span></span>
+<span class="line"><span>const char WIFI_PSWD[] = &quot;&quot;;                    //WIFI密码</span></span>
+<span class="line"><span>const char* CUSTOM_HOSTNAME = &quot;开门猫&quot;;          //设备名称</span></span>
+<span class="line"><span>const char* mqtt_server = &quot;&quot;;                   //mqtt服务器</span></span>
+<span class="line"><span>const int mqtt_port = 1883;                     //mqtt端口</span></span>
+<span class="line"><span>const char* mqtt_topic = &quot;switch/state&quot;;        //mqtt主题订阅</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 硬件 ======================</span></span>
+<span class="line"><span>const int SERVO_PIN = 0;</span></span>
+<span class="line"><span>const int ONBOARD_LED_PIN = 2;  // 低电平亮</span></span>
+<span class="line"><span>const uint16_t kIrLed = 3;</span></span>
+<span class="line"><span>const int MIN_ANGLE = 0;</span></span>
+<span class="line"><span>const int MAX_ANGLE = 90;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 参数 ======================</span></span>
+<span class="line"><span>const int OPEN_KEEP_TIME = 2000;</span></span>
+<span class="line"><span>const int MOVE_TIME = 300;</span></span>
+<span class="line"><span>const int VIBRATE_DELAY = 250;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ▼▼▼▼▼▼▼▼▼▼▼ 季节性配置区  ▼▼▼▼▼▼▼▼▼▼▼</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//    夏天制冷填: kCoolixCool 冬天制热填: kCoolixHeat 其他可选: kCoolixAuto(自动), kCoolixDry(除湿), kCoolixFan(送风) </span></span>
+<span class="line"><span>const uint8_t DEFAULT_AC_MODE = kCoolixCool; </span></span>
+<span class="line"><span>// 2. 设置默认温度:</span></span>
+<span class="line"><span>const int DEFAULT_AC_TEMP = 20;     //（16-30）         </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 3. 设置默认风速等级 (只需改这就行，硬件自动匹配):</span></span>
+<span class="line"><span>//    1=静音(Fixed)</span></span>
+<span class="line"><span>//    2=低速(Min)</span></span>
+<span class="line"><span>//    3=中速(Med)</span></span>
+<span class="line"><span>//    4=高速(Max) - 推荐夏天用这个</span></span>
+<span class="line"><span>//    5=自动(Auto)</span></span>
+<span class="line"><span>const int DEFAULT_FAN_LEVEL = 4;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 对象 ======================</span></span>
+<span class="line"><span>WiFiUDP ntpUDP;</span></span>
+<span class="line"><span>NTPClient timeClient(ntpUDP, &quot;pool.ntp.org&quot;, 8*3600, 60000);</span></span>
+<span class="line"><span>WiFiClient espClient;</span></span>
+<span class="line"><span>PubSubClient mqttClient(espClient);</span></span>
+<span class="line"><span>Servo myServo;</span></span>
+<span class="line"><span>IRsend irsend(kIrLed);</span></span>
+<span class="line"><span>IRCoolixAC ac(kIrLed);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== Blinker 组件 ======================</span></span>
+<span class="line"><span>BlinkerButton btn_servo(&quot;key-servo&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_light(&quot;key-light&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_pwr(&quot;btn-pwr&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_fan(&quot;btn-fan&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_cool(&quot;btn-cool&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_dry(&quot;btn-dry&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_hot(&quot;btn-hot&quot;);</span></span>
+<span class="line"><span>BlinkerButton btn_auto(&quot;btn-auto&quot;);</span></span>
+<span class="line"><span>BlinkerSlider slider_temp(&quot;ran-wen&quot;);</span></span>
+<span class="line"><span>BlinkerNumber NUM1(&quot;settemp&quot;);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 状态变量 ======================</span></span>
+<span class="line"><span>bool lightState = false;</span></span>
+<span class="line"><span>bool timeSynced = false;</span></span>
+<span class="line"><span>bool lightManualOverride = false;</span></span>
+<span class="line"><span>static int lastHour = -1;</span></span>
+<span class="line"><span>bool isOpening = false;</span></span>
+<span class="line"><span>unsigned long servoTimer = 0;</span></span>
+<span class="line"><span>enum ServoState { IDLE, GO_TO_90, STAY_90, GO_TO_0 } servoState = IDLE;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>bool ac_power = false;</span></span>
+<span class="line"><span>uint8_t ac_mode = kCoolixCool;</span></span>
+<span class="line"><span>uint8_t ac_temp = 25;</span></span>
+<span class="line"><span>uint8_t ac_fan = kCoolixFanAuto0; // 这个现在由函数自动管理</span></span>
+<span class="line"><span>int fan_level = 5;                // 当前等级</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 核心辅助函数 ======================</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 【新功能】智能风速设置函数：输入等级，自动设置变量和硬件指令</span></span>
+<span class="line"><span>void applyFanLevel(int level) {</span></span>
+<span class="line"><span>  if (level &lt; 1) level = 1;</span></span>
+<span class="line"><span>  if (level &gt; 5) level = 5;</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  fan_level = level; // 更新全局等级变量</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 根据等级自动匹配硬件指令</span></span>
+<span class="line"><span>  switch(fan_level) {</span></span>
+<span class="line"><span>    case 1: ac_fan = kCoolixFanFixed; break; // 静音</span></span>
+<span class="line"><span>    case 2: ac_fan = kCoolixFanMin;   break; // 低速</span></span>
+<span class="line"><span>    case 3: ac_fan = kCoolixFanMed;   break; // 中速</span></span>
+<span class="line"><span>    case 4: ac_fan = kCoolixFanMax;   break; // 高速</span></span>
+<span class="line"><span>    case 5: ac_fan = kCoolixFanAuto0; break; // 自动</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>String getModeText() {</span></span>
+<span class="line"><span>  switch(ac_mode) {</span></span>
+<span class="line"><span>    case kCoolixAuto: return &quot;自动&quot;;</span></span>
+<span class="line"><span>    case kCoolixCool: return &quot;制冷&quot;;</span></span>
+<span class="line"><span>    case kCoolixDry:  return &quot;除湿&quot;;</span></span>
+<span class="line"><span>    case kCoolixHeat: return &quot;制热&quot;;</span></span>
+<span class="line"><span>    default: return &quot;送风&quot;;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>String getFanText() {</span></span>
+<span class="line"><span>  switch(fan_level) {</span></span>
+<span class="line"><span>    case 1: return &quot;静音&quot;; case 2: return &quot;低速&quot;;</span></span>
+<span class="line"><span>    case 3: return &quot;中速&quot;; case 4: return &quot;高速&quot;; case 5: return &quot;自动&quot;;</span></span>
+<span class="line"><span>    default: return &quot;未知&quot;;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void sendAcState() {</span></span>
+<span class="line"><span>  if (!ac_power) { ac.off(); ac.send(); Serial.println(&quot;【空调】已关机&quot;); return; }</span></span>
+<span class="line"><span>  ac.on(); ac.setMode(ac_mode); ac.setTemp(ac_temp); ac.setFan(ac_fan); ac.send();</span></span>
+<span class="line"><span>  Serial.printf(&quot;【空调】已发送 → %s %d°C %s风 (等级%d)\n&quot;, getModeText().c_str(), ac_temp, getFanText().c_str(), fan_level);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void updateAppState() {</span></span>
+<span class="line"><span>  btn_light.print(lightState ? &quot;on&quot; : &quot;off&quot;);</span></span>
+<span class="line"><span>  if (ac_power) {</span></span>
+<span class="line"><span>    btn_pwr.color(&quot;#00FF00&quot;); btn_pwr.text(&quot;已开机&quot;); btn_pwr.print(&quot;on&quot;);</span></span>
+<span class="line"><span>  } else {</span></span>
+<span class="line"><span>    btn_pwr.color(&quot;#FF0000&quot;); btn_pwr.text(&quot;已关机&quot;); btn_pwr.print(&quot;off&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  NUM1.print(ac_temp); slider_temp.print(ac_temp);</span></span>
+<span class="line"><span>  btn_fan.text(getFanText()); btn_fan.print();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  String c=&quot;#CCCCCC&quot;, d=&quot;#CCCCCC&quot;, h=&quot;#CCCCCC&quot;, a=&quot;#CCCCCC&quot;;</span></span>
+<span class="line"><span>  if(ac_power){</span></span>
+<span class="line"><span>    if(ac_mode==kCoolixCool) c=&quot;#00B0FF&quot;;</span></span>
+<span class="line"><span>    if(ac_mode==kCoolixDry)  d=&quot;#FFC107&quot;;</span></span>
+<span class="line"><span>    if(ac_mode==kCoolixHeat) h=&quot;#FF5722&quot;;</span></span>
+<span class="line"><span>    if(ac_mode==kCoolixAuto) a=&quot;#4CAF50&quot;;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  btn_cool.color(c); btn_cool.print();</span></span>
+<span class="line"><span>  btn_dry.color(d);  btn_dry.print();</span></span>
+<span class="line"><span>  btn_hot.color(h);  btn_hot.print();</span></span>
+<span class="line"><span>  btn_auto.color(a); btn_auto.print();</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ... 灯光和门锁逻辑保持不变，省略以节省空间，功能与v4.1完全一致 ...</span></span>
+<span class="line"><span>void updateLightStateAccordingToTime() {</span></span>
+<span class="line"><span>  if (!timeSynced) return;</span></span>
+<span class="line"><span>  int h = timeClient.getHours();</span></span>
+<span class="line"><span>  bool shouldBeOn = (h &gt;= 8 &amp;&amp; h &lt; 12) || (h &gt;= 14 &amp;&amp; h &lt; 24);</span></span>
+<span class="line"><span>  bool currentIsOn = (digitalRead(ONBOARD_LED_PIN) == LOW);</span></span>
+<span class="line"><span>  bool newTimeSlot = (h != lastHour);</span></span>
+<span class="line"><span>  if (newTimeSlot) { lightManualOverride = false; lastHour = h; Serial.printf(&quot;【自动灯光】进入 %02d:00，清除反转\n&quot;, h); }</span></span>
+<span class="line"><span>  if (currentIsOn != shouldBeOn) {</span></span>
+<span class="line"><span>    if (lightManualOverride &amp;&amp; !newTimeSlot) return;</span></span>
+<span class="line"><span>    lightState = shouldBeOn; digitalWrite(ONBOARD_LED_PIN, lightState ? LOW : HIGH);</span></span>
+<span class="line"><span>    btn_light.print(lightState ? &quot;on&quot; : &quot;off&quot;); Serial.printf(&quot;【自动灯光】%02d:%02d → 自动%s\n&quot;, h, timeClient.getMinutes(), lightState?&quot;开&quot;:&quot;关&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>void toggleLightWithOverride() {</span></span>
+<span class="line"><span>  lightManualOverride = true; lightState = !lightState;</span></span>
+<span class="line"><span>  digitalWrite(ONBOARD_LED_PIN, lightState ? LOW : HIGH);</span></span>
+<span class="line"><span>  btn_light.print(lightState ? &quot;on&quot; : &quot;off&quot;); Serial.println(&quot;【灯光】手动反转&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>void rotateServoSequence() {</span></span>
+<span class="line"><span>  if (isOpening) return;</span></span>
+<span class="line"><span>  isOpening = true; servoState = GO_TO_90; servoTimer = millis(); myServo.write(MAX_ANGLE);</span></span>
+<span class="line"><span>  Serial.println(&quot;【门锁】开门&quot;); Blinker.print(&quot;门&quot;, &quot;开&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>void handleServoNonBlock() {</span></span>
+<span class="line"><span>  if (!isOpening) return;</span></span>
+<span class="line"><span>  if(servoState==GO_TO_90 &amp;&amp; millis()-servoTimer&gt;=VIBRATE_DELAY){ Blinker.vibrate(); servoState=STAY_90; servoTimer=millis(); }</span></span>
+<span class="line"><span>  else if(servoState==STAY_90 &amp;&amp; millis()-servoTimer&gt;=OPEN_KEEP_TIME){ myServo.write(MIN_ANGLE); Serial.println(&quot;【门锁】关门&quot;); servoState=GO_TO_0; servoTimer=millis(); }</span></span>
+<span class="line"><span>  else if(servoState==GO_TO_0 &amp;&amp; millis()-servoTimer&gt;=MOVE_TIME){ isOpening=false; servoState=IDLE; }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== setup ======================</span></span>
+<span class="line"><span>void setup() {</span></span>
+<span class="line"><span>  Serial.begin(115200);</span></span>
+<span class="line"><span>  Serial.println(F(&quot;\n=== 终极融合版 v4.2 (智能风速) ===&quot;));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  WiFi.hostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span>  pinMode(ONBOARD_LED_PIN, OUTPUT); digitalWrite(ONBOARD_LED_PIN, HIGH);</span></span>
+<span class="line"><span>  myServo.attach(SERVO_PIN); myServo.write(MIN_ANGLE);</span></span>
+<span class="line"><span>  irsend.begin(); ac.begin();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  Blinker.begin(AUTH, WIFI_SSID, WIFI_PSWD);</span></span>
+<span class="line"><span>  delay(3000); WiFi.hostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  timeClient.begin();</span></span>
+<span class="line"><span>  for(int i=0; i&lt;10; i++) { if(timeClient.forceUpdate()) { timeSynced=true; break; } delay(1000); }</span></span>
+<span class="line"><span>  if(timeSynced) Serial.println(&quot;时间同步成功&quot;);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  btn_servo.attach([](const String &amp;s) { rotateServoSequence(); });</span></span>
+<span class="line"><span>  btn_light.attach([](const String &amp;s) { toggleLightWithOverride(); });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // ========== 空调逻辑优化区 ==========</span></span>
+<span class="line"><span>  btn_pwr.attach([](const String &amp;state){</span></span>
+<span class="line"><span>    if(state==BLINKER_CMD_ON &amp;&amp; !ac_power){</span></span>
+<span class="line"><span>      ac_power = true; </span></span>
+<span class="line"><span>      // 1. 读取默认模式</span></span>
+<span class="line"><span>      ac_mode = DEFAULT_AC_MODE; </span></span>
+<span class="line"><span>      // 2. 读取默认温度</span></span>
+<span class="line"><span>      ac_temp = DEFAULT_AC_TEMP; </span></span>
+<span class="line"><span>      // 3. 读取默认等级，并自动计算硬件指令！</span></span>
+<span class="line"><span>      applyFanLevel(DEFAULT_FAN_LEVEL);</span></span>
+<span class="line"><span>      </span></span>
+<span class="line"><span>      Serial.println(&quot;【空调】一键启动(智能匹配风速)&quot;);</span></span>
+<span class="line"><span>    } else if(state==BLINKER_CMD_OFF){ ac_power=false; }</span></span>
+<span class="line"><span>    sendAcState(); updateAppState();</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  slider_temp.attach([](int32_t v){ if(ac_power){ v=constrain(v,17,30); ac_temp=v; sendAcState(); updateAppState(); }});</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  // 风速按钮：现在非常简洁，直接调用函数</span></span>
+<span class="line"><span>  btn_fan.attach([](const String &amp;s){ </span></span>
+<span class="line"><span>    if(ac_power){ </span></span>
+<span class="line"><span>      int nextLevel = (fan_level &gt;= 5) ? 1 : fan_level + 1; // 循环 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;1</span></span>
+<span class="line"><span>      applyFanLevel(nextLevel); // 一行代码搞定设置和硬件映射</span></span>
+<span class="line"><span>      sendAcState(); updateAppState(); </span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  btn_cool.attach([](const String&amp;s){if(ac_power&amp;&amp;s==BLINKER_CMD_BUTTON_TAP){ac_mode=kCoolixCool;sendAcState();updateAppState();}});</span></span>
+<span class="line"><span>  btn_dry.attach([](const String&amp;s){if(ac_power&amp;&amp;s==BLINKER_CMD_BUTTON_TAP){ac_mode=kCoolixDry;sendAcState();updateAppState();}});</span></span>
+<span class="line"><span>  btn_hot.attach([](const String&amp;s){if(ac_power&amp;&amp;s==BLINKER_CMD_BUTTON_TAP){ac_mode=kCoolixHeat;sendAcState();updateAppState();}});</span></span>
+<span class="line"><span>  btn_auto.attach([](const String&amp;s){if(ac_power&amp;&amp;s==BLINKER_CMD_BUTTON_TAP){ac_mode=kCoolixAuto;sendAcState();updateAppState();}});</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  Blinker.attachHeartbeat(updateAppState);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  mqttClient.setServer(mqtt_server, mqtt_port);</span></span>
+<span class="line"><span>  mqttClient.setCallback([](char*t,byte*p,unsigned int l){</span></span>
+<span class="line"><span>    String m=&quot;&quot;; for(unsigned int i=0;i&lt;l;i++)m+=(char)p[i];</span></span>
+<span class="line"><span>    if(m==&quot;on&quot;) rotateServoSequence(); </span></span>
+<span class="line"><span>    if(m==&quot;light&quot;) toggleLightWithOverride(); </span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  updateAppState();</span></span>
+<span class="line"><span>  Serial.println(&quot;系统就绪&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void loop() {</span></span>
+<span class="line"><span>  Blinker.run();</span></span>
+<span class="line"><span>  timeClient.update();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if(!mqttClient.connected()){</span></span>
+<span class="line"><span>    String id=&quot;ESP8266-&quot;+String(random(0xffff),HEX);</span></span>
+<span class="line"><span>    if(mqttClient.connect(id.c_str())) mqttClient.subscribe(mqtt_topic);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  mqttClient.loop();</span></span>
+<span class="line"><span>  handleServoNonBlock();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  static unsigned long lastCheck = 0;</span></span>
+<span class="line"><span>  if(millis() - lastCheck &gt;= 30000){ updateLightStateAccordingToTime(); lastCheck = millis(); }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if(Serial.available()){</span></span>
+<span class="line"><span>    String c=Serial.readStringUntil(&#39;\n&#39;); c.trim(); c.toLowerCase();</span></span>
+<span class="line"><span>    if(c==&quot;on&quot;) rotateServoSequence();</span></span>
+<span class="line"><span>    else if(c==&quot;light&quot;) toggleLightWithOverride();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>注意：这里面可以自定义默认开机的空调模式，详情见注释</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>// ▼▼▼▼▼▼▼▼▼▼▼ 季节性配置区  ▼▼▼▼▼▼▼▼▼▼▼</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//    夏天制冷填: kCoolixCool 冬天制热填: kCoolixHeat 其他可选: kCoolixAuto(自动), kCoolixDry(除湿), kCoolixFan(送风) </span></span>
+<span class="line"><span>const uint8_t DEFAULT_AC_MODE = kCoolixCool; </span></span>
+<span class="line"><span>// 2. 设置默认温度:</span></span>
+<span class="line"><span>const int DEFAULT_AC_TEMP = 20;     //（16-30）         </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 3. 设置默认风速等级 (只需改这就行，硬件自动匹配):</span></span>
+<span class="line"><span>//    1=静音(Fixed)</span></span>
+<span class="line"><span>//    2=低速(Min)</span></span>
+<span class="line"><span>//    3=中速(Med)</span></span>
+<span class="line"><span>//    4=高速(Max) - 推荐夏天用这个</span></span>
+<span class="line"><span>//    5=自动(Auto)</span></span>
+<span class="line"><span>const int DEFAULT_FAN_LEVEL = 4;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="app配置-​" tabindex="-1">APP配置 <a href="#app%E9%85%8D%E7%BD%AE">​</a> <a class="header-anchor" href="#app配置-​" aria-label="Permalink to &quot;APP配置 [​](#app配置)&quot;">​</a></h2><p>使用了可以遥控空调的代码记得使用新的app配置</p><p>如下：</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>{¨config¨{¨headerColor¨¨transparent¨¨headerStyle¨¨dark¨¨background¨{¨img¨¨assets/img/bg/f1.jpg¨¨isFull¨»}}¨dashboard¨|{¨type¨¨btn¨¨ico¨¨fal fa-air-conditioner¨¨mode¨Ê¨t0¨´关´¨t1¨¨文本2¨¨bg¨Ë¨cols¨Ë¨rows¨Ë¨key¨¨btn-pwr¨´x´É´y´Ê¨speech¨|÷¨lstyle¨É¨clr¨¨#EA0909¨}{ßA¨num¨ßF¨温度¨ßC¨fal fa-thermometer-three-quarters¨ßP¨#076EEF¨¨min¨É¨max¨¤U¨uni¨´℃´ßIËßJÍßKËßL¨settemp¨´x´Í´y´ÊßN|÷ßOË}{ßA¨ran¨ßFßSßP¨#00A90C¨ßW¤UßV¤HßIËßJÑßKËßL¨ran-wen¨´x´É´y´ÎßN|÷ßOË¨rt¨«}{ßAßBßC¨fal fa-fan¨ßEÉßF¨风速¨ßGßHßIËßJËßKËßL¨btn-fan¨´x´Ë´y´ÊßN|÷ßOÉßPßa}{ßAßBßC¨fad fa-sun¨ßEÉßF¨干燥¨ßGßHßIËßJËßKËßL¨btn-dry¨´x´Ë´y´ÌßN|÷ßP¨#FBA613¨}{ßAßBßC¨fad fa-fire-alt¨ßEÉßF¨制热¨ßGßHßIËßJËßKËßL¨btn-hot¨´x´Í´y´ÌßN|÷ßPßQ}{ßAßBßC¨fad fa-snowflakes¨ßEÉßF¨制冷¨ßGßHßIËßJËßKËßL¨btn-cool¨´x´É´y´ÌßN|÷ßPßU}{ßAßBßC¨fad fa-user-robot¨ßEÉßF¨自动¨ßGßHßIËßJËßKËßL¨btn-auto¨´x´Ï´y´ÌßN|÷ßPßa}{ßA¨deb¨ßEÉßIÉßJÑßKÍßL¨debug¨´x´É´y´¤DßN|÷ßOÊ}{ßAßBßC¨far fa-door-open¨ßEÊßF¨文本1¨ßGßHßIÊßJÍßKÍßL¨key-servo¨´x´Ë´y´ÑßPßaßOË}{ßAßBßC¨far fa-lightbulb-on¨ßEÉßF´´ßGßHßIËßJËßKËßL¨key-light¨´x´Ï´y´¤BßOÉßPßU}÷ßc|÷}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="注意-​" tabindex="-1">注意 <a href="#%E6%B3%A8%E6%84%8F">​</a> <a class="header-anchor" href="#注意-​" aria-label="Permalink to &quot;注意 [​](#注意)&quot;">​</a></h2><p>注意</p><p>直接使用esp8266RX口来驱动红外LED会有功率过于小的问题，你需要设置一个新的电路来驱动LED，可以查看B站博主的视频来构建。</p><p>不添加电路只能实现5m范围的遥控</p><p>再次提醒，因为使用了RX引脚，所以在上传代码的时候如果RX被LED占用会刷写不上代码。</p><h2 id="结束-​" tabindex="-1">结束 <a href="#%E7%BB%93%E6%9D%9F">​</a> <a class="header-anchor" href="#结束-​" aria-label="Permalink to &quot;结束 [​](#结束)&quot;">​</a></h2><p>恭喜你，现在你可以通过这个来控制空调了。</p><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>HEBAIJU</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control" target="_blank" title="本文链接">https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/260124-3c3u-config" class="post-nav-prev" title="3C3U-金萝卜组织文档贰"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">3C3U-金萝卜组织文档贰</span></a></div><div class="post-nav-item"><a href="/posts/251013-ESP8266DormitorySmartDoor" class="post-nav-next" title="开源项目-「宿舍智能门」"><span class="title truncate" text="sm">开源项目-「宿舍智能门」</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template class="mt-4 lg:hidden"></template><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-134607ee><div class="content" data-v-134607ee><div class="outline-title" data-v-134607ee>本页</div><div class="outline-marker" data-v-134607ee></div><nav aria-labelledby="doc-outline-aria-label" data-v-134607ee><span id="doc-outline-aria-label" class="visually-hidden" data-v-134607ee> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-134607ee data-v-9d599344><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2025 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>HEBAIJU</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.11</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.11</span></span></div><!--[--><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://web.hebaiju.cn/#identity","@type":"Person","name":"HEBAIJU","url":"https://web.hebaiju.cn/","image":{"@id":"https://web.hebaiju.cn/#/schema/image/1"},"sameAs":["/atom.xml","https://github.com/Hebaiju","https://space.bilibili.com/3546981114841718","mailto:wbix@qq.com"]},{"@id":"https://web.hebaiju.cn/#website","@type":"WebSite","dateModified":"2025-12-09","datePublished":"2025-12-09","inLanguage":"zh-CN","name":"ESP8266控制空调","url":"https://web.hebaiju.cn/","publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#webpage","@type":"WebPage","dateModified":"2025-12-09T00:00:00.000Z","datePublished":"2025-12-09T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","name":"ESP8266控制空调","url":"https://web.hebaiju.cn/","about":{"@id":"https://web.hebaiju.cn/#identity"},"isPartOf":{"@id":"https://web.hebaiju.cn/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://web.hebaiju.cn/"]}]},{"@id":"https://web.hebaiju.cn/#article","dateModified":"2025-12-09T00:00:00.000Z","datePublished":"2025-12-09T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","headline":"ESP8266控制空调","inLanguage":"zh-CN","thumbnailUrl":"https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png","@type":["Article","BlogPosting"],"author":{"@id":"https://web.hebaiju.cn/#/schema/person/1"},"image":{"@id":"https://web.hebaiju.cn/#/schema/image/2"},"isPartOf":{"@id":"https://web.hebaiju.cn/#webpage"},"mainEntityOfPage":{"@id":"https://web.hebaiju.cn/#webpage"},"publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#/schema/person/1","@type":"Person","name":"HEBAIJU","url":"https://valaxy.site"},{"@id":"https://web.hebaiju.cn/#/schema/image/1","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg"},{"@id":"https://web.hebaiju.cn/#/schema/image/2","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png"}]}</script>
+  
+</body>
+</html>

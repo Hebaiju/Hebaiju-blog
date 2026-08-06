@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://web.hebaiju.cn/</id>
+    <title>鹤白居的小站</title>
+    <updated>2026-08-06T06:04:30.470Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>HEBAIJU</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://web.hebaiju.cn/"/>
+    <link rel="self" href="https://web.hebaiju.cn/atom.xml"/>
+    <subtitle>鹤白居的个人博客，记录生活与学习。</subtitle>
+    <logo>https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg</logo>
+    <icon>https://web.hebaiju.cn/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2026 © HEBAIJU</rights>
+    <entry>
+        <title type="html"><![CDATA[为博客添加 Waline 评论系统]]></title>
+        <id>https://web.hebaiju.cn/posts/260408-blog-msg</id>
+        <link href="https://web.hebaiju.cn/posts/260408-blog-msg"/>
+        <updated>2026-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>终于把评论系统搞定了！趁着还有记忆，把整个过程记录下来，包括踩过的坑和最终的解决方案。</p>
+</blockquote>
+<h2>用到的工具和网站 <a href="#%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E7%BD%91%E7%AB%99">​</a></h2>
+<table>
+<thead>
+<tr>
+<th>工具/网站</th>
+<th>用途</th>
+</tr>
+</thead>
+</table>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/260408-blog-msg" target="_blank">https://web.hebaiju.cn/posts/260408-blog-msg</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-04-08T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[旧日记]]></title>
+        <id>https://web.hebaiju.cn/posts/260319-blog</id>
+        <link href="https://web.hebaiju.cn/posts/260319-blog"/>
+        <updated>2026-03-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>找到了之前的一些日记 <a href="#%E6%89%BE%E5%88%B0%E4%BA%86%E4%B9%8B%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%AE%B0">​</a></h2>
+<p>找到了之前的一些个小日记，反正都是没有多少人看。我就挂在我的网站上面吧。</p>
+<p>![日记230911.jpg](<a href="https://pic1">https://pic1</a>.</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/260319-blog" target="_blank">https://web.hebaiju.cn/posts/260319-blog</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-20T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[3C3U-金萝卜组织文档贰]]></title>
+        <id>https://web.hebaiju.cn/posts/260124-3c3u-config</id>
+        <link href="https://web.hebaiju.cn/posts/260124-3c3u-config"/>
+        <updated>2026-02-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>3C3U-金萝卜-MCC命令行客户端使用文档 <a href="#_3c3u-%E9%87%91%E8%90%9D%E5%8D%9C-mcc%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3">​</a></h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
+</blockquote>
+<p>目前本基地有正式成员4人。</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/260124-3c3u-config" target="_blank">https://web.hebaiju.cn/posts/260124-3c3u-config</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-02-24T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ESP8266控制空调]]></title>
+        <id>https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</id>
+        <link href="https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control"/>
+        <updated>2025-12-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>项目介绍 <a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">​</a></h2>
+<p>本文章基于ESP8266开发板来实现对空调的控制，基本控制原理为，通过点灯科技APP向ESP8266来发送指令，ESP8266通过库来实现对红外LED的编码控</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control" target="_blank">https://web.hebaiju.cn/posts/251207-ESP8266AC-IR-Control</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-12-09T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[开源项目-「宿舍智能门」]]></title>
+        <id>https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</id>
+        <link href="https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor"/>
+        <updated>2025-12-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>介绍 <a href="#%E4%BB%8B%E7%BB%8D">​</a></h2>
+<p>本文基于Arduino平台，点灯科技，ESP8266开发板完成宿舍智能门项目的开发。最终目标是在手机上利用点灯科技APP来实现开门关门的功能。</p>
+<h3>背景 [​]</h3>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor" target="_blank">https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-12-08T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[3C3U-金萝卜组织文档壹]]></title>
+        <id>https://web.hebaiju.cn/posts/251118-3c3u-config</id>
+        <link href="https://web.hebaiju.cn/posts/251118-3c3u-config"/>
+        <updated>2025-11-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<ul>
+<li>无规则服</li>
+<li>minecraft</li>
+</ul>
+<hr>
+<h2>3C3U-MCC命令行客户端 <a href="#_3c3u-mcc%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF">​</a></h2>
+<blockquote>
+<p>本篇文章将介绍金萝卜使用的命令行客户端，后台控制，链接等。</p>
+</blockquote>
+<p>目前</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/251118-3c3u-config" target="_blank">https://web.hebaiju.cn/posts/251118-3c3u-config</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-11-18T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的“舞台”]]></title>
+        <id>https://web.hebaiju.cn/posts/251109-MyStage</id>
+        <link href="https://web.hebaiju.cn/posts/251109-MyStage"/>
+        <updated>2025-11-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>日记 <a href="#%E6%97%A5%E8%AE%B0">​</a></h2>
+<p>这篇文章我反反复复隐藏了多次，还是公开吧。希望我的读者能学到经验。</p>
+<h3>开始 <a href="#%E5%BC%80%E5%A7%8B">​</a></h3>
+<p>2周前，我使用的是一张中国移动的8元电话卡和一张中国广电流量卡，流量卡办理也有1年了，到上个月我就意识到冲100送100的活动到期了，意味着原本19的月租现在要账10元。</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/251109-MyStage" target="_blank">https://web.hebaiju.cn/posts/251109-MyStage</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-11-09T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ESP8266实现配网]]></title>
+        <id>https://web.hebaiju.cn/posts/250726-ESP8266NetworkSetup</id>
+        <link href="https://web.hebaiju.cn/posts/250726-ESP8266NetworkSetup"/>
+        <updated>2025-07-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>ESP8266实现配网 <a href="#esp8266%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%91">​</a></h2>
+<p>我目前处于大学阶段，在参加一个社团，里面主要是做项目，比赛的一个小团队。<br>
+在这个小团队中，我主要负责的是一个项目的硬件部分，</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/250726-ESP8266NetworkSetup" target="_blank">https://web.hebaiju.cn/posts/250726-ESP8266NetworkSetup</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-07-26T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小破站成立了！]]></title>
+        <id>https://web.hebaiju.cn/posts/250725-SmallStationLaunched</id>
+        <link href="https://web.hebaiju.cn/posts/250725-SmallStationLaunched"/>
+        <updated>2025-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[搞钱，迎娶白富美，走上人生巅峰。]]></summary>
+        <content type="html"><![CDATA[<h2>小破站成立了！ <a href="#%E5%B0%8F%E7%A0%B4%E7%AB%99%E6%88%90%E7%AB%8B%E4%BA%86">​</a></h2>
+<p>  今天时间是2025年7月25日，我在<a href="https://www.hebaiju.cn">HEBAIJU的博客</a>上创建了一个我的小破站，用于记录我生</p>
+<br/><p>访问 <a href="https://web.hebaiju.cn/posts/250725-SmallStationLaunched" target="_blank">https://web.hebaiju.cn/posts/250725-SmallStationLaunched</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>HEBAIJU</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-07-01T00:00:00.000Z</published>
+    </entry>
+</feed>

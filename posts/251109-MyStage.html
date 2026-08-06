@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.By6FC1Cu.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.BTQirQJB.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.C1-1dNXk.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.YUHqddSK.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BHwonxou.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CPXCB7Nr.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.R6iBPCna.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.B77LU5n3.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/251109-MyStage.COKErdlb.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的“舞台” - 鹤白居的小站</title>
+<script>LA.init({id:"3Ny1uac0PW8pSlg2",ck:"3Ny1uac0PW8pSlg2",autoTrack:true,screenRecord:true})</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="鹤白居的小站">
+<meta property="og:title" content="我的“舞台”">
+<meta property="og:image" content="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://web.hebaiju.cn/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.11">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-f6b5dd64><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-f6b5dd64><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-f6b5dd64><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-f6b5dd64><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-f6b5dd64><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="文章" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><a href="/links/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="友链" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-link"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-f6b5dd64><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-f6b5dd64><!----><span class="font-light truncate">鹤白居的小站</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-f6b5dd64><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-f6b5dd64><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-f6b5dd64><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg" alt="avatar"><span class="site-author-status absolute" title="小破站建设中">😁</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">HEBAIJU</a><a href="/about/site" class="site-name text-lg leading-loose">鹤白居的小站</a><h4 class="site-subtitle block op-70" text="xs">Next Generation Static Blog Framework.</h4><div class="site-description">鹤白居的个人博客，记录生活与学习。</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">9</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">5</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">13</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/Hebaiju" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://space.bilibili.com/3546981114841718" title="哔哩哔哩" target="_blank" style="color:#FF8EB3;"><div class="i-ri-bilibili-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:wbix@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1;"><div class="i-ri-mail-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/archives/" class="va-link link-item yun-icon-btn" inline-flex title="归档" style="color:dodgerblue;"><!--[--><div class="i-ri-archive-line icon size-6"></div><!--]--></a><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="友链" style="color:coral;"><!--[--><div class="i-ri-link-m icon size-6"></div><!--]--></a><a href="/nav-link/" class="va-link link-item yun-icon-btn" inline-flex title="快捷链接" style="color:mediumspringgreen;"><!--[--><div class="i-ri-global-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template></template><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">我的“舞台”</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-11-09 00:00:00"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-11-09</time></span><!----></div><!--[--><!--]--><div class="inline-flex-center gap-4"><!----><div class="inline-flex gap-4" text="sm" h="5"><!----><!----></div><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E6%97%A5%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>日记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=%E5%88%86%E4%BA%AB" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>分享</span></a><a href="/tags/?tag=%E6%97%A5%E8%AE%B0" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>日记</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><h2 id="日记-​" tabindex="-1">日记 <a href="#%E6%97%A5%E8%AE%B0">​</a> <a class="header-anchor" href="#日记-​" aria-label="Permalink to &quot;日记 [​](#日记)&quot;">​</a></h2><p>这篇文章我反反复复隐藏了多次，还是公开吧。希望我的读者能学到经验。</p><h3 id="开始-​" tabindex="-1">开始 <a href="#%E5%BC%80%E5%A7%8B">​</a> <a class="header-anchor" href="#开始-​" aria-label="Permalink to &quot;开始 [​](#开始)&quot;">​</a></h3><p>2周前，我使用的是一张中国移动的8元电话卡和一张中国广电流量卡，流量卡办理也有1年了，到上个月我就意识到冲100送100的活动到期了，意味着原本19的月租现在要账10元。<!-- more -->所以我就不是很想用这一张电话卡了，在我的搜寻下我先是通过B站的广告信息了解到一张中国联通的电话号价格让我非常满意，我下单了，收到之后我发现信号确实不好，所以直接注销了。</p><p>于此同时我发现居然存在双不限（不限制流量，不限制速度）。其中一款是陕西移动的还能添加多张副卡，最多18张副卡，重要的是副卡同样不限速不限量。主卡是59一个月，相对来说这个非常不错。其中18张副卡还能加入别人的电话卡，让别人来享受这个套餐，这个位置目前老说50元/人/月。</p><p>也就是说我如果将这些位置推销出去，一月我能收租600＋，如果我想要这一张主卡那么需要2W转让费。还有一种是山西那边的电信的套餐，一样是双不限。但是只能添加一个副卡。这个性价比太低了我没有考虑。</p><p>综合之后我的想法就是我确实看上了这一张陕西的移动双不限电话卡。</p><h3 id="过程-​" tabindex="-1">过程 <a href="#%E8%BF%87%E7%A8%8B">​</a> <a class="header-anchor" href="#过程-​" aria-label="Permalink to &quot;过程 [​](#过程)&quot;">​</a></h3><p>现在了解到了有这样子的一个卡，那么我肯定想要，于是我就上B站，咸鱼平台上看有哪些是出副卡位的卖家，就私信，愿不愿意卖主卡。终于我联系到了两个卖家，表示都愿意出。只是一家出价3w一家2w，我就选择了2w的卖家。此时我冷静了2天时间，在综合考虑了收益，真实性，价格等方面后我处于一种买或者不买都可以的状态，所以我给我的父母电话联系，并且将上述的情况陈述，让他们帮忙定夺，结果不错他们心动了，表示到“你要是愿意弄，想好了我就支持你，大不了被骗了就当买个教训”，给我说了不要上当受骗还拿出来了我的另外一个“表表”上当受骗然后不回家的经历，尽管这是我们都是知道的事，我就回复等两天时间容我我再想想。</p><p>两天过去2025年11月8日上午我决定了弄一张卡，且我和卖家商量好先拍下一半然后线上过户过给我之后再付另外一半，我也防着被骗。于是我向父母电话说明我要弄，我开始向父母要钱求支持。先是给母亲电话，那时她在上班，一会回电过来表示要和父亲说清楚，我说没问题，我等父亲下班就开始电话，说明了我要弄这个。这个时候父亲就担心我上当受骗，说这2w元钱是我们要不吃不喝一个月才能赚到，开始质疑我说的事的真是信，认为我已经上当受骗。（这么好的一个东西为什么轮得到你，你要是真被骗了怎么办，怎么把钱追回来）。我想也是，因为此前我就向对方说明我需要你拍照手持身份证照片。感觉不太保险，于是我又拟定了一份电话卡转让协议。我们双方签字拍照留存，以防万一。</p><h3 id="悬念-​" tabindex="-1">悬念 <a href="#%E6%82%AC%E5%BF%B5">​</a> <a class="header-anchor" href="#悬念-​" aria-label="Permalink to &quot;悬念 [​](#悬念)&quot;">​</a></h3><p>在对方还在准备签订发送给我的时候，派出所找到了学校保卫处老师，于是联系到我，让我过去说明情况，是不是被诈骗了。这个时候我知道他们报警了，我彻底和他们说不通了。于是派出所民警和我了解情况，他说到在咸鱼上面交易上当受骗的非常的多。对于我这一件事情，他也不了解，他没有遇到过，但是他认准了一件事买卖电话卡违法，我其实想和他辩解，又想到他一个不理解这个东西的人，我给他解释又有什么用。有意思的是，他没有想到那一份合约居然还是我拟定的。他认准了买卖电话卡违法，确实我之前忘记了这一条，还说到如果他离开后被发现我仍然完成了这笔交易，他一定会追责，我承担法律责任。</p><p>确实他作为一名警察，这是他们的职责所在，我无话可说，随后给我辅导员电话，导员不在联系了一个其他老师，结果是我认识的老师就来我身边，又解释了一遍，这个老师与我年纪相仿，大不了多少，他能理解，但是他觉得没必要弄，因为在这里我只提到了这个保值的事。随后这一场比较平静的和民警的交谈就结束了。随后我便于老师一起去驿站，途中我才和他说到了还有副卡这么一件事，我感觉，他让我我这是投机取巧，不太靠谱，但是又是真实存在的。最后还说到我认为受益的一句话，要是这个钱是你的，那么你想怎么花就就怎么花。随后和父亲通话，表示我实在是没有想到你们会报警，我们的思想观念差太远了。最后这个不算愉快的通话牛草草结束。卡我不弄了，至少在我没有能力解决经济这个事情之前不会考虑。</p><h3 id="结语-​" tabindex="-1">结语 <a href="#%E7%BB%93%E8%AF%AD">​</a> <a class="header-anchor" href="#结语-​" aria-label="Permalink to &quot;结语 [​](#结语)&quot;">​</a></h3><p>这个经历太重要了，而是我深刻的体会到了我们认知的巨大鸿沟。我们是两个时代的人。其实这个可以算作一次我对父母的测验，以及对他承诺你干事只要是合理的我支持的这句话的真实性，他对于金钱的认知，对于钱的价值观，以及他能对我金钱支持的天花板。约等于0。</p><p>可以说我是彻底对他们失望了，至少说对我金钱，价值，劳动力方面和思想方面。已经严重于世界脱轨，他们的目光是多么的短浅。我明白了我是孤身一人，他们所说的他们是我的后盾这个是多么的可笑。所以我决定了我以后的任何事，我自己能解决自己解决，尽力都不能解决的，算了，这是我自己的事，不需要想着他们能帮我解决什么问题。一切都是空谈。</p><p>人生时间那么多，我还有大把的时间去试错，去撞南墙。</p><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>HEBAIJU</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://web.hebaiju.cn/posts/251109-MyStage" target="_blank" title="本文链接">https://web.hebaiju.cn/posts/251109-MyStage</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/251118-3c3u-config" class="post-nav-prev" title="3C3U-金萝卜组织文档壹"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">3C3U-金萝卜组织文档壹</span></a></div><div class="post-nav-item"><a href="/posts/250726-ESP8266NetworkSetup" class="post-nav-next" title="ESP8266实现配网"><span class="title truncate" text="sm">ESP8266实现配网</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template class="mt-4 lg:hidden"></template><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-134607ee><div class="content" data-v-134607ee><div class="outline-title" data-v-134607ee>本页</div><div class="outline-marker" data-v-134607ee></div><nav aria-labelledby="doc-outline-aria-label" data-v-134607ee><span id="doc-outline-aria-label" class="visually-hidden" data-v-134607ee> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-134607ee data-v-9d599344><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2025 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>HEBAIJU</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.11</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.11</span></span></div><!--[--><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://web.hebaiju.cn/#identity","@type":"Person","name":"HEBAIJU","url":"https://web.hebaiju.cn/","image":{"@id":"https://web.hebaiju.cn/#/schema/image/1"},"sameAs":["/atom.xml","https://github.com/Hebaiju","https://space.bilibili.com/3546981114841718","mailto:wbix@qq.com"]},{"@id":"https://web.hebaiju.cn/#website","@type":"WebSite","dateModified":"2025-11-09","datePublished":"2025-11-09","inLanguage":"zh-CN","name":"我的“舞台”","url":"https://web.hebaiju.cn/","publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#webpage","@type":"WebPage","dateModified":"2025-11-09T00:00:00.000Z","datePublished":"2025-11-09T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","name":"我的“舞台”","url":"https://web.hebaiju.cn/","about":{"@id":"https://web.hebaiju.cn/#identity"},"isPartOf":{"@id":"https://web.hebaiju.cn/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://web.hebaiju.cn/"]}]},{"@id":"https://web.hebaiju.cn/#article","dateModified":"2025-11-09T00:00:00.000Z","datePublished":"2025-11-09T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","headline":"我的“舞台”","inLanguage":"zh-CN","thumbnailUrl":"https://web.hebaiju.cn/favicon.svg","@type":["Article","BlogPosting"],"author":{"@id":"https://web.hebaiju.cn/#/schema/person/1"},"image":{"@id":"https://web.hebaiju.cn/#/schema/image/2"},"isPartOf":{"@id":"https://web.hebaiju.cn/#webpage"},"mainEntityOfPage":{"@id":"https://web.hebaiju.cn/#webpage"},"publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#/schema/person/1","@type":"Person","name":"HEBAIJU","url":"https://valaxy.site"},{"@id":"https://web.hebaiju.cn/#/schema/image/1","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg"},{"@id":"https://web.hebaiju.cn/#/schema/image/2","@type":"ImageObject","contentUrl":"https://web.hebaiju.cn/favicon.svg","inLanguage":"zh-CN","url":"https://web.hebaiju.cn/favicon.svg"}]}</script>
+  
+</body>
+</html>

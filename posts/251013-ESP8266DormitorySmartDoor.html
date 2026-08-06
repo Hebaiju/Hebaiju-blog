@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.By6FC1Cu.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.BTQirQJB.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.C1-1dNXk.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.YUHqddSK.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BHwonxou.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CPXCB7Nr.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.R6iBPCna.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.B77LU5n3.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.8JZ-ZCgZ.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/251013-ESP8266DormitorySmartDoor.CPaTrkyU.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源项目-「宿舍智能门」 - 鹤白居的小站</title>
+<script>LA.init({id:"3Ny1uac0PW8pSlg2",ck:"3Ny1uac0PW8pSlg2",autoTrack:true,screenRecord:true})</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:description" content="搞钱，迎娶白富美，走上人生巅峰。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="鹤白居的小站">
+<meta property="og:title" content="开源项目-「宿舍智能门」">
+<meta property="og:image" content="https://pic1.imgdb.cn/i/0342DcLD501L1nEqhpV7xO.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://web.hebaiju.cn/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.11">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-f6b5dd64><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-f6b5dd64><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-f6b5dd64><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-f6b5dd64><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-f6b5dd64><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="文章" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><a href="/links/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="友链" data-v-f6b5dd64><!--[--><div class="size-6 i-ri-link"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-f6b5dd64><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-f6b5dd64><!----><span class="font-light truncate">鹤白居的小站</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-f6b5dd64><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-f6b5dd64><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-f6b5dd64><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg" alt="avatar"><span class="site-author-status absolute" title="小破站建设中">😁</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">HEBAIJU</a><a href="/about/site" class="site-name text-lg leading-loose">鹤白居的小站</a><h4 class="site-subtitle block op-70" text="xs">Next Generation Static Blog Framework.</h4><div class="site-description">鹤白居的个人博客，记录生活与学习。</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">9</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">5</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">13</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/Hebaiju" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://space.bilibili.com/3546981114841718" title="哔哩哔哩" target="_blank" style="color:#FF8EB3;"><div class="i-ri-bilibili-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:wbix@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1;"><div class="i-ri-mail-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/archives/" class="va-link link-item yun-icon-btn" inline-flex title="归档" style="color:dodgerblue;"><!--[--><div class="i-ri-archive-line icon size-6"></div><!--]--></a><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="友链" style="color:coral;"><!--[--><div class="i-ri-link-m icon size-6"></div><!--]--></a><a href="/nav-link/" class="va-link link-item yun-icon-btn" inline-flex title="快捷链接" style="color:mediumspringgreen;"><!--[--><div class="i-ri-global-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template></template><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">开源项目-「宿舍智能门」</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-12-08 00:00:00"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-12-08</time></span><!----></div><!--[--><!--]--><div class="inline-flex-center gap-4"><!----><div class="inline-flex gap-4" text="sm" h="5"><!----><!----></div><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=Code" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>Code</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=ESP8266" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ESP8266</span></a><a href="/tags/?tag=%E5%AE%BF%E8%88%8D" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>宿舍</span></a><a href="/tags/?tag=%E9%A1%B9%E7%9B%AE" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>项目</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><h2 id="介绍-​" tabindex="-1">介绍 <a href="#%E4%BB%8B%E7%BB%8D">​</a> <a class="header-anchor" href="#介绍-​" aria-label="Permalink to &quot;介绍 [​](#介绍)&quot;">​</a></h2><p>本文基于Arduino平台，点灯科技，ESP8266开发板完成宿舍智能门项目的开发。最终目标是在手机上利用点灯科技APP来实现开门关门的功能。</p><h3 id="背景-​" tabindex="-1">背景 <a href="#%E8%83%8C%E6%99%AF">​</a> <a class="header-anchor" href="#背景-​" aria-label="Permalink to &quot;背景 [​](#背景)&quot;">​</a></h3><p>在科技高速发展的今天，智慧家庭，智慧大棚等拥有科技元素的，能够实现自动化，为了方便人类行为活动的科技产品，咱们均认为是有意义的。</p><blockquote><p>科技不是高高在上而是服务于人民。 --雷军</p></blockquote><p>上面的全部是废话，不必在意。</p><h3 id="题外话-​" tabindex="-1">题外话 <a href="#%E9%A2%98%E5%A4%96%E8%AF%9D">​</a> <a class="header-anchor" href="#题外话-​" aria-label="Permalink to &quot;题外话 [​](#题外话)&quot;">​</a></h3><p>目前我就读大学，每天日复一日的重复着教室-食堂-宿舍，三点一线。当然呆着时间最多的就是宿舍了，然而学校宿舍门有些许老旧，是使用的老式的门，甚至都掉油漆，独有一份监狱风格。</p><p>每次出门必须带钥匙，要不然就被关在了外面。曾经我们和大多数寝室一样选择将钥匙放在门框上，这是非常不保险的做法。安全度几乎为0。既然安全度为0又何必去安装一个门呢？</p><h3 id="正式背景介绍-​" tabindex="-1">正式背景介绍 <a href="#%E6%AD%A3%E5%BC%8F%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D">​</a> <a class="header-anchor" href="#正式背景介绍-​" aria-label="Permalink to &quot;正式背景介绍 [​](#正式背景介绍)&quot;">​</a></h3><p>曾经，当然不是我哈^_^我可不会忘记带钥匙，我的舍友他们老是忘记带钥匙，而且还有的钥匙不见了，每次都需要等带钥匙的回来才能进入寝室，否则则跑到宿管借备用钥匙，然后回来开门，再去还备用钥匙。要跑3趟。简直就是无妄之灾。</p><p>这些只是众多原因中的一个  a little bit</p><p>废话不多说，现在开始手把手，从0开始，一步一步跟着来做，来学。</p><h2 id="被控制方-​" tabindex="-1">被控制方 <a href="#%E8%A2%AB%E6%8E%A7%E5%88%B6%E6%96%B9">​</a> <a class="header-anchor" href="#被控制方-​" aria-label="Permalink to &quot;被控制方 [​](#被控制方)&quot;">​</a></h2><hr><p>本教程面对群众为新手，0基础。如果你觉得较为困难，请向AI工具进行提问，或者向大神请求解答，当然本博主十分愿意用零散的时间来换取一杯咖啡😚</p><h3 id="项目材料准备-​" tabindex="-1">项目材料准备 <a href="#%E9%A1%B9%E7%9B%AE%E6%9D%90%E6%96%99%E5%87%86%E5%A4%87">​</a> <a class="header-anchor" href="#项目材料准备-​" aria-label="Permalink to &quot;项目材料准备 [​](#项目材料准备)&quot;">​</a></h3><table><thead><tr><th>材料列表</th><th>数量</th><th>价格</th><th>图片</th></tr></thead><tbody><tr><td><a href="https://item.taobao.com/item.htm?ali_refid=a3_430673_1006%3A1122812217%3AN%3Aqwnbk4ga1jWzvtXuIEnkGA%3D%3D%3Ab8ae833f50e89e1033037e7171b44b71&amp;ali_trackid=1_b8ae833f50e89e1033037e7171b44b71&amp;id=539003694382&amp;mi_id=0000wlxqib2G4jBL3QpKyaNJ5dcj2DGzSUBDxbsbj2VQe4g&amp;mm_sceneid=1_0_114003394_0&amp;priceTId=214784b017603615514204927e0fbc&amp;skuId=4383586252993&amp;spm=a21n57.sem.item.7&amp;utparam=%7B%22aplus_abtest%22%3A%225e2089e06d2fcc43feb549b1b0fa929d%22%7D&amp;xxc=ad_ztc" target="_blank" rel="noreferrer">ESP8266-01s</a></td><td>1</td><td>6</td><td><img src="https://pic1.imgdb.cn/i/0342DcLD501L1nEqhpV7xO.jpg" width="140" alt="ESP8266-01s"></td></tr><tr><td><a href="https://detail.tmall.com/item.htm?ali_refid=a3_430673_1006%3A1109448581%3AN%3AGoWQiM5hj2WQTKuqS5zU%2FTMwO5ziiohA%3A1adfae2e21874b573340d58bda968b91&amp;ali_trackid=1_1adfae2e21874b573340d58bda968b91&amp;id=617225331165&amp;mi_id=0000A_KbxPJhbihXdVyiUKSrEI6JDMbeszwla5V2dA91qck&amp;mm_sceneid=1_0_57814139_0&amp;priceTId=213e087717603619469582006e1712&amp;skuId=4351773637185&amp;spm=a21n57.sem.item.43&amp;utparam=%7B%22aplus_abtest%22%3A%22996194b47c58d30515ffd684b5134803%22%7D&amp;xxc=ad_ztc" target="_blank" rel="noreferrer">CH340烧录器</a></td><td>1</td><td>6</td><td><img src="https://pic1.imgdb.cn/i/0342DcJZnPhn1DAIybk3md.jpg" width="140" alt="CH340烧录器"></td></tr><tr><td><a href="https://item.taobao.com/item.htm?id=573547711366&amp;mi_id=0000tkJtG5SnMi_-1x6GfGJs-MaEiZFSVOlP_lX__Xs9GQg&amp;skuId=3906660838326&amp;spm=tbpc.mytb_itemcollect.item.goods&amp;upStreamPrice=1440" target="_blank" rel="noreferrer">舵机</a></td><td>1</td><td>15</td><td><img src="https://pic1.imgdb.cn/i/0342DcLLx5mhRcEEZZ3dTG.jpg" width="140" alt="舵机"></td></tr><tr><td><a href="https://detail.tmall.com/item.htm?ali_refid=a3_430673_1006%3A1359940039%3AH%3AJ1YENfCfO5vN1AQn%2FM74BhE1p4%2BYNbMK%3Ada41d710fe1de3ccaa4ac52ae102adbb&amp;ali_trackid=282_da41d710fe1de3ccaa4ac52ae102adbb&amp;id=683420525367&amp;mi_id=0000aoePFcTdScHSwJzcHakgCWtzjXhVi9dxVZSwA1eqdvA&amp;mm_sceneid=1_0_1496170099_0&amp;priceTId=213e087717603623018451706e1712&amp;skuId=5062477719044&amp;spm=a21n57.sem.item.2&amp;utparam=%7B%22aplus_abtest%22%3A%22a73f2474141db84db41c26eb550ce8ca%22%7D&amp;xxc=ad_ztc" target="_blank" rel="noreferrer">USB线</a></td><td>1</td><td>2</td><td><img src="https://pic1.imgdb.cn/i/0342DcguCzgetYCBPZ8XNE.jpg" width="140" alt="USB线"></td></tr><tr><td><a href="https://item.taobao.com/item.htm?ali_refid=a3_430673_1006%3A1107255686%3AN%3AMsF9mE9KLTC2IibWJh%2BK1A%3D%3D%3Ae6188cb8ad452a06a8ff90ba8b235c44&amp;ali_trackid=1_e6188cb8ad452a06a8ff90ba8b235c44&amp;id=626699339752&amp;mi_id=0000g_QPnIABA1wVeBciEX0FQ362C7ik5EppPrSJfo1biK8&amp;mm_sceneid=1_0_30693817_0&amp;priceTId=213e087717603623416314400e1712&amp;skuId=6048588939883&amp;spm=a21n57.sem.item.44&amp;utparam=%7B%22aplus_abtest%22%3A%22a72a3e6180176186878aafdc7648e185%22%7D&amp;xxc=ad_ztc" target="_blank" rel="noreferrer">杜邦线</a></td><td>若干</td><td>2</td><td><img src="https://pic1.imgdb.cn/i/0342DcL7WY4SXhWCW9w1yT.jpg" width="140" alt="杜邦线"></td></tr><tr><td><a href="https://item.taobao.com/item.htm?ali_refid=a3_430673_1006%3A1682218166%3AN%3Ak3UParKGYF%2FTnr04H%2FnB1w%3D%3D%3Acc5546591def63a47be2c967b14b7853&amp;ali_trackid=1_cc5546591def63a47be2c967b14b7853&amp;id=820130327778&amp;mi_id=00005WGskN94dveeWmcuPk1ItOSxCugUI5tQrpd9piYjZ4A&amp;mm_sceneid=1_0_3838888826_0&amp;priceTId=213e087717603624095278730e1712&amp;skuId=5528500289757&amp;spm=a21n57.sem.item.132&amp;utparam=%7B%22aplus_abtest%22%3A%22dddcd9a0bfd5668b7e3d51003e18de72%22%7D&amp;xxc=ad_ztc" target="_blank" rel="noreferrer">扎带</a></td><td>若干</td><td>1</td><td><img src="https://pic1.imgdb.cn/i/0342DcguJAkTITVPeFBu7D.jpg" width="140" alt="扎带"></td></tr><tr><td>电脑</td><td>1</td><td>自费</td><td>操作系统最好为window 11</td></tr><tr><td><a href="https://www.arduino.cc/" target="_blank" rel="noreferrer">arduino</a></td><td>1</td><td>免费</td><td><a href="https://downloads.arduino.cc/app-lab-release/ArduinoAppLab_0.1.23_Windows_x86-64_installer.exe" target="_blank" rel="noreferrer">官方下载</a>或者到教程里面领取</td></tr></tbody></table><h3 id="功能说明-​" tabindex="-1">功能说明 <a href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E">​</a> <a class="header-anchor" href="#功能说明-​" aria-label="Permalink to &quot;功能说明 [​](#功能说明)&quot;">​</a></h3><table><thead><tr><th>功能</th><th>说明</th><th>支持方式</th></tr></thead><tbody><tr><td>远程开门（保持 2 秒）</td><td>一点即开，自动保持 2 秒后自动关门</td><td>Blinker App / MQTT / 串口</td></tr><tr><td>手机震动反馈</td><td>按下后约 0.25 秒立刻震动，感觉“秒开”</td><td>自动触发</td></tr><tr><td>自动灯光（按真实时间）</td><td>08:00–11:59 14:00–22:59 自动亮灯，其余时间关灯</td><td>NTP 网络校时，每 30 秒自动判断</td></tr><tr><td>手动反转灯</td><td>在自动时间段内仍可手动点亮/熄灭</td><td>Blinker App / MQTT / 串口</td></tr><tr><td>MQTT 远程控制</td><td>发 <code>on</code> 开门，发 <code>light</code> 反转灯</td><td>Home Assistant / Node-RED 等</td></tr><tr><td>Wi-Fi 列表自定义名字</td><td>永远显示“开门猫”（或你改的名字），再见 ESP_XXXX</td><td>代码强制写入</td></tr><tr><td>串口调试命令</td><td>接电脑就能手动控制</td><td>见下方</td></tr></tbody></table><h3 id="接口说明-​" tabindex="-1">接口说明 <a href="#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E">​</a> <a class="header-anchor" href="#接口说明-​" aria-label="Permalink to &quot;接口说明 [​](#接口说明)&quot;">​</a></h3><table><thead><tr><th>接口类型</th><th>名称 / Key / 主题</th><th>功能</th><th>具体命令 / Payload</th><th>备注</th></tr></thead><tbody><tr><td><strong>Blinker 按钮</strong></td><td><code>servo</code></td><td>开门（保持 2 秒）</td><td>点击按钮</td><td>App 内默认显示“开门”</td></tr><tr><td><strong>Blinker 按钮</strong></td><td><code>light</code></td><td>手动反转当前灯状态</td><td>点击按钮</td><td>自动时间段内仍可强制开关</td></tr><tr><td><strong>设备显示名称</strong></td><td><code>CUSTOM_HOSTNAME</code>（代码里改）</td><td>Wi-Fi 列表 + App 显示的设备名</td><td>当前默认：<strong>开门猫</strong></td><td>烧录后永久生效，再见 ESP_XXXXXX</td></tr><tr><td><strong>串口命令</strong></td><td><code>on</code></td><td>立刻开门一次（保持 2 秒）</td><td>输入 <code>on</code> 回车</td><td></td></tr><tr><td><strong>串口命令</strong></td><td><code>time</code></td><td>立刻强制同步网络时间</td><td>输入 <code>time</code> 回车</td><td></td></tr><tr><td><strong>串口命令</strong></td><td><code>light on</code></td><td>强制开灯</td><td>输入 <code>light on</code> 回车</td><td></td></tr><tr><td><strong>串口命令</strong></td><td><code>light off</code></td><td>强制关灯</td><td>输入 <code>light off</code> 回车</td><td></td></tr><tr><td><strong>MQTT 主题</strong></td><td><code>switch/state</code></td><td>主控制主题</td><td>—</td><td>设备自动订阅</td></tr><tr><td><strong>MQTT 命令</strong></td><td><code>on</code></td><td>开门 2 秒</td><td>发送字符串 <code>on</code></td><td></td></tr><tr><td><strong>MQTT 命令</strong></td><td><code>light</code></td><td>反转当前灯状态</td><td>发送字符串 <code>light</code></td><td>开→关 或 关→开</td></tr><tr><td><strong>MQTT Broker</strong></td><td>自建</td><td></td><td>—</td><td>无需账号，也可改成自家 EMQX/Mosquitto</td></tr><tr><td><strong>NTP 时间服务器</strong></td><td>ntp1.aliyun.com</td><td>北京时间自动校时（+8 区）</td><td>—</td><td>备用 pool.ntp.org</td></tr><tr><td><strong>硬件接线</strong></td><td>舵机信号线</td><td>GPIO0（D3）</td><td>—</td><td>SG90 / MG90S</td></tr><tr><td><strong>硬件接线</strong></td><td>灯控制（低电平亮）</td><td>GPIO2（D4）</td><td>—</td><td>板载 LED 或继电器</td></tr></tbody></table><blockquote><p>接线：舵机控制线连接D3引脚，正极接3.3V，负极接GND。灯是板载灯，不用管。</p></blockquote><h3 id="代码-​" tabindex="-1">代码 <a href="#%E4%BB%A3%E7%A0%81">​</a> <a class="header-anchor" href="#代码-​" aria-label="Permalink to &quot;代码 [​](#代码)&quot;">​</a></h3><p>提示</p><p>请订阅代码中的库文件！！！</p><p>功能代码</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>/****************************************************************************************</span></span>
+<span class="line"><span> * 项目名称：智能门控 + 自动灯光系统（终极版 - 开门保持2秒）</span></span>
+<span class="line"><span> * 作者 ： 鹤白居</span></span>
+<span class="line"><span> ****************************************************************************************/</span></span>
+<span class="line"><span>#include &lt;Servo.h&gt;</span></span>
+<span class="line"><span>#define BLINKER_WIFI</span></span>
+<span class="line"><span>#include &lt;Blinker.h&gt;</span></span>
+<span class="line"><span>#include &lt;NTPClient.h&gt;</span></span>
+<span class="line"><span>#include &lt;WiFiUdp.h&gt;</span></span>
+<span class="line"><span>#include &lt;PubSubClient.h&gt;</span></span>
+<span class="line"><span>// ====================== 配置 ======================</span></span>
+<span class="line"><span>const char AUTH[] = &quot;&quot;;          // ←←← 改成你自己的 Blinker Key</span></span>
+<span class="line"><span>const char WIFI_SSID[] = &quot;&quot;;     // ←←← 你的 Wi-Fi 名字</span></span>
+<span class="line"><span>const char WIFI_PSWD[] = &quot;&quot;;          // ←←← 你的 Wi-Fi 密码</span></span>
+<span class="line"><span>const char* mqtt_server = &quot;&quot;;   // 全球公共免费（强烈推荐）</span></span>
+<span class="line"><span>// 可选替换（任选其一）：</span></span>
+<span class="line"><span>// &quot;broker.hivemq.com&quot;</span><span>      // 另一个免费公网</span></span>
+<span class="line"><span>// &quot;test.mosquitto.org&quot;</span><span>     // 测试用</span></span>
+<span class="line"><span>// &quot;192.168.1.100&quot;</span><span>          // 你自己内网的 EMQX/Mosquitto 地址</span></span>
+<span class="line"><span>const int   mqtt_port   = 1883;               // 基本都用 1883，改了也连不上公网免费的</span></span>
+<span class="line"><span>const char* mqtt_topic  = &quot;switch/state&quot;;     // 发 on 开门，发 light 反转灯</span></span>
+<span class="line"><span>const char* CUSTOM_HOSTNAME = &quot;开门猫&quot;;  // 自定义WiFi列表显示的名字（改这里就行）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 舵机时间参数（集中管理，想改多久改多久）======================</span></span>
+<span class="line"><span>const int OPEN_KEEP_TIME    = 2000;   // 门保持打开的时间（毫秒） ←←←← 你现在要的2秒</span></span>
+<span class="line"><span>const int MOVE_TIME         = 300;    // 舵机从0→90或90→0需要的预计时间（实测300ms很稳）</span></span>
+<span class="line"><span>const int VIBRATE_DELAY     = 250;    // 开门后多久手机震动（比实际运动略早一点，手感更秒开）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>WiFiUDP ntpUDP;</span></span>
+<span class="line"><span>NTPClient timeClient(ntpUDP, &quot;ntp1.aliyun.com&quot;, 8*3600, 60000);</span></span>
+<span class="line"><span>WiFiClient espClient;</span></span>
+<span class="line"><span>PubSubClient mqttClient(espClient);</span></span>
+<span class="line"><span>BlinkerButton ServoButton(&quot;servo&quot;);</span></span>
+<span class="line"><span>BlinkerButton LightButton(&quot;light&quot;);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 硬件 ======================</span></span>
+<span class="line"><span>const int SERVO_PIN = 0;</span></span>
+<span class="line"><span>const int ONBOARD_LED_PIN = 2;   // 你实际灯接这里（低电平亮）</span></span>
+<span class="line"><span>const int MIN_ANGLE = 0;</span></span>
+<span class="line"><span>const int MAX_ANGLE = 90;</span></span>
+<span class="line"><span>const int MIN_PULSE = 500;</span></span>
+<span class="line"><span>const int MAX_PULSE = 2500;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 状态 ======================</span></span>
+<span class="line"><span>bool lightState = false;</span></span>
+<span class="line"><span>bool timeSynced = false;</span></span>
+<span class="line"><span>unsigned long lastNTPSync = 0;</span></span>
+<span class="line"><span>Servo myServo;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>bool isOpening = false;</span></span>
+<span class="line"><span>unsigned long servoTimer = 0;</span></span>
+<span class="line"><span>enum ServoState { IDLE, GO_TO_90, STAY_90, GO_TO_0 } servoState = IDLE;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 开机欢迎 ======================</span></span>
+<span class="line"><span>void printWelcome() {</span></span>
+<span class="line"><span>  Serial.println(F(&quot;\n&quot;));</span></span>
+<span class="line"><span>  Serial.println(F(&quot;================================================&quot;));</span></span>
+<span class="line"><span>  Serial.println(F(&quot; 智能门控 + 自动灯光系统 已启动&quot;));</span></span>
+<span class="line"><span>  Serial.println(F(&quot; 项目名称：门控灯光终极版 v1.1&quot;));</span></span>
+<span class="line"><span>  Serial.printf(&quot; WiFi列表显示名：%s\n&quot;, CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span>  Serial.printf(&quot; 门保持打开时间：%d ms (%.1fs)\n&quot;, OPEN_KEEP_TIME, OPEN_KEEP_TIME/1000.0);</span></span>
+<span class="line"><span>  Serial.println(F(&quot; 输入 time 可立刻强制同步时间&quot;));</span></span>
+<span class="line"><span>  Serial.println(F(&quot;================================================&quot;));</span></span>
+<span class="line"><span>  Serial.println(F(&quot;&quot;));</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== setup ======================</span></span>
+<span class="line"><span>void setup() {</span></span>
+<span class="line"><span>  Serial.begin(115200);</span></span>
+<span class="line"><span>  printWelcome();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 先强制设置自定义主机名（防Blinker偷偷改）</span></span>
+<span class="line"><span>  WiFi.hostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span>  WiFi.setHostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  pinMode(ONBOARD_LED_PIN, OUTPUT);</span></span>
+<span class="line"><span>  digitalWrite(ONBOARD_LED_PIN, HIGH);  // 初始关灯</span></span>
+<span class="line"><span>  myServo.attach(SERVO_PIN, MIN_PULSE, MAX_PULSE);</span></span>
+<span class="line"><span>  myServo.write(MIN_ANGLE);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  Blinker.begin(AUTH, WIFI_SSID, WIFI_PSWD);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // Blinker连上后再次强行改回来，100%显示“开门猫”</span></span>
+<span class="line"><span>  delay(3000);</span></span>
+<span class="line"><span>  WiFi.hostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span>  WiFi.setHostname(CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  while (!Blinker.connected()) {</span></span>
+<span class="line"><span>    Blinker.run();</span></span>
+<span class="line"><span>    delay(100);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  Serial.printf(&quot;WiFi和Blinker已连接，设备名已强制为：%s\n&quot;, CUSTOM_HOSTNAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  timeClient.begin();</span></span>
+<span class="line"><span>  for (int i = 0; i &lt; 10; i++) {</span></span>
+<span class="line"><span>    if (timeClient.forceUpdate()) {</span></span>
+<span class="line"><span>      timeSynced = true;</span></span>
+<span class="line"><span>      Serial.printf(&quot;开机时间同步成功：%02d:%02d:%02d\n&quot;,</span></span>
+<span class="line"><span>                    timeClient.getHours(), timeClient.getMinutes(), timeClient.getSeconds());</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    delay(1000);</span></span>
+<span class="line"><span>    Serial.print(&quot;.&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  if (!timeSynced) Serial.println(&quot;\n启动同步失败，后续会继续尝试&quot;);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 控件回调</span></span>
+<span class="line"><span>  ServoButton.attach([](const String &amp;state) {</span></span>
+<span class="line"><span>    rotateServoSequence();</span></span>
+<span class="line"><span>    Blinker.print(&quot;门&quot;, &quot;开了！！！&quot;);</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span>  LightButton.attach([](const String &amp;state) {</span></span>
+<span class="line"><span>    lightState = !lightState;</span></span>
+<span class="line"><span>    setLightState(lightState);</span></span>
+<span class="line"><span>    Serial.println(&quot;App手动反转当前时间段灯状态&quot;);</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  mqttClient.setServer(mqtt_server, mqtt_port);</span></span>
+<span class="line"><span>  mqttClient.setCallback([](char* topic, byte* payload, unsigned int length) {</span></span>
+<span class="line"><span>    String msg = &quot;&quot;;</span></span>
+<span class="line"><span>    for (int i = 0; i &lt; length; i++) msg += (char)payload[i];</span></span>
+<span class="line"><span>    if (msg == &quot;on&quot;) rotateServoSequence();</span></span>
+<span class="line"><span>    if (msg == &quot;light&quot;) {</span></span>
+<span class="line"><span>      lightState = !lightState;</span></span>
+<span class="line"><span>      setLightState(lightState);</span></span>
+<span class="line"><span>      Serial.println(&quot;MQTT手动反转当前时间段灯状态&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== loop ======================</span></span>
+<span class="line"><span>void loop() {</span></span>
+<span class="line"><span>  Blinker.run();</span></span>
+<span class="line"><span>  timeClient.update();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (!mqttClient.connected()) {</span></span>
+<span class="line"><span>    String id = &quot;ESP8266-&quot; + String(random(0xffff), HEX);</span></span>
+<span class="line"><span>    if (mqttClient.connect(id.c_str())) mqttClient.subscribe(mqtt_topic);</span></span>
+<span class="line"><span>    else delay(3000);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  mqttClient.loop();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 每30秒根据真实时间校准灯</span></span>
+<span class="line"><span>  static unsigned long lastCheck = 0;</span></span>
+<span class="line"><span>  if (millis() - lastCheck &gt;= 30000) {</span></span>
+<span class="line"><span>    updateLightStateAccordingToTime();</span></span>
+<span class="line"><span>    lastCheck = millis();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 每30分钟自动同步时间</span></span>
+<span class="line"><span>  if (millis() - lastNTPSync &gt;= 1800000UL) {</span></span>
+<span class="line"><span>    timeClient.forceUpdate();</span></span>
+<span class="line"><span>    lastNTPSync = millis();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  handleServoNonBlock();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 串口命令</span></span>
+<span class="line"><span>  if (Serial.available()) {</span></span>
+<span class="line"><span>    String cmd = Serial.readStringUntil(&#39;\n&#39;);</span></span>
+<span class="line"><span>    cmd.trim(); cmd.toLowerCase();</span></span>
+<span class="line"><span>    if (cmd == &quot;time&quot;) {</span></span>
+<span class="line"><span>      Serial.print(&quot;手动强制同步时间...&quot;);</span></span>
+<span class="line"><span>      if (timeClient.forceUpdate()) {</span></span>
+<span class="line"><span>        timeSynced = true;</span></span>
+<span class="line"><span>        Serial.printf(&quot;成功！北京时间 %02d:%02d:%02d\n&quot;,</span></span>
+<span class="line"><span>                      timeClient.getHours(), timeClient.getMinutes(), timeClient.getSeconds());</span></span>
+<span class="line"><span>        updateLightStateAccordingToTime();</span></span>
+<span class="line"><span>      } else Serial.println(&quot;失败&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    else if (cmd == &quot;on&quot;) rotateServoSequence();</span></span>
+<span class="line"><span>    else if (cmd == &quot;light on&quot;)  { lightState = true;  setLightState(true);  Serial.println(&quot;串口强制开灯&quot;); }</span></span>
+<span class="line"><span>    else if (cmd == &quot;light off&quot;) { lightState = false; setLightState(false); Serial.println(&quot;串口强制关灯&quot;); }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 灯光自动逻辑 ======================</span></span>
+<span class="line"><span>void updateLightStateAccordingToTime() {</span></span>
+<span class="line"><span>  if (!timeSynced) {</span></span>
+<span class="line"><span>    setLightState(false);</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  int h = timeClient.getHours();</span></span>
+<span class="line"><span>  bool shouldBeOn = (h &gt;= 8 &amp;&amp; h &lt; 12) || (h &gt;= 14 &amp;&amp; h &lt; 23);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (lightState != shouldBeOn) {</span></span>
+<span class="line"><span>    lightState = shouldBeOn;</span></span>
+<span class="line"><span>    setLightState(lightState);</span></span>
+<span class="line"><span>    Serial.printf(&quot;自动恢复：%d点 → %s\n&quot;, h, lightState ? &quot;开灯&quot; : &quot;关灯&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void setLightState(bool state) {</span></span>
+<span class="line"><span>  lightState = state;</span></span>
+<span class="line"><span>  digitalWrite(ONBOARD_LED_PIN, state ? LOW : HIGH);  // 低电平亮</span></span>
+<span class="line"><span>  Blinker.print(&quot;light&quot;, state ? &quot;开&quot; : &quot;关&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ====================== 舵机非阻塞控制（2秒版）======================</span></span>
+<span class="line"><span>void rotateServoSequence() {</span></span>
+<span class="line"><span>  if (isOpening) return;       // 防重复触发</span></span>
+<span class="line"><span>  isOpening = true;</span></span>
+<span class="line"><span>  servoState = GO_TO_90;</span></span>
+<span class="line"><span>  servoTimer = millis();</span></span>
+<span class="line"><span>  myServo.write(MAX_ANGLE);    // 立刻开门</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void handleServoNonBlock() {</span></span>
+<span class="line"><span>  if (!isOpening) return;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  switch (servoState) {</span></span>
+<span class="line"><span>    case GO_TO_90:</span></span>
+<span class="line"><span>      if (millis() - servoTimer &gt;= VIBRATE_DELAY) {</span></span>
+<span class="line"><span>        Blinker.vibrate();     // 250ms后手机震动，手感超快</span></span>
+<span class="line"><span>        servoState = STAY_90;</span></span>
+<span class="line"><span>        servoTimer = millis();</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    case STAY_90:</span></span>
+<span class="line"><span>      if (millis() - servoTimer &gt;= OPEN_KEEP_TIME) {</span></span>
+<span class="line"><span>        myServo.write(MIN_ANGLE);   // 开始关门</span></span>
+<span class="line"><span>        servoState = GO_TO_0;</span></span>
+<span class="line"><span>        servoTimer = millis();</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    case GO_TO_0:</span></span>
+<span class="line"><span>      if (millis() - servoTimer &gt;= MOVE_TIME) {  // 给舵机足够时间回到0°</span></span>
+<span class="line"><span>        isOpening = false;</span></span>
+<span class="line"><span>        servoState = IDLE;</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>      break;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="app配置-​" tabindex="-1">App配置 <a href="#app%E9%85%8D%E7%BD%AE">​</a> <a class="header-anchor" href="#app配置-​" aria-label="Permalink to &quot;App配置 [​](#app配置)&quot;">​</a></h3><p>注意主题的订阅为servo和light</p><p>一个是小灯，一个是控制舵机开门！</p><p><img src="https://pic1.imgdb.cn/i/0342DcKszwBq96c3vU0r54.jpg" alt="最终配置界面"><img src="https://pic1.imgdb.cn/i/0342DcKVVPim9bCkjCumYc.jpg" alt="组件名称配置界面"></p><p>或者你可以通过直接导入界面配置文件</p><p>信息</p><p>右上角三个点——界面配置——复制下面替换掉里面的内容。</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>{¨version¨¨2.0.0¨¨config¨{¨headerColor¨¨transparent¨¨headerStyle¨¨dark¨¨background¨{¨img¨¨assets/img/headerbg.jpg¨¨isFull¨«}}¨dashboard¨|{¨type¨¨btn¨¨ico¨¨far fa-door-open¨¨mode¨É¨t0¨´门´¨t1¨¨文本2¨¨bg¨É¨cols¨Í¨rows¨Í¨key¨¨servo¨´x´Ë´y´Ð¨lstyle¨Ë¨clr¨¨#00A90C¨}{ßCßDßE¨fad fa-lightbulb-on¨ßGÉßH¨小灯¨ßIßJßKËßLËßMËßN¨light¨´x´Ï´y´ÒßQ¨#076EEF¨ßPÉ}{ßC¨deb¨ßGÉßKÉßLÑßMÌßN¨debug¨´x´É´y´¤D}÷¨actions¨|÷¨triggers¨|÷¨rt¨|÷}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="结语-​" tabindex="-1">结语 <a href="#%E7%BB%93%E8%AF%AD">​</a> <a class="header-anchor" href="#结语-​" aria-label="Permalink to &quot;结语 [​](#结语)&quot;">​</a></h3><p>如果你只需要实现手机上通过APP的传接来开门，那么到这里就结束了</p><hr><h2 id="控制方-​" tabindex="-1">控制方 <a href="#%E6%8E%A7%E5%88%B6%E6%96%B9">​</a> <a class="header-anchor" href="#控制方-​" aria-label="Permalink to &quot;控制方 [​](#控制方)&quot;">​</a></h2><h3 id="说明-​" tabindex="-1">说明 <a href="#%E8%AF%B4%E6%98%8E">​</a> <a class="header-anchor" href="#说明-​" aria-label="Permalink to &quot;说明 [​](#说明)&quot;">​</a></h3><p>当前已经完成了在门外面通过App进行控制，然而显示情况却有不同</p><p>当我在宿舍里面的时候，有别人在外面敲门，我需要打开手机给别人开门，或者走过去开门。当然我是一个非常懒的人，能不动就绝对运动。</p><blockquote><p>懒是科技进步的动力源泉</p></blockquote><p>所以如果能在我的桌面上有一个按钮来开门就好了</p><p>我的具体实施过程是：在桌面上放置一个按钮，按钮连接esp8266开发板，由充电器给esp8266供电，按下按钮，控制方的esp8266来向被控制方的esp8266发送一条mqtt消息，从而来实现开门。</p><p>材料有按钮，esp8266开发板，杜邦线，充电头（其实电脑上面也可以插着）</p><p>信息</p><p>这里的内容大部分都是类同的，就不重复无聊的地方，下面直接就是控制方的代码</p><div class="language- max-h-300px"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>#include &lt;ESP8266WiFi.h&gt;</span></span>
+<span class="line"><span>#include &lt;PubSubClient.h&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// WiFi配置</span></span>
+<span class="line"><span>const char* ssid = &quot;&quot;;</span></span>
+<span class="line"><span>const char* password = &quot;&quot;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// MQTT配置</span></span>
+<span class="line"><span>const char* mqttServer = &quot;&quot;;</span></span>
+<span class="line"><span>const int mqttPort = 1883;</span></span>
+<span class="line"><span>const char* mqttTopic = &quot;switch/state&quot;;</span></span>
+<span class="line"><span>const char* clientId = &quot;esp8266-switch-054&quot;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 开关和LED引脚定义</span></span>
+<span class="line"><span>const int switchPin = 0;    // 开关引脚</span></span>
+<span class="line"><span>const int ledPin = 2;       // LED引脚</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 状态变量（单击双击检测）</span></span>
+<span class="line"><span>int lastSteadyState = HIGH;</span></span>
+<span class="line"><span>int lastFlickerableState = HIGH;</span></span>
+<span class="line"><span>int currentState;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 时间变量</span></span>
+<span class="line"><span>unsigned long lastDebounceTime = 0;</span></span>
+<span class="line"><span>unsigned long debounceDelay = 50;    // 去抖延迟</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 单击双击检测变量</span></span>
+<span class="line"><span>unsigned long firstClickTime = 0;</span></span>
+<span class="line"><span>int clickCount = 0;</span></span>
+<span class="line"><span>const unsigned long doubleClickDelay = 500;  // 双击最大间隔</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 创建WiFi客户端和MQTT客户端实例</span></span>
+<span class="line"><span>WiFiClient espClient;</span></span>
+<span class="line"><span>PubSubClient client(espClient);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// MQTT重连函数</span></span>
+<span class="line"><span>void reconnect() {</span></span>
+<span class="line"><span>  while (!client.connected()) {</span></span>
+<span class="line"><span>    Serial.print(&quot;正在连接MQTT服务器...&quot;);</span></span>
+<span class="line"><span>    if (client.connect(clientId)) {</span></span>
+<span class="line"><span>      Serial.println(&quot;连接成功&quot;);</span></span>
+<span class="line"><span>    } else {</span></span>
+<span class="line"><span>      Serial.print(&quot;连接失败，错误代码: &quot;);</span></span>
+<span class="line"><span>      Serial.print(client.state());</span></span>
+<span class="line"><span>      Serial.println(&quot;，5秒后重试...&quot;);</span></span>
+<span class="line"><span>      delay(5000);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void setup() {</span></span>
+<span class="line"><span>  // 初始化串口</span></span>
+<span class="line"><span>  Serial.begin(115200);</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  // 初始化引脚</span></span>
+<span class="line"><span>  pinMode(switchPin, INPUT_PULLUP);</span></span>
+<span class="line"><span>  pinMode(ledPin, OUTPUT);</span></span>
+<span class="line"><span>  digitalWrite(ledPin, HIGH);  // 关闭LED</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  // 连接WiFi</span></span>
+<span class="line"><span>  Serial.print(&quot;连接WiFi: &quot;);</span></span>
+<span class="line"><span>  Serial.println(ssid);</span></span>
+<span class="line"><span>  WiFi.begin(ssid, password);</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  while (WiFi.status() != WL_CONNECTED) {</span></span>
+<span class="line"><span>    delay(500);</span></span>
+<span class="line"><span>    Serial.print(&quot;.&quot;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  Serial.println(&quot;&quot;);</span></span>
+<span class="line"><span>  Serial.println(&quot;WiFi连接成功&quot;);</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  // 设置MQTT服务器</span></span>
+<span class="line"><span>  client.setServer(mqttServer, mqttPort);</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  Serial.println(&quot;设备初始化完成，等待开关操作...&quot;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void loop() {</span></span>
+<span class="line"><span>  // 维持MQTT连接</span></span>
+<span class="line"><span>  if (!client.connected()) {</span></span>
+<span class="line"><span>    reconnect();</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  client.loop();</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  // 读取当前引脚状态</span></span>
+<span class="line"><span>  currentState = digitalRead(switchPin);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 检测状态是否发生变化（去抖处理）</span></span>
+<span class="line"><span>  if (currentState != lastFlickerableState) {</span></span>
+<span class="line"><span>    lastDebounceTime = millis();</span></span>
+<span class="line"><span>    lastFlickerableState = currentState;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 如果状态稳定超过去抖延迟</span></span>
+<span class="line"><span>  if ((millis() - lastDebounceTime) &gt; debounceDelay) {</span></span>
+<span class="line"><span>    // 如果状态确实改变</span></span>
+<span class="line"><span>    if (lastSteadyState != currentState) {</span></span>
+<span class="line"><span>      lastSteadyState = currentState;</span></span>
+<span class="line"><span>      </span></span>
+<span class="line"><span>      // 检测到开关释放(从低到高的变化)</span></span>
+<span class="line"><span>      if (currentState == HIGH) {</span></span>
+<span class="line"><span>        clickCount++;  // 增加点击计数</span></span>
+<span class="line"><span>        Serial.print(&quot;检测到点击! 计数: &quot;);</span></span>
+<span class="line"><span>        Serial.println(clickCount);</span></span>
+<span class="line"><span>        </span></span>
+<span class="line"><span>        // 如果是第一次点击，记录时间</span></span>
+<span class="line"><span>        if (clickCount == 1) {</span></span>
+<span class="line"><span>          firstClickTime = millis();</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 检查双击间隔是否已过，判断点击类型</span></span>
+<span class="line"><span>  if (clickCount &gt; 0 &amp;&amp; (millis() - firstClickTime) &gt; doubleClickDelay) {</span></span>
+<span class="line"><span>    // 根据点击次数发送相应的MQTT消息</span></span>
+<span class="line"><span>    if (clickCount == 1) {</span></span>
+<span class="line"><span>      Serial.println(&quot;发送MQTT消息: on&quot;);</span></span>
+<span class="line"><span>      client.publish(mqttTopic, &quot;on&quot;);  // 单击发送&quot;on&quot;</span></span>
+<span class="line"><span>    } else if (clickCount == 2) {</span></span>
+<span class="line"><span>      Serial.println(&quot;发送MQTT消息: light&quot;);</span></span>
+<span class="line"><span>      client.publish(mqttTopic, &quot;light&quot;);  // 双击发送&quot;light&quot;</span></span>
+<span class="line"><span>    } else {</span></span>
+<span class="line"><span>      Serial.print(&quot;多次点击: &quot;);</span></span>
+<span class="line"><span>      Serial.println(clickCount);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    // 重置点击计数</span></span>
+<span class="line"><span>    clickCount = 0;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  delay(10);</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>信息</p><p>由于mqtt的特性，你可以实现，一个开关控制多个门，或者多个开关控制一个门，你可以实现，或者给你的室友没人发一个</p><h2 id="最后-​" tabindex="-1">最后 <a href="#%E6%9C%80%E5%90%8E">​</a> <a class="header-anchor" href="#最后-​" aria-label="Permalink to &quot;最后 [​](#最后)&quot;">​</a></h2><p>当然在这之后，esp8266开发板还剩下了2个io口，还能干很多事，所以我让rx这个io口连接一个红外led，直接让他接入空调，使得可以在手机上控制空调。这都是题外话了。</p><p>可以去查看之后的一篇文章<a href="./251207-ESP8266AC-IR-Control">「ESP8266控制空调」 - 鹤白居的小站</a></p><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>HEBAIJU</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor" target="_blank" title="本文链接">https://web.hebaiju.cn/posts/251013-ESP8266DormitorySmartDoor</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/251207-ESP8266AC-IR-Control" class="post-nav-prev" title="ESP8266控制空调"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">ESP8266控制空调</span></a></div><div class="post-nav-item"><a href="/posts/251118-3c3u-config" class="post-nav-next" title="3C3U-金萝卜组织文档壹"><span class="title truncate" text="sm">3C3U-金萝卜组织文档壹</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template class="mt-4 lg:hidden"></template><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-134607ee><div class="content" data-v-134607ee><div class="outline-title" data-v-134607ee>本页</div><div class="outline-marker" data-v-134607ee></div><nav aria-labelledby="doc-outline-aria-label" data-v-134607ee><span id="doc-outline-aria-label" class="visually-hidden" data-v-134607ee> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-134607ee data-v-9d599344><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2025 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>HEBAIJU</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.11</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.11</span></span></div><!--[--><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://web.hebaiju.cn/#identity","@type":"Person","name":"HEBAIJU","url":"https://web.hebaiju.cn/","image":{"@id":"https://web.hebaiju.cn/#/schema/image/1"},"sameAs":["/atom.xml","https://github.com/Hebaiju","https://space.bilibili.com/3546981114841718","mailto:wbix@qq.com"]},{"@id":"https://web.hebaiju.cn/#website","@type":"WebSite","dateModified":"2025-12-08","datePublished":"2025-12-08","inLanguage":"zh-CN","name":"开源项目-「宿舍智能门」","url":"https://web.hebaiju.cn/","publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#webpage","@type":"WebPage","dateModified":"2025-12-08T00:00:00.000Z","datePublished":"2025-12-08T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","name":"开源项目-「宿舍智能门」","url":"https://web.hebaiju.cn/","about":{"@id":"https://web.hebaiju.cn/#identity"},"isPartOf":{"@id":"https://web.hebaiju.cn/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://web.hebaiju.cn/"]}]},{"@id":"https://web.hebaiju.cn/#article","dateModified":"2025-12-08T00:00:00.000Z","datePublished":"2025-12-08T00:00:00.000Z","description":"搞钱，迎娶白富美，走上人生巅峰。","headline":"开源项目-「宿舍智能门」","inLanguage":"zh-CN","thumbnailUrl":"https://pic1.imgdb.cn/i/0342DcLD501L1nEqhpV7xO.jpg","@type":["Article","BlogPosting"],"author":{"@id":"https://web.hebaiju.cn/#/schema/person/1"},"image":{"@id":"https://web.hebaiju.cn/#/schema/image/2"},"isPartOf":{"@id":"https://web.hebaiju.cn/#webpage"},"mainEntityOfPage":{"@id":"https://web.hebaiju.cn/#webpage"},"publisher":{"@id":"https://web.hebaiju.cn/#identity"}},{"@id":"https://web.hebaiju.cn/#/schema/person/1","@type":"Person","name":"HEBAIJU","url":"https://valaxy.site"},{"@id":"https://web.hebaiju.cn/#/schema/image/1","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342Dcg6IjPPIQZ6OcaxBw.jpg"},{"@id":"https://web.hebaiju.cn/#/schema/image/2","@type":"ImageObject","contentUrl":"https://pic1.imgdb.cn/i/0342DcLD501L1nEqhpV7xO.jpg","inLanguage":"zh-CN","url":"https://pic1.imgdb.cn/i/0342DcLD501L1nEqhpV7xO.jpg"}]}</script>
+  
+</body>
+</html>
