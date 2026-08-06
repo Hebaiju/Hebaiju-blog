@@ -37,7 +37,7 @@ codeHeightLimit: 300
 
 红外LED长针连接ESP8266的RX引脚如下图的 **7 GPIO3 U0RXD**,短针连接在GND。
 
-![ESP826601s引脚.png](https://qntc.hebaiju.cn/img/acir-esp8266-01s-pins.png)![ESP8266引脚.jpg](https://qntc.hebaiju.cn/img/acir-esp8266-pins.jpg)
+![ESP826601s引脚.png](https://pic1.imgdb.cn/i/0342Dbvqd1uSPvGvJKkmHF.png)![ESP8266引脚.jpg](https://pic1.imgdb.cn/i/0342DbwHd48GSPQUsGZuJg.jpg)
 
 ## 测试代码 [​](#测试代码)
 
